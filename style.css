@@ -1,4 +1,3 @@
-/* Tipografía personalizada (ajusta si tienes el archivo Burgundia.ttf) */
 @font-face {
   font-family: 'Burgundia';
   src: url('fonts/Burgundia.ttf') format('truetype');
@@ -9,17 +8,16 @@ body {
   padding: 0;
   font-family: 'Burgundia', serif;
   color: #ffffff;
-  background-image: url('img/nayra.png'); /* Asegúrate que esta ruta sea correcta */
+  background-image: url('img/nayra.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* HEADER */
+/* ENCABEZADO */
 header {
   background-color: rgba(44, 15, 60, 0.9);
   padding: 20px;
-  text-align: left;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,7 +41,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* SECCIÓN HERO */
+/* HERO */
 .hero {
   text-align: center;
   padding: 80px 20px;
