@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nayra Elhara - Bruja Sanadora</title>
+  <!-- Meta tags para SEO y redes sociales -->
+  <meta name="description" content="Nayra Elhara – Canalizadora del Alma. Reserva tu lectura de tarot, sanación energética y rituales personalizados." />
+  <meta property="og:title" content="Nayra Elhara – Canalizadora del Alma" />
+  <meta property="og:description" content="Lecturas de tarot, cuarzos energéticos y rituales para tu transformación interior." />
+  <meta property="og:image" content="https://nayraelhara.com/images/og-image.jpg" />
+  <meta property="og:url" content="https://nayraelhara.com/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nayra Elhara – Canalizadora del Alma" />
+  <meta name="twitter:description" content="Lecturas de tarot, cuarzos energéticos y rituales para tu transformación interior." />
+  <meta name="twitter:image" content="https://nayraelhara.com/images/og-image.jpg" />
+  <link rel="icon" href="/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Preload de fuente Burgundia -->
+  <link rel="preload" href="fonts/burgundia.ttf" as="font" type="font/ttf" crossorigin>
+</head>
+<body>
+  <!-- Navegación -->
+  <nav>
+    <div class="logo">Nayra Elhara</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#about">Servicios</a></li>
+      <li><a href="index.html#guia">Guía</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-text">
+      <h1 class="gold-glow">Canalizadora del Alma</h1>
+      <p>Mensajes del universo, sanación energética y guía espiritual para tu transformación interior.</p>
+      <!-- Si usas Calendly, descomenta y ajusta tu enlace:
+      <a href="#" class="button" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/tu-usuario/lectura' });return false;">Reserva tu lectura</a>
+      <script src="https://assets.calendly.com/assets/external/widget.js"></script>
+      -->
+      <a href="#contacto" class="button">Reserva tu lectura</a>
+    </div>
+  </header>
+
+  <!-- Acerca de y Servicios -->
+  <section id="about" class="about">
+    <h2>¿Quién es Nayra Elhara?</h2>
+    <p>
+      Soy un canal de luz. Acompaño procesos de sanación a través del <strong>tarot del alma</strong>, <strong>registros akáshicos</strong> y <strong>limpiezas energéticas</strong>.
+      Conectamos con tu verdad interior y el propósito que tu alma eligió.
+    </p>
+
+    <div class="services">
+      <div class="service-card">
+        <img src="images/tarot.png" alt="Tarot del Alma">
+        <h3>Tarot del Alma</h3>
+        <p>Canalización de mensajes espirituales y guía profunda para tu evolución personal.</p>
+      </div>
+      <div class="service-card">
+        <img src="images/cuarzos.png" alt="Cuarzos Energéticos">
+        <h3>Cuarzos Energéticos</h3>
+        <p>Activación de cristales para armonizar chakras, intenciones y espacios sagrados.</p>
+      </div>
+      <div class="service-card">
+        <img src="images/rituales.png" alt="Rituales Energéticos">
+        <h3>Rituales Energéticos</h3>
+        <p>Limpiezas, consagraciones y rituales lunares para renovar tu energía y vibración.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guía paso a paso -->
+  <section id="guia" class="guide-section">
+    <h2>Guía Paso a Paso para Completar y Escalar tu Negocio</h2>
+    <p class="guide-intro">Aquí encontrarás todos los pasos detallados para transformar tu landing en una plataforma robusta y escalable. Haz clic en cada ítem para desplegar la información completa.</p>
+
+    <!-- 1. Identidad de marca y contenidos -->
+    <details>
+      <summary>1. Definir y recopilar contenidos y marca</summary>
+      <div class="detail-content">
+        <ul>
+          <li><strong>Identidad de marca:</strong>
+            <ul>
+              <li>Paleta de colores: define 2–3 colores principales (p. ej. púrpura místico, dorado, blanco) y colores de acento.</li>
+              <li>Tipografía: Burgundia para títulos, Poppins para textos. Asegura tener el archivo <code>burgundia.ttf</code> y definiciones de tamaños/pesos.</li>
+              <li>Logotipo: en PNG/SVG para nav-bar y favicon.</li>
+              <li>Imágenes:
+                <ul>
+                  <li><code>nayra.png</code> para Hero.</li>
+                  <li>Iconos/imágenes para servicios: <code>tarot.png</code>, <code>cuarzos.png</code>, <code>rituales.png</code>, etc.</li>
+                  <li>Favicon: <code>favicon.ico</code> o <code>favicon.png</code>.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><strong>Textos finales:</strong>
+            <ul>
+              <li>Titulares y subtítulos de cada sección.</li>
+              <li>Descripciones detalladas de cada servicio (tarot, cuarzos, rituales...).</li>
+              <li>“Sobre mí” o biografía breve.</li>
+              <li>Llamadas a la acción (CTA): “Reserva tu lectura”, “Contáctame”, etc.</li>
+              <li>Políticas: política de privacidad, términos de uso adaptados.</li>
+            </ul>
+          </li>
+          <li><strong>Estructura de páginas:</strong>
+            <ul>
+              <li>Landing: Hero, presentación, servicios destacados, testimonios (opcional), contacto.</li>
+              <li>Páginas secundarias opcionales: servicios individuales (<code>tarot.html</code>, <code>cuarzos.html</code>), sobre mí extendido, blog, testimonios, tienda, página de agradecimiento, política de privacidad, términos y condiciones.</li>
+            </ul>
+          </li>
+          <li><strong>Recopilar medios y optimizar:</strong>
+            <ul>
+              <li>Optimiza imágenes (TinyPNG, Squoosh).</li>
+              <li>Imágenes responsive: versiones pequeñas para móviles.</li>
+              <li>Estructura de carpetas:
+                <pre>
+/nayra-elhara/
+├── index.html
+├── gracias.html
+├── style.css
+├── favicon.png
+├── images/
+│   ├── nayra.png
+│   ├── tarot.png
+│   ├── cuarzos.png
+│   ├── rituales.png
+│   └── ...
+└── fonts/
+    └── burgundia.ttf
+                </pre>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 2. Responsividad -->
+    <details>
+      <summary>2. Hacer el sitio completamente responsivo</summary>
+      <div class="detail-content">
+        <ul>
+          <li><strong>Media Queries:</strong> Ajusta fuentes, paddings y layout en móviles. Ejemplo:
+            <pre>
+@media (max-width: 768px) {
+  .hero h1.gold-glow { font-size: 2.5rem; }
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: 1rem; }
+  .services { flex-direction: column; gap: 1.5rem; }
+  .service-card { max-width: 90%; margin: 0 auto; }
+}
+            </pre>
+          </li>
+          <li><strong>Menú hamburguesa:</strong>
+            <ul>
+              <li>Agrega un ícono “☰” visible &lt;768px para togglear la visibilidad de <code>ul.nav-links</code>.</li>
+              <li>Ejemplo JavaScript:
+                <pre>
+function toggleMenu() {
+  document.querySelector('ul.nav-links').classList.toggle('open');
+}
+                </pre>
+              </li>
+              <li>CSS para móviles:
+                <pre>
+.hamburger { display: block; cursor: pointer; color: #fff; }
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(90,50,100,0.95);
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .nav-links.open { max-height: 300px; }
+  .nav-links li { margin: 1rem 0; text-align: center; }
+}
+                </pre>
+              </li>
+            </ul>
+          </li>
+          <li><strong>Pruebas:</strong> Usar Chrome DevTools para simular distintos dispositivos y ajustar diseño.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 3. Contacto funcional -->
+    <details>
+      <summary>3. Contacto funcional: configurar envío de formulario</summary>
+      <div class="detail-content">
+        <ul>
+          <li><strong>Formulario con Formspree:</strong>
+            <pre>
+<form id="contactForm" action="https://formspree.io/f/movwkyay" method="POST" class="contact-form">
+  <input type="hidden" name="_next" value="https://nayraelhara.com/gracias.html" />
+  <input type="hidden" name="_subject" value="Nueva solicitud de lectura - Nayra Elhara" />
+  <input type="text" name="name" placeholder="Tu nombre completo" required />
+  <input type="email" name="email" placeholder="Tu correo electrónico" required />
+  <textarea name="message" placeholder="Tu mensaje o intención..." rows="5" required></textarea>
+  <button type="submit">Enviar mensaje</button>
+</form>
+            </pre>
+          </li>
+          <li><strong>JavaScript para enviar con fetch y mostrar mensaje inline:</strong>
+            <pre>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    if (btn) {
+      btn.disabled = true;
+      btn.innerText = 'Enviando...';
+    }
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        const container = document.createElement('div');
+        container.className = 'form-success';
+        container.innerText = '¡Mensaje enviado! Gracias por conectar. Te responderé pronto.';
+        form.replaceWith(container);
+      } else {
+        alert('Hubo un error al enviar tu mensaje. Por favor inténtalo nuevamente o recarga la página.');
+        if (btn) {
+          btn.disabled = false;
+          btn.innerText = 'Enviar mensaje';
+        }
+      }
+    })
+    .catch(() => {
+      alert('Error de red. Intenta de nuevo en unos momentos.');
+      if (btn) {
+        btn.disabled = false;
+        btn.innerText = 'Enviar mensaje';
+      }
+    });
+  });
+});
+            </pre>
+          </li>
+          <li><strong>Página de agradecimiento:</strong> crea `gracias.html` en la raíz con rutas corregidas.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 4. Páginas de Servicios individuales -->
+    <details>
+      <summary>4. Páginas de Servicios individuales</summary>
+      <div class="detail-content">
+        <ul>
+          <li>Crear archivos: <code>tarot.html</code>, <code>cuarzos.html</code>, <code>rituales.html</code>, etc.</li>
+          <li>En landing, tarjetas enlazan a estas páginas:
+            <pre>
+<div class="service-card">
+  <a href="tarot.html">
+    <img src="images/tarot.png" alt="Tarot del Alma">
+    <h3>Tarot del Alma</h3>
+    <p>Canalización de mensajes espirituales...</p>
+  </a>
+</div>
+            </pre>
+          </li>
+          <li>Contenido detallado en cada página: descripción, beneficios, testimonios, CTA a contacto o Calendly, precios o consulta inicial.</li>
+          <li>SEO interno: <code>&lt;title&gt;Tarot del Alma - Nayra Elhara&lt;/title&gt;</code>, meta description relevantes.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 5. Testimonios y Prueba social -->
+    <details>
+      <summary>5. Agregar Testimonios y “Prueba social”</summary>
+      <div class="detail-content">
+        <ul>
+          <li>Recopila testimonios reales (texto + nombre + foto si autorizan).</li>
+          <li>Ejemplo sección:
+            <pre>
+<section id="testimonios" class="testimonials">
+  <h2>Testimonios</h2>
+  <div class="testimonial-cards">
+    <div class="testimonial-card">
+      <p>"La lectura de Nayra me ayudó a ver claridad en mi vida..."</p>
+      <h4>— Nombre Cliente</h4>
+    </div>
+  </div>
+</section>
+            </pre>
+          </li>
+          <li>CSS ejemplo en style.css (ver más abajo).</li>
+          <li>Opcional carrusel con Swiper.js u otra librería ligera.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 6. SEO básico y meta tags -->
+    <details>
+      <summary>6. SEO básico y meta tags</summary>
+      <div class="detail-content">
+        <ul>
+          <li>En <code>&lt;head&gt;</code>: <code>&lt;title&gt;</code>, <meta name="description">, Open Graph, Twitter Card, favicon.</li>
+          <li>Sube imagen OG a `https://nayraelhara.com/images/og-image.jpg`.</li>
+          <li>robots.txt y sitemap.xml en tu hosting: `https://nayraelhara.com/sitemap.xml`.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 7. Analítica y seguimiento -->
+    <details>
+      <summary>7. Analítica y seguimiento</summary>
+      <div class="detail-content">
+        <ul>
+          <li>Google Analytics 4: inserta gtag.js con tu ID en <head> o antes de </body>.</li>
+          <li>Search Console: verifica `https://nayraelhara.com` y envía sitemap.</li>
+          <li>Eventos personalizados: medir clics en CTA, envíos de formulario.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 8. Hosting y despliegue -->
+    <details>
+      <summary>8. Hosting y despliegue</summary>
+      <div class="detail-content">
+        <ul>
+          <li>Hosting estático: Netlify, Vercel, GitHub Pages. Apunta DNS de `nayraelhara.com` según instrucciones.</li>
+          <li>Hosting con backend: si necesitas funciones serverless o API propias.</li>
+          <li>SSL automático tras apuntar dominio.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 9. Dominio y SSL -->
+    <details>
+      <summary>9. Dominio y SSL</summary>
+      <div class="detail-content">
+        <ul>
+          <li>Comprar dominio (nayraelhara.com) y apuntar a hosting.</li>
+          <li>Configurar DNS: registros A/CNAME según proveedor de hosting.</li>
+          <li>SSL/TLS configurado automáticamente.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 10. Optimización de rendimiento -->
+    <details>
+      <summary>10. Optimización de rendimiento</summary>
+      <div class="detail-content">
+        <ul>
+          <li>Imágenes optimizadas, WebP si es posible.</li>
+          <li>Minificar CSS/JS en producción.</li>
+          <li>Preload de fuentes (<code>burgundia.ttf</code> o WOFF2).</li>
+          <li>Lazy loading en imágenes no críticas (<code>loading="lazy"</code>).</li>
+          <li>Lighthouse para auditar performance y accesibilidad.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 11. Integración de programación de sesiones -->
+    <details>
+      <summary>11. Integración de programación de sesiones</summary>
+      <div class="detail-content">
+        <ul>
+          <li>Calendly: incrusta widget o enlace popup con tu URL de Calendly.</li>
+          <li>Sincronizar Calendar para evitar doble reserva.</li>
+          <li>Alternativa: enlace a WhatsApp Business.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 12. E-commerce ligero para kits energéticos -->
+    <details>
+      <summary>12. E-commerce ligero para kits energéticos</summary>
+      <div class="detail-content">
+        <ul>
+          <li>Shopify / WooCommerce o Buy Button para vender kits de cuarzos/rituales.</li>
+          <li>Pagos: Stripe/PayPal.</li>
+          <li>Automatización con Zapier: confirmaciones y seguimientos.</li>
+          <li>Mostrar productos en sección “Tienda” o landing.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 13. Captación de leads y email marketing -->
+    <details>
+      <summary>13. Captación de leads y email marketing</summary>
+      <div class="detail-content">
+        <ul>
+          <li>Formulario de suscripción (Mailchimp/Sendinblue) con lead magnet.</li>
+          <li>Secuencia de bienvenida automatizada.</li>
+          <li>Newsletter periódica con reflexiones, testimonios y ofertas.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 14. Analytics avanzado y seguimiento de conversiones -->
+    <details>
+      <summary>14. Analytics avanzado y seguimiento de conversiones</summary>
+      <div class="detail-content">
+        <ul>
+          <li>Eventos en GA4 para medir conversiones (clic en “Reserva tu lectura”, envíos de formulario).</li>
+          <li>Meta Pixel para remarketing en campañas pagadas.</li>
+          <li>Páginas de “Gracias” para medir conversiones en Ads.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 15. Seguridad y confianza -->
+    <details>
+      <summary>15. Seguridad y confianza</summary>
+      <div class="detail-content">
+        <ul>
+          <li>HTTPS (SSL) configurado.</li>
+          <li>Páginas de Política de privacidad y Términos de uso.</li>
+          <li>Sellos de pago seguro (PayPal, Stripe) si se vende.</li>
+          <li>Actualizar dependencias/plugins si usas CMS.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 16. Pruebas y feedback -->
+    <details>
+      <summary>16. Pruebas y feedback</summary>
+      <div class="detail-content">
+        <ul>
+          <li>Pruebas de usuario: pedir feedback sobre UI/UX.</li>
+          <li>Corregir legibilidad y compatibilidad de formularios.</li>
+          <li>Monitoreo de errores (404, scripts que no cargan).</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 17. Lanzamiento y marketing inicial -->
+    <details>
+      <summary>17. Lanzamiento y marketing inicial</summary>
+      <div class="detail-content">
+        <ul>
+          <li>Redes Sociales: anunciar lanzamiento con posts y videos.</li>
+          <li>Colaboraciones con influencers o aliados en espiritualidad/tecnología.</li>
+          <li>Eventos en vivo: webinars o sesiones gratuitas.</li>
+          <li>Publicidad pagada (Meta Ads, Google Ads) segmentada.</li>
+          <li>SEO orgánico: blog con artículos optimizados.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 18. Iteración y escalabilidad -->
+    <details>
+      <summary>18. Iteración y escalabilidad</summary>
+      <div class="detail-content">
+        <ul>
+          <li>Analizar métricas: servicios más demandados, fuentes de tráfico.</li>
+          <li>A/B testing: titulares, colores, CTA.</li>
+          <li>Nuevos servicios/productos: cursos, membresías premium.</li>
+          <li>Automatización con IA: chatbot espiritual con tu estilo.</li>
+          <li>Plataforma multi-terapeuta: invitar a otros sanadores.</li>
+          <li>Apps móviles: diario emocional o meditaciones.</li>
+          <li>Experiencias inmersivas: VR/AR de rituales.</li>
+          <li>Internacionalización y pagos internacionales.</li>
+          <li>Inversión/partnerships con plataformas de bienestar digital.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 19. Gestión y operaciones -->
+    <details>
+      <summary>19. Gestión y operaciones</summary>
+      <div class="detail-content">
+        <ul>
+          <li>Herramientas de productividad: Notion/Trello/Asana.</li>
+          <li>CRM ligero: gestionar clientes y citas (Calendly + Google Calendar o CRM).</li>
+          <li>Automatización de emails: recordatorios, encuestas, upsell de kits.</li>
+          <li>Contabilidad y facturación según región.</li>
+          <li>Soporte al cliente: email, WhatsApp Business, chat en vivo.</li>
+          <li>Equipo: contratar o colaborar según crecimiento.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 20. Roadmap y visión a largo plazo -->
+    <details>
+      <summary>20. Roadmap y visión a largo plazo</summary>
+      <div class="detail-content">
+        <ul>
+          <li>Definir hitos: MVP, marketing, IA, app móvil.</li>
+          <li>KPIs: conversiones, retención, ingresos recurrentes.</li>
+          <li>Validación continua: encuestas, feedback, reviews.</li>
+          <li>Reinversión o buscar inversores.</li>
+          <li>Innovación constante: explorar nuevas tecnologías.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Checklist inmediato -->
+    <details>
+      <summary>Checklist inmediato</summary>
+      <div class="detail-content">
+        <ul>
+          <li>[ ] Definir dominio y apuntar a hosting (DNS apuntando a tu hosting).</li>
+          <li>[ ] Preparar repo en GitHub con archivos: index.html, style.css, imágenes, fonts.</li>
+          <li>[ ] Configurar hosting estático (Netlify/Vercel) y desplegar primera versión.</li>
+          <li>[ ] Configurar Formspree con endpoint https://formspree.io/f/movwkyay y probar envíos.</li>
+          <li>[ ] Añadir meta tags, OG image y verificar en Search Console.</li>
+          <li>[ ] Integrar Google Analytics y verificar visitas.</li>
+          <li>[ ] Crear páginas de servicios y enlazarlas.</li>
+          <li>[ ] Preparar testimonios y añadir sección en landing.</li>
+          <li>[ ] Crear cuenta Calendly y enlazar “Reserva tu lectura”.</li>
+          <li>[ ] Montar tienda o Buy Buttons para kits de cuarzos (si aplica).</li>
+          <li>[ ] Configurar email marketing: lead magnet + suscripción.</li>
+          <li>[ ] Promocionar lanzamiento en redes.</li>
+          <li>[ ] Revisar métricas y feedback la primera semana y ajustar.</li>
+          <li>[ ] Planificar siguiente sprint: IA/chatbot, blog, app ligera.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contact-section">
+    <h2>Agenda tu conexión espiritual</h2>
+    <p>Permíteme acompañarte en tu proceso de transformación. Escríbeme y coordina tu sesión de lectura, guía energética o canalización.</p>
+
+    <form id="contactForm" action="https://formspree.io/f/movwkyay" method="POST" class="contact-form">
+      <!-- Redirigir a página de gracias en tu dominio -->
+      <input type="hidden" name="_next" value="https://nayraelhara.com/gracias.html" />
+      <!-- Asunto personalizado -->
+      <input type="hidden" name="_subject" value="Nueva solicitud de lectura - Nayra Elhara" />
+
+      <input type="text" name="name" placeholder="Tu nombre completo" required />
+      <input type="email" name="email" placeholder="Tu correo electrónico" required />
+      <textarea name="message" placeholder="Tu mensaje o intención..." rows="5" required></textarea>
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Nayra Elhara · Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Menú hamburguesa
+    function toggleMenu() {
+      document.querySelector('ul.nav-links').classList.toggle('open');
+    }
+    // Envío de formulario con fetch para mejor UX
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('contactForm');
+      if (!form) return;
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        if (btn) {
+          btn.disabled = true;
+          btn.innerText = 'Enviando...';
+        }
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(response => {
+          if (response.ok) {
+            // Mostrar mensaje de éxito inline
+            const container = document.createElement('div');
+            container.className = 'form-success';
+            container.innerText = '¡Mensaje enviado! Gracias por conectar. Te responderé pronto.';
+            form.replaceWith(container);
+          } else {
+            alert('Hubo un error al enviar tu mensaje. Por favor inténtalo nuevamente o recarga la página.');
+            if (btn) {
+              btn.disabled = false;
+              btn.innerText = 'Enviar mensaje';
+            }
+          }
+        })
+        .catch(() => {
+          alert('Error de red. Intenta de nuevo en unos momentos.');
+          if (btn) {
+            btn.disabled = false;
+            btn.innerText = 'Enviar mensaje';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
