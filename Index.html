@@ -1,19 +1,20 @@
-<!-- index.html COMPLETO -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nayra Elhara - Canalizadora del Alma</title>
-  <meta name="description" content="Nayra Elhara – Canalizadora del Alma, tarot, cuarzos y guía espiritual para tu transformación interior.">
-  <meta property="og:title" content="Nayra Elhara - Canalizadora del Alma">
-  <meta property="og:description" content="Sanación energética, tarot y mensajes del universo. Reserva tu lectura ahora.">
-  <meta property="og:image" content="https://nayraelhara.netlify.app/nayra.png">
-  <meta property="og:url" content="https://nayraelhara.netlify.app">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#8149a4" />
+  <meta name="description" content="Nayra Elhara - Canalizadora del alma, tarot, cuarzos y guía espiritual." />
+  <meta name="keywords" content="nayra, tarot, canalizadora, espiritualidad, cuarzos, rituales" />
+  <meta name="author" content="Nayra Elhara" />
+  <meta property="og:title" content="Nayra Elhara - Canalizadora del alma" />
+  <meta property="og:image" content="nayra.png" />
+  <meta property="og:description" content="Conecta con tu energía. Sesiones de tarot, cuarzos y canalización espiritual." />
+  <meta property="og:url" content="https://nayraelhara.netlify.app" />
+  <title>Nayra Elhara</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 <body>
   <div id="particles-js"></div>
@@ -23,105 +24,95 @@
       <a href="#inicio" class="boton-nav">Inicio</a>
       <a href="#servicios" class="boton-nav">Servicios</a>
       <a href="#quien-soy" class="boton-nav">¿Quién soy?</a>
-      <a href="#contacto" class="boton-nav">Contacto</a>
+      <a href="#contacto" class="boton-nav">Contáctame</a>
     </nav>
   </header>
 
   <section id="inicio" class="hero">
     <h2 class="titulo-dorado">Canalizadora del Alma</h2>
-    <p>Mensajes del universo, sanación energética y guía espiritual para tu transformación interior.</p>
-    <a href="#contacto"><button class="boton-mistico">Reserva tu lectura</button></a>
+    <p>Guía energética para tu despertar espiritual.</p>
+    <button class="boton-mistico" onclick="mostrarMensajeOraculo()">Consultar al Oráculo</button>
   </section>
 
   <section id="servicios">
     <h2>Servicios</h2>
     <ul>
-      <li>🔮 Lecturas de Tarot</li>
-      <li>💎 Cuarzos energéticos</li>
-      <li>🕯️ Rituales personalizados</li>
+      <li>Lecturas de Tarot</li>
+      <li>Cuarzos y energías</li>
+      <li>Rituales personalizados</li>
     </ul>
   </section>
 
   <section id="quien-soy">
     <h2>¿Quién es Nayra Elhara?</h2>
-    <p>Soy un canal de luz, guía espiritual y alquimista del alma. A través del tarot, la energía y los elementos, te ayudo a reconectar con tu propósito divino.</p>
+    <p>Soy canal de luz, guía espiritual, y acompañante en procesos de transformación interior.</p>
   </section>
 
   <section id="tienda">
-    <h2>Tienda Energética</h2>
+    <h2>Tienda Mística</h2>
     <div class="producto">
       <h3>Cuarzo Rosa</h3>
-      <p>Amor propio y sanación emocional. Energía suave y femenina.</p>
-      <button class="boton-mistico" onclick="activarCuarzo()">Activar mi cuarzo ✨</button>
+      <p>Armoniza tus emociones y activa el amor propio.</p>
+      <button class="boton-mistico" onclick="alert('✨ Tu cuarzo ha sido activado energéticamente ✨')">Activar mi cuarzo</button>
     </div>
   </section>
 
   <section id="oraculo">
-    <h2>🧘‍♀️ Voz del Alma</h2>
-    <p>¿En qué energía necesitas claridad hoy?</p>
-    <input type="text" id="pregunta" placeholder="Escribe tu pregunta">
-    <button onclick="responderOraculo()">Consultar</button>
-    <p id="respuesta"></p>
+    <h2>Oráculo Espiritual</h2>
+    <p id="mensaje-oraculo">Conecta y recibe una guía del universo.</p>
   </section>
 
   <section id="contacto">
     <h2>Contáctame</h2>
     <form action="https://formspree.io/f/movwkyay" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo electrónico" required>
-      <textarea name="mensaje" rows="5" placeholder="Tu mensaje o consulta espiritual..." required></textarea>
-      <button type="submit" class="boton-mistico">Enviar mensaje</button>
+      <input type="text" name="nombre" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Tu correo" required />
+      <textarea name="mensaje" rows="5" placeholder="Tu mensaje"></textarea>
+      <button type="submit" class="boton-mistico">Enviar</button>
     </form>
   </section>
 
   <footer>
     <p>© 2025 Nayra Elhara. Todos los derechos reservados.</p>
     <div class="redes-sociales">
-      <a href="https://www.instagram.com/nayraelhara.tarot" target="_blank">Instagram</a>
+      <a href="https://www.instagram.com/nayraelhara.tarot" target="_blank">Instagram: @nayraelhara.tarot</a><br />
+      <a href="tel:+573012344892">Llámanos: +57 301 234 4892</a>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
   <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 90 },
-        color: { value: "#ffffff" },
-        shape: { type: "circle" },
-        opacity: { value: 0.3 },
-        size: { value: 3 },
-        move: { enable: true, speed: 1 }
-      },
-      interactivity: {
-        events: {
-          onhover: { enable: true, mode: "grab" }
-        },
-        modes: {
-          grab: { distance: 140, line_linked: { opacity: 0.5 } }
-        }
-      },
-      retina_detect: true
+    function mostrarMensajeOraculo() {
+      const mensajes = [
+        "Activa tu intuición. La respuesta vive en ti.",
+        "Confía. El universo ya se está alineando.",
+        "Hoy es un día para soltar lo que no vibra contigo.",
+        "Medita y respira, tu guía interior hablará.",
+        "Canaliza el amor, deja que fluya la luz."
+      ];
+      const indice = Math.floor(Math.random() * mensajes.length);
+      document.getElementById('mensaje-oraculo').innerText = mensajes[indice];
+    }
+  </script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(function(reg) {
+          console.log('✅ Service Worker registrado:', reg);
+        }).catch(function(error) {
+          console.log('❌ Error registrando Service Worker:', error);
+        });
+    }
+  </script>
+
+  <script>
+    particlesJS.load('particles-js', 'particles.json', function() {
+      console.log('✨ Partículas cargadas');
     });
-
-    const mensajes = [
-      "Respira profundo, la claridad llega con la quietud.",
-      "Hoy, tu energía pide conexión con el chakra corazón.",
-      "Libera lo que no te pertenece, y lo divino te encontrará.",
-      "Activa tu intuición. La respuesta ya vive dentro de ti.",
-      "El universo está sincronizado a tu favor, confía."
-    ];
-
-    function responderOraculo() {
-      const index = Math.floor(Math.random() * mensajes.length);
-      document.getElementById("respuesta").textContent = mensajes[index];
-    }
-
-    function activarCuarzo() {
-      alert("💎 Tu cuarzo ha sido energéticamente activado. ✨");
-    }
   </script>
 </body>
 </html>
+
 
 
 
