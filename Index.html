@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Inicio Místico</title>
 
-  <!-- Fuente e íconos -->
+  <!-- Fuente Cinzel + Íconos -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -23,10 +23,29 @@
       min-height: 100vh;
     }
 
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    /* === Logo en esquina === */
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffd700;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+      z-index: 1100;
+    }
+
+    /* === Menú === */
     .navbar {
-      background: rgba(0, 0, 0, 0.6);
+      padding: 15px 30px 15px 160px; /* espacio para logo */
       backdrop-filter: blur(8px);
-      padding: 15px 30px;
+      background: rgba(0, 0, 0, 0.7);
       box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
       position: sticky;
       top: 0;
@@ -83,40 +102,62 @@
         width: 90%;
         justify-content: center;
       }
+
+      .logo {
+        position: relative;
+        top: auto;
+        left: auto;
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      .navbar {
+        padding: 15px;
+      }
     }
 
-    /* Secciones visibles */
+    /* === Secciones === */
     section {
       padding: 60px 20px;
-      margin: 40px;
+      margin: 40px auto;
+      max-width: 800px;
       text-align: center;
       font-size: 24px;
       background-color: rgba(0, 0, 0, 0.6);
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      color: #f0e6d2;
     }
   </style>
 </head>
 <body>
 
-  <nav class="navbar">
-    <ul class="nav-menu">
-      <li><button onclick="location.href='#inicio'"><i class="fas fa-home"></i> Inicio</button></li>
-      <li><button onclick="location.href='#canalizaciones'"><i class="fas fa-star-and-crescent"></i> Canalizaciones</button></li>
-      <li><button onclick="location.href='#catalogo'"><i class="fas fa-shopping-bag"></i> Catálogo</button></li>
-      <li><button onclick="location.href='#iaespiritual'"><i class="fas fa-brain"></i> IA Espiritual</button></li>
-      <li><button onclick="location.href='#agenda'"><i class="fas fa-calendar-alt"></i> Agenda</button></li>
-      <li><button onclick="location.href='#contacto'" class="btn-contacto"><i class="fas fa-envelope"></i> Contacto</button></li>
-    </ul>
-  </nav>
+  <div class="overlay">
 
-  <!-- Secciones con contenido -->
-  <section id="inicio">✨ Bienvenida al Portal Místico</section>
-  <section id="canalizaciones">🔮 Canalizaciones Espirituales para tu alma</section>
-  <section id="catalogo">🛍️ Catálogo de cuarzos, rituales y sabiduría</section>
-  <section id="iaespiritual">🤖 IA Espiritual: Tu guía digital con intuición</section>
-  <section id="agenda">📅 Agenda tus lecturas, consultas y más</section>
-  <section id="contacto">📬 Contáctanos con amor y luz para recibir tu mensaje</section>
+    <!-- Logo o nombre -->
+    <div class="logo">Nayra Elhara</div>
+
+    <!-- Menú -->
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li><button onclick="location.href='#inicio'"><i class="fas fa-home"></i> Inicio</button></li>
+        <li><button onclick="location.href='#canalizaciones'"><i class="fas fa-star-and-crescent"></i> Canalizaciones</button></li>
+        <li><button onclick="location.href='#catalogo'"><i class="fas fa-shopping-bag"></i> Catálogo</button></li>
+        <li><button onclick="location.href='#iaespiritual'"><i class="fas fa-brain"></i> IA Espiritual</button></li>
+        <li><button onclick="location.href='#agenda'"><i class="fas fa-calendar-alt"></i> Agenda</button></li>
+        <li><button onclick="location.href='#contacto'" class="btn-contacto"><i class="fas fa-envelope"></i> Contacto</button></li>
+      </ul>
+    </nav>
+
+    <!-- Secciones -->
+    <section id="inicio">✨ Bienvenida al Portal Místico</section>
+    <section id="canalizaciones">🔮 Canalizaciones Espirituales para tu alma</section>
+    <section id="catalogo">🛍️ Catálogo de cuarzos, rituales y sabiduría</section>
+    <section id="iaespiritual">🤖 IA Espiritual: Tu guía digital con intuición</section>
+    <section id="agenda">📅 Agenda tus lecturas, consultas y más</section>
+    <section id="contacto">📬 Contáctanos con amor y luz para recibir tu mensaje</section>
+
+  </div>
 
 </body>
 </html>
