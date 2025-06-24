@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Burgundia';
-  src: url('fonts/Burgundia.ttf') format('truetype');
+  src: url('Burgundia_PERSONAL_USE_ONLY.otf') format('opentype');
 }
 
 body {
@@ -8,7 +8,7 @@ body {
   padding: 0;
   font-family: 'Burgundia', serif;
   color: #ffffff;
-  background-image: url('img/nayra.png');
+  background-image: url('nayra.png'); /* CORREGIDO: ya no está en carpeta /img */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -22,12 +22,18 @@ header {
   justify-content: space-between;
   align-items: center;
   color: white;
+  flex-wrap: wrap;
 }
 
 header h1 {
   margin: 0;
   font-size: 1.8em;
   font-weight: bold;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -41,7 +47,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* HERO */
+/* SECCIÓN HERO */
 .hero {
   text-align: center;
   padding: 80px 20px;
