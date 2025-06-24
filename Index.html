@@ -2,96 +2,76 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nayra Elhara - Guía Mística</title>
-  <meta name="description" content="Canalizadora espiritual, oráculo de sabiduría y guía mística.">
-  <meta name="keywords" content="espiritualidad, canalizadora, guía, oráculo, energía, Nayra Elhara">
-  <meta name="theme-color" content="#8149a4">
-  <link rel="manifest" href="manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nayra Elhara - Canalizadora del Alma</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
-  <div id="particles-js"></div>
 
+  <!-- ENCABEZADO -->
   <header>
     <h1>Nayra Elhara</h1>
-    <nav class="botonera">
-      <a href="#inicio" class="boton-nav">Inicio</a>
-      <a href="#servicios" class="boton-nav">Servicios</a>
-      <a href="#quien-soy" class="boton-nav">Quién soy</a>
-      <a href="#contacto" class="boton-nav">Contacto</a>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#quien">¿Quién soy?</a>
+      <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
-  <section id="inicio" class="hero">
-    <h2 class="titulo-dorado">Bienvenida a tu guía espiritual</h2>
-    <p>Conecta con tu esencia y sabiduría interior.</p>
+  <!-- SECCIÓN HERO -->
+  <section class="hero" id="inicio">
+    <div class="titulo-dorado">Canalizadora del Alma</div>
+    <p>Mensajes del universo, sanación energética y guía espiritual para tu transformación interior.</p>
+    <a href="#contacto"><button class="boton-mistico">Reserva tu lectura</button></a>
   </section>
 
-  <section id="servicios">
-    <h2>Servicios Místicos</h2>
-    <p>Lectura de cartas, sanación energética, conexión con guías y más.</p>
+  <!-- SERVICIOS -->
+  <section id="servicios" class="hero">
+    <h2>Servicios</h2>
+    <p>✨ Lectura de Tarot<br>
+       ✨ Rituales de luz y armonía<br>
+       ✨ Venta de cuarzos energéticos</p>
   </section>
 
-  <section id="quien-soy">
-    <h2>¿Quién soy?</h2>
-    <p>Soy Nayra Elhara, canalizadora de mensajes de luz y guía espiritual.</p>
+  <!-- SOBRE MÍ -->
+  <section id="quien" class="hero">
+    <h2>¿Quién es Nayra Elhara?</h2>
+    <p>Soy un canal de luz, amor y conexión espiritual. Acompaño procesos de transformación a través del Tarot, la energía universal y los mensajes que el alma necesita escuchar. Mi propósito es ayudarte a recordar tu poder interior.</p>
   </section>
 
-  <section id="oraculo">
-    <h2>Oráculo Místico</h2>
-    <p>Escribe tu pregunta y el oráculo te responderá:</p>
-    <input type="text" id="pregunta" placeholder="Escribe tu duda..." />
-    <button class="boton-mistico" onclick="responderOraculo()">Consultar</button>
-    <p id="respuesta"></p>
-  </section>
+  <!-- CONTACTO -->
+  <section id="contacto" class="hero">
+    <h2>Contáctame</h2>
+    <p>🌙 Reserva tu lectura espiritual o pide tu cuarzo personalizado:</p>
+    <form action="https://formspree.io/f/movwkyay" method="POST" class="formulario-contacto">
+      <label for="name">Nombre completo</label>
+      <input type="text" id="name" name="name" placeholder="Ej: Luna Celeste" required>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <form action="https://formspree.io/f/your-code" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre" required />
-      <input type="email" name="email" placeholder="Tu email" required />
-      <textarea name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
-      <button type="submit" class="boton-mistico">Enviar</button>
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" placeholder="Ej: tu@email.com" required>
+
+      <label for="message">Tu mensaje</label>
+      <textarea id="message" name="message" rows="5" placeholder="¿Qué deseas consultar o reservar?" required></textarea>
+
+      <button type="submit" class="boton-mistico">Enviar ✨</button>
     </form>
+
+    <!-- REDES -->
+    <div class="redes-sociales">
+      <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="https://wa.me/573001112222" target="_blank"><i class="bi bi-whatsapp"></i></a>
+    </div>
   </section>
 
+  <!-- PIE DE PÁGINA -->
   <footer>
-    <p>&copy; 2025 Nayra Elhara</p>
-    <div class="redes-sociales">
-      <a href="#">Instagram</a> | <a href="#">YouTube</a> | <a href="#">TikTok</a>
-    </div>
+    <p>&copy; 2025 Nayra Elhara | Con amor y luz ✨</p>
   </footer>
 
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(reg => console.log('✅ Service Worker registrado:', reg))
-        .catch(err => console.error('❌ Error al registrar el Service Worker:', err));
-    }
-
-    const frases = [
-      "La energía que das es la que recibes.",
-      "Tu alma ya sabe el camino.",
-      "Escucha el susurro del universo.",
-      "La sanación comienza en el corazón.",
-      "No estás sola, los guías te acompañan."
-    ];
-
-    function responderOraculo() {
-      const respuesta = frases[Math.floor(Math.random() * frases.length)];
-      document.getElementById('respuesta').textContent = respuesta;
-    }
-
-    particlesJS.load('particles-js', 'particles.json');
-  </script>
 </body>
 </html>
-
-
-
-
 
 
 
