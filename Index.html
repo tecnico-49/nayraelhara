@@ -1,42 +1,73 @@
 <!DOCTYPE html>
-<section id="catalogo">
-  <h2>Catálogo de Productos</h2>
-  <div id="lista-productos" class="catalogo-grid"></div>
-  <form id="form-producto" class="form-catalogo">
-    <input type="text" id="nombre-producto" placeholder="Nombre del producto" required />
-    <input type="text" id="descripcion-producto" placeholder="Descripción" required />
-    <input type="url" id="imagen-producto" placeholder="URL de imagen" required />
-    <a href="https://wa.me/573012344892" target="_blank">
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#8149a4" />
+  <meta name="description" content="Nayra Elhara - Canalizadora del alma, tarot, cuarzos y guía espiritual." />
+  <meta name="keywords" content="nayra, tarot, canalizadora, espiritualidad, cuarzos, rituales" />
+  <meta name="author" content="Nayra Elhara" />
+  <title>Nayra Elhara</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <header>
+    <h1>Nayra Elhara</h1>
+    <nav class="botonera">
+      <a href="#inicio" class="boton-nav">Inicio</a>
+      <a href="#servicios" class="boton-nav">Servicios</a>
+      <a href="#quien-soy" class="boton-nav">¿Quién soy?</a>
+      <a href="#contacto" class="boton-nav">Contáctame</a>
+      <a href="#catalogo" class="boton-nav">Catálogo</a>
+    </nav>
+  </header>
+
+  <section id="catalogo">
+    <h2>Catálogo de Productos</h2>
+    <div id="lista-productos" class="catalogo-grid"></div>
+    <form id="form-producto" class="form-catalogo">
+      <input type="text" id="nombre-producto" placeholder="Nombre del producto" required />
+      <input type="text" id="descripcion-producto" placeholder="Descripción" required />
+      <input type="url" id="imagen-producto" placeholder="URL de imagen" required />
       <button type="submit" class="boton-mistico">Agregar al catálogo</button>
-    </a>
-  </form>
-</section>
+    </form>
+  </section>
 
-<script>
-  document.getElementById('form-producto').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const nombre = document.getElementById('nombre-producto').value;
-    const descripcion = document.getElementById('descripcion-producto').value;
-    const imagen = document.getElementById('imagen-producto').value;
-    const lista = document.getElementById('lista-productos');
+  <footer>
+    <p>© 2025 Nayra Elhara. Todos los derechos reservados.</p>
+    <div class="redes-sociales">
+      <a href="https://www.instagram.com/nayraelhara.tarot" target="_blank">Instagram: @nayraelhara.tarot</a><br />
+      <a href="tel:+573012344892">Llámanos: +57 301 234 4892</a>
+    </div>
+  </footer>
 
-    const item = document.createElement('div');
-    item.className = 'producto-card';
-    item.innerHTML = `
-      <img src="${imagen}" alt="${nombre}" class="producto-imagen" />
-      <h3>${nombre}</h3>
-      <p>${descripcion}</p>
-      <a href="https://wa.me/573012344892?text=Hola Nayra, quiero más información sobre: ${nombre}" target="_blank">
-        <button class="boton-mistico">Solicitar</button>
-      </a>
-    `;
-    lista.appendChild(item);
-    e.target.reset();
-  });
-</script>
+  <script>
+    document.getElementById('form-producto').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre-producto').value;
+      const descripcion = document.getElementById('descripcion-producto').value;
+      const imagen = document.getElementById('imagen-producto').value;
+      const lista = document.getElementById('lista-productos');
 
-
-
+      const item = document.createElement('div');
+      item.className = 'producto-card';
+      item.innerHTML = `
+        <img src="${imagen}" alt="${nombre}" class="producto-imagen" />
+        <h3>${nombre}</h3>
+        <p>${descripcion}</p>
+        <a href="https://wa.me/573012344892?text=Hola Nayra, quiero más información sobre: ${nombre}" target="_blank">
+          <button class="boton-mistico">Solicitar</button>
+        </a>
+      `;
+      lista.appendChild(item);
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
 
 
 
