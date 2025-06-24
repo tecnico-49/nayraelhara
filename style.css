@@ -1,27 +1,38 @@
+/* Fondo con imagen de Nayra y constelaciones */
 body {
   margin: 0;
   font-family: 'Quicksand', sans-serif;
-  background: #0c0c1b;
+  background: url('nayra.png') no-repeat center center fixed;
+  background-size: cover;
   color: #f5f5f5;
+  position: relative;
+  overflow-x: hidden;
 }
 
+/* Capa de partículas */
 #particles-js {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
-  background: #0c0c1b;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Contenido visible */
+header, .seccion, footer {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(12, 12, 27, 0.6);
+  border-radius: 12px;
+  margin: 20px;
+  padding: 20px;
 }
 
 header {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 20px;
   text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding-top: 30px;
 }
 
 header h1 {
@@ -37,7 +48,7 @@ nav ul {
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 nav a {
@@ -47,11 +58,11 @@ nav a {
 }
 
 nav a:hover {
-  color: #e3b9ff;
+  color: #ddaaff;
 }
 
 .seccion {
-  padding: 60px 20px;
+  padding: 40px 20px;
   text-align: center;
 }
 
@@ -89,14 +100,12 @@ input[type="text"] {
 }
 
 footer {
-  background: rgba(0, 0, 0, 0.7);
   text-align: center;
   padding: 20px;
   font-size: 0.9em;
   color: #ccc;
 }
 
-}
 
 
 
