@@ -12,6 +12,14 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* === Capa oscura para visibilidad del texto === */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.55);
+  min-height: 100vh;
+  width: 100%;
 }
 
 /* === PARTICULAS === */
@@ -24,49 +32,90 @@ body {
   z-index: -1;
 }
 
-/* === ENCABEZADO === */
-header {
-  background-color: rgba(30, 0, 50, 0.85);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-header h1 {
-  font-size: 1.8rem;
-  font-family: 'Playfair Display', serif;
-}
-
-.botonera {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.boton-nav {
-  background-color: #3d0b60;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 1.5rem;
-  text-decoration: none;
+/* === LOGO "Nayra Elhara" === */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 26px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 0 10px rgba(248, 224, 255, 0.3);
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  font-family: 'Playfair Display', serif;
+  z-index: 1100;
 }
 
-.boton-nav:hover {
-  background-color: #6d27a8;
+/* === NAVBAR MÍSTICA === */
+.navbar {
+  padding: 15px 30px 15px 160px;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* === HERO SECCIÓN PRINCIPAL === */
-.hero {
-  text-align: center;
-  padding: 5rem 2rem;
+.nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.nav-menu li button {
+  background: linear-gradient(to right, #3e3e58, #2a2a3d);
+  border: 1px solid #ffd700;
+  color: #f0e6d2;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Cinzel', serif;
+}
+
+.nav-menu li button:hover {
+  background: #f0e6d2;
+  color: #2d2d44;
+  box-shadow: 0 0 10px #ffd700;
+}
+
+.btn-contacto {
+  background: linear-gradient(to right, #ffcc70, #ffd700);
+  color: #2d2d44;
+  font-weight: bold;
+  padding: 12px 28px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-contacto:hover {
+  box-shadow: 0 0 12px #ffe066;
+  transform: scale(1.05);
+}
+
+/* === HERO O SECCIONES === */
+section {
+  padding: 3rem 2rem;
+  margin: 40px auto;
+  max-width: 800px;
   background-color: rgba(0, 0, 0, 0.4);
+  font-family: 'Karla', sans-serif;
+  font-size: 22px;
+  border-radius: 15px;
+  color: #f0e6d2;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
+/* === TÍTULO DORADO MÍSTICO === */
 .titulo-dorado {
   font-size: 2.8rem;
   font-weight: bold;
@@ -79,7 +128,7 @@ header h1 {
   font-family: 'Cinzel', serif;
 }
 
-/* === BOTONES MÍSTICOS === */
+/* === BOTÓN MÍSTICO REUTILIZABLE === */
 .boton-mistico {
   background-color: #8149a4;
   color: white;
@@ -102,14 +151,24 @@ header h1 {
   box-shadow: inset 0 0 10px #fff;
 }
 
-/* === SECCIONES === */
-section {
-  padding: 3rem 2rem;
-  background-color: rgba(0, 0, 0, 0.4);
-  font-family: 'Karla', sans-serif;
+/* === SECCIÓN PREGUNTAS ESPIRITUALES === */
+.preguntas {
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffd700;
+  background: rgba(0, 0, 0, 0.65);
+  border: 2px solid #ffd700;
+  padding: 1rem;
+  margin: 2rem auto;
+  border-radius: 12px;
 }
 
-/* === FORMULARIO ORÁCULO === */
+/* === SECCIÓN DE CONTACTO FINAL === */
+.contacto-final {
+  text-align: center;
+}
+
+/* === FORMULARIO ORÁCULO (SI SE USA) === */
 form {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 2rem;
@@ -136,7 +195,7 @@ textarea::placeholder {
   color: #eee;
 }
 
-/* === IA ORÁCULO === */
+/* === ORÁCULO IA === */
 #oraculo {
   text-align: center;
   margin-top: 2rem;
@@ -167,14 +226,25 @@ footer {
 }
 
 /* === RESPONSIVE === */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-
-  .botonera {
+@media (max-width: 768px) {
+  .nav-menu {
     flex-direction: column;
     align-items: center;
+  }
+
+  .nav-menu li button {
+    width: 90%;
+    justify-content: center;
+  }
+
+  .logo {
+    position: relative;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .navbar {
+    padding: 15px;
   }
 }
 
