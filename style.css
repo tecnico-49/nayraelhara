@@ -1,3 +1,4 @@
+/* === IMPORTACIÓN DE FUENTE CINZEL === */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
 
 body {
@@ -9,8 +10,10 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow-x: hidden;
 }
 
+/* === PARTICLES === */
 #particles-js {
   position: fixed;
   top: 0;
@@ -20,6 +23,7 @@ body {
   z-index: -1;
 }
 
+/* === HEADER === */
 header {
   background-color: rgba(30, 0, 50, 0.85);
   padding: 1rem 2rem;
@@ -107,7 +111,8 @@ form {
   margin: auto;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   padding: 0.8rem;
   margin-bottom: 1rem;
@@ -118,10 +123,12 @@ input, textarea {
   font-family: 'Cinzel', serif;
 }
 
-input::placeholder, textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: #eee;
 }
 
+/* === TIENDA === */
 #tienda {
   text-align: center;
 }
@@ -168,6 +175,61 @@ footer {
   font-weight: bold;
 }
 
+/* === CATÁLOGO NUEVO === */
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
 
+.producto-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+}
 
+.producto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.producto-imagen {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.form-catalogo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .botonera {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .catalogo-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
