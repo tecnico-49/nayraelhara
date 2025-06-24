@@ -1,178 +1,101 @@
-@font-face {
-  font-family: 'Burgundia';
-  src: url('Burgundia_PERSONAL_USE_ONLY.otf') format('opentype');
-}
-
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Burgundia', serif;
-  color: #ffffff; 
-  background-image:url('nayra.png');
-  background-size: cover; 
-  background-position: center;
-  background-repeat: no-repeat;
+  font-family: 'Quicksand', sans-serif;
+  background: #0c0c1b;
+  color: #f5f5f5;
 }
 
-/* ENCABEZADO */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #0c0c1b;
+}
+
 header {
-  background-color: rgba(44, 15, 60, 0.9);
+  background: rgba(0, 0, 0, 0.7);
   padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-  flex-wrap: wrap;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 header h1 {
+  font-family: 'Cinzel', serif;
+  color: #e3b9ff;
   margin: 0;
-  font-size: 1.8em;
-  font-weight: bold;
 }
 
-nav {
+nav ul {
+  list-style: none;
+  padding: 0;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
 }
 
 nav a {
-  color: white;
+  color: #f5f5f5;
   text-decoration: none;
-  margin: 0 15px;
   font-weight: bold;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #e3b9ff;
 }
 
-/* HERO */
-.hero {
+.seccion {
+  padding: 60px 20px;
   text-align: center;
-  padding: 80px 20px;
-  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.titulo-dorado {
-  font-size: 3rem;
-  color: #FFD700;
-  text-shadow: 0 0 15px #fff799;
-  border: 2px solid gold;
-  padding: 0.5em 1.5em;
+h2 {
+  color: #ddaaff;
+  font-family: 'Cinzel', serif;
+}
+
+.boton {
   display: inline-block;
-  animation: brillo 2s infinite alternate;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-@keyframes brillo {
-  0% { text-shadow: 0 0 10px #fff; }
-  100% { text-shadow: 0 0 25px #FFD700; }
-}
-
-.hero p {
-  font-size: 1.2em;
-  max-width: 700px;
-  margin: 20px auto;
-}
-
-.boton-mistico {
-  background-color: #8f3eb4;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1.1em;
+  padding: 12px 24px;
+  background: linear-gradient(45deg, #b47bff, #e3b9ff);
+  color: #1c1c2b;
+  text-decoration: none;
   border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.boton-mistico:hover {
-  background-color: #a052cc;
-}
-
-/* FORMULARIO */
-.formulario-contacto {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 30px;
-  border-radius: 15px;
-  max-width: 600px;
-  margin: 30px auto;
-  backdrop-filter: blur(6px);
-  border: 1px solid #ffffff22;
-}
-
-.formulario-contacto label {
-  color: #FFD700;
   font-weight: bold;
-  margin-bottom: 5px;
-  display: block;
-  text-align: left;
-}
-
-.formulario-contacto input,
-.formulario-contacto textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
+  margin-top: 15px;
+  transition: transform 0.2s ease;
   border: none;
-  border-radius: 8px;
-  font-size: 1em;
-  font-family: 'Burgundia', serif;
-  background: #ffffff22;
-  color: white;
+  cursor: pointer;
 }
 
-.formulario-contacto input::placeholder,
-.formulario-contacto textarea::placeholder {
-  color: #ddd;
-  font-style: italic;
+.boton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #e3b9ff;
 }
 
-/* REDES SOCIALES */
-.redes-sociales {
-  margin-top: 25px;
-  font-size: 2rem;
+input[type="text"] {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 80%;
+  max-width: 400px;
+  margin-top: 10px;
 }
 
-.redes-sociales a {
-  margin: 0 15px;
-  color: #FFD700;
-  transition: transform 0.3s;
-}
-
-.redes-sociales a:hover {
-  transform: scale(1.2);
-}
-
-/* FOOTER */
 footer {
+  background: rgba(0, 0, 0, 0.7);
   text-align: center;
   padding: 20px;
-  background-color: #1e1127;
-  color: #ccc;
   font-size: 0.9em;
+  color: #ccc;
 }
 
-/* RESPONSIVE */
-@media screen and (max-width: 768px) {
-  .titulo-dorado {
-    font-size: 2rem;
-  }
-
-  .hero {
-    padding: 60px 10px;
-  }
-
-  .boton-mistico {
-    width: 90%;
-  }
-
-  nav {
-    flex-direction: column;
-    text-align: center;
-  }
 }
 
 
