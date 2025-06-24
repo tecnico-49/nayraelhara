@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nayra Elhara - Canalizadora Mística</title>
 
-  <!-- Tipografías mágicas -->
-  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Karla:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -14,73 +14,22 @@
   <!-- Fondo animado -->
   <div id="particles-js"></div>
 
+  <!-- Encabezado con menú -->
   <header>
     <h1>Nayra Elhara</h1>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#canalizaciones">Canalizaciones</a></li>
-        <li><a href="#catalogo">Catálogo</a></li>
-        <li><a href="#ia">IA Espiritual</a></li>
-        <li><a href="#agenda">Agenda</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
+    <nav class="botonera">
+      <a href="#inicio" class="boton-nav">Inicio</a>
+      <a href="#canalizaciones" class="boton-nav">Canalizaciones</a>
+      <a href="#catalogo" class="boton-nav">Catálogo</a>
+      <a href="#ia" class="boton-nav">IA Espiritual</a>
+      <a href="#agenda" class="boton-nav">Agenda</a>
+      <a href="#contacto" class="boton-nav">Contacto</a>
     </nav>
   </header>
 
-  <section id="inicio" class="seccion">
-    <h2>Bienvenida, alma luminosa</h2>
-    <p>Conecta con tu guía interior a través de canalizaciones de luz, cuarzos sagrados y sabiduría energética.</p>
-    <a href="#catalogo" class="boton">✨ Ver Catálogo</a>
-  </section>
-
-  <section id="canalizaciones" class="seccion">
-    <h2>Canalizaciones Recientes</h2>
-    <ul>
-      <li>🔮 Junio 2025: "El renacer del alma consciente"</li>
-      <li>🌕 Portal 7/7: "Activación de dones dormidos"</li>
-    </ul>
-  </section>
-
-  <section id="catalogo" class="seccion">
-    <h2>Catálogo de Cuarzos</h2>
-    <p>Explora los cristales que resuenan con tu energía actual.</p>
-    <a href="catalogo.html" class="boton">🌸 Explorar Catálogo</a>
-  </section>
-
-  <section id="ia" class="seccion">
-    <h2>IA Espiritual</h2>
-    <p>Haz una pregunta y recibe un mensaje canalizado:</p>
-    <input type="text" id="pregunta" placeholder="¿Qué necesito saber hoy?">
-    <button onclick="responderPregunta()" class="boton">Canalizar</button>
-    <p id="respuestaIA" style="margin-top: 15px;"></p>
-  </section>
-
-  <section id="agenda" class="seccion">
-    <h2>Agenda tu Sesión</h2>
-    <p>Reserva tu canalización personalizada conmigo.</p>
-    <a href="https://calendly.com/" class="boton" target="_blank">🗓️ Reservar ahora</a>
-  </section>
-
-  <section id="contacto" class="seccion">
-    <h2>Contacto</h2>
-    <p>Conecta conmigo por WhatsApp o redes.</p>
-    <a href="https://wa.me/57XXXXXXXXXX" class="boton">💬 Enviar mensaje</a>
-  </section>
-
-  <footer>
-    <p>© 2025 Nayra Elhara · Todos los derechos reservados</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="ia.js"></script>
-  <script>
-    particlesJS.load('particles-js', 'particles-config.json');
-  </script>
-
-</body>
-</html>
+  <!-- Bienvenida -->
+  <section id="inicio" class="hero">
+    <d
 
 
 
