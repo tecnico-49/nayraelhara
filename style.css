@@ -1,28 +1,22 @@
-/* === IMPORTACIÓN DE FUENTES === */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Karla:wght@400;700&family=Playfair+Display:wght@500;700&display=swap');
 
-/* === ESTILOS GENERALES === */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Karla', sans-serif;
   color: #ffffff;
-  background-image: url('nayra.png');
+  background: url('nayra.png') no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   overflow-x: hidden;
   min-height: 100vh;
 }
 
-/* === Capa oscura para visibilidad del texto === */
 .overlay {
-  background-color: rgba(0, 0, 0, 0.55);
+  background-color: rgba(0, 0, 0, 0.6);
   min-height: 100vh;
   width: 100%;
 }
 
-/* === PARTICULAS === */
 #particles-js {
   position: fixed;
   top: 0;
@@ -32,7 +26,7 @@ body {
   z-index: -1;
 }
 
-/* === LOGO "Nayra Elhara" === */
+/* Logo */
 .logo {
   position: absolute;
   top: 20px;
@@ -40,17 +34,16 @@ body {
   font-size: 26px;
   font-weight: bold;
   color: #ffffff;
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
   font-family: 'Playfair Display', serif;
   z-index: 1100;
 }
 
-/* === NAVBAR MÍSTICA === */
+/* Navbar */
 .navbar {
   padding: 15px 30px 15px 160px;
   backdrop-filter: blur(8px);
-  background: rgba(0, 0, 0, 0.7);
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  background: rgba(0, 0, 0, 0.75);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -85,39 +78,21 @@ body {
   box-shadow: 0 0 10px #ffd700;
 }
 
-.btn-contacto {
-  background: linear-gradient(to right, #ffcc70, #ffd700);
-  color: #2d2d44;
-  font-weight: bold;
-  padding: 12px 28px;
-  font-size: 20px;
-  border: none;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-}
-
-.btn-contacto:hover {
-  box-shadow: 0 0 12px #ffe066;
-  transform: scale(1.05);
-}
-
-/* === HERO O SECCIONES === */
+/* Secciones */
 section {
   padding: 3rem 2rem;
   margin: 40px auto;
   max-width: 800px;
   background-color: rgba(0, 0, 0, 0.4);
-  font-family: 'Karla', sans-serif;
-  font-size: 22px;
+  font-size: 20px;
+  text-align: center;
   border-radius: 15px;
   color: #f0e6d2;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
-/* === TÍTULO DORADO MÍSTICO === */
+/* Título */
 .titulo-dorado {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   font-weight: bold;
   color: #f5e663;
   text-shadow: 0 0 10px #d1c45f;
@@ -128,30 +103,7 @@ section {
   font-family: 'Cinzel', serif;
 }
 
-/* === BOTÓN MÍSTICO REUTILIZABLE === */
-.boton-mistico {
-  background-color: #8149a4;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 1.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-}
-
-.boton-mistico:hover {
-  background-color: #9e5bd1;
-  transform: scale(1.05);
-}
-
-.boton-mistico:active {
-  transform: scale(0.95);
-  box-shadow: inset 0 0 10px #fff;
-}
-
-/* === SECCIÓN PREGUNTAS ESPIRITUALES === */
+/* Preguntas espirituales */
 .preguntas {
   font-size: 26px;
   font-weight: bold;
@@ -163,29 +115,23 @@ section {
   border-radius: 12px;
 }
 
-/* === SECCIÓN DE CONTACTO FINAL === */
-.contacto-final {
-  text-align: center;
-}
-
-/* === FORMULARIO ORÁCULO (SI SE USA) === */
-form {
-  background-color: rgba(255, 255, 255, 0.1);
+/* Formulario */
+.formulario form {
+  background-color: rgba(255, 255, 255, 0.08);
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 0 10px #c99af5;
+  box-shadow: 0 0 15px rgba(201, 154, 245, 0.4);
   max-width: 500px;
   margin: auto;
 }
 
-input,
-textarea {
+input, textarea {
   width: 100%;
   padding: 0.8rem;
   margin-bottom: 1rem;
   border-radius: 0.5rem;
   border: none;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.12);
   color: #fff;
   font-family: 'Cinzel', serif;
 }
@@ -195,37 +141,24 @@ textarea::placeholder {
   color: #eee;
 }
 
-/* === ORÁCULO IA === */
-#oraculo {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-#oraculo input {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-/* === PIE DE PÁGINA === */
-footer {
-  background-color: rgba(20, 0, 40, 0.9);
-  padding: 1rem;
-  text-align: center;
-  font-size: 0.9rem;
-  font-family: 'Karla', sans-serif;
-}
-
-.redes-sociales {
-  margin-top: 1rem;
-}
-
-.redes-sociales a {
-  color: #f5e663;
-  text-decoration: none;
+/* Botón contacto */
+.btn-contacto {
+  background: linear-gradient(to right, #ffcc70, #ffd700);
+  color: #2d2d44;
   font-weight: bold;
+  padding: 12px 28px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
-/* === RESPONSIVE === */
+.btn-contacto:hover {
+  box-shadow: 0 0 12px #ffe066;
+  transform: scale(1.05);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .nav-menu {
     flex-direction: column;
@@ -240,7 +173,7 @@ footer {
   .logo {
     position: relative;
     text-align: center;
-    margin: 10px 0;
+    margin-top: 1rem;
   }
 
   .navbar {
