@@ -1,132 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nayra Elhara</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nayra Elhara - Canalizadora Mística</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Fondo animado -->
+  <div id="particles-js"></div>
 
-    <!-- Fuente mágica -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <header>
+    <h1>Nayra Elhara</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#canalizaciones">Canalizaciones</a></li>
+        <li><a href="#catalogo">🛍️ Catálogo</a></li>
+        <li><a href="#ia">IA Espiritual</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Tailwind CSS desde CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <section id="inicio" class="seccion">
+    <h2>Bienvenida, alma luminosa</h2>
+    <p>Conecta con tu guía interior a través de canalizaciones de luz, cuarzos sagrados y sabiduría energética.</p>
+    <a href="#catalogo" class="boton">🛍️ Ver Catálogo de Cuarzos</a>
+  </section>
 
-    <!-- Estilos personalizados -->
-    <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        font-family: 'Inter', sans-serif;
-        background: url('nayra.png') no-repeat center center fixed;
-        background-size: cover;
-        overflow-x: hidden;
-      }
+  <section id="canalizaciones" class="seccion">
+    <h2>Canalizaciones Recientes</h2>
+    <ul>
+      <li>✨ Canalización Junio 2025: "El renacer del alma consciente"</li>
+      <li>🌕 Portal 7/7: "Activación de dones dormidos"</li>
+    </ul>
+  </section>
 
-      #particles-js {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        z-index: 0;
-        pointer-events: none;
-      }
+  <section id="catalogo" class="seccion">
+    <h2>Catálogo de Cuarzos</h2>
+    <p>Descubre qué cuarzo se alinea con tu energía actual.</p>
+    <a href="catalogo.html" class="boton">Explorar Catálogo</a>
+  </section>
 
-      .content {
-        position: relative;
-        z-index: 1;
-        background-color: rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(4px);
-      }
-    </style>
-  </head>
+  <section id="ia" class="seccion">
+    <h2>IA Espiritual</h2>
+    <p>Haz una pregunta y recibe un mensaje canalizado:</p>
+    <input type="text" id="pregunta" placeholder="¿Qué necesito sanar hoy?">
+    <button onclick="responderPregunta()" class="boton">Canalizar mensaje</button>
+    <p id="respuestaIA"></p>
+  </section>
 
-  <body>
-    <!-- Fondo animado -->
-    <div id="particles-js"></div>
+  <section id="agenda" class="seccion">
+    <h2>Agenda tu Sesión</h2>
+    <p>Reserva tu canalización personalizada conmigo.</p>
+    <a href="https://calendly.com/" class="boton" target="_blank">Reservar ahora</a>
+  </section>
 
-    <!-- Contenido visible -->
-    <div class="content min-h-screen w-full flex flex-col items-center justify-center px-4">
-      <header class="text-center mb-8">
-        <h1 class="text-5xl md:text-6xl font-serif text-white mb-4 drop-shadow-lg">
-          Nayra Elhara
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-200 mb-6">
-          Rituales, Tarot y Guía Energética
-        </p>
-        <a href="#form" class="px-8 py-3 bg-purple-600 rounded-full text-white font-semibold hover:bg-purple-700 transition">
-          Agenda tu lectura
-        </a>
-      </header>
+  <section id="contacto" class="seccion">
+    <h2>Contacto</h2>
+    <p>Escríbeme por WhatsApp o sígueme en redes 🌌</p>
+    <a href="https://wa.me/57XXXXXXXXXX" class="boton">Enviar mensaje</a>
+  </section>
 
-      <section id="form" class="bg-white bg-opacity-90 rounded-lg p-8 w-full max-w-md shadow-lg">
-        <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">
-          Descarga tu guía gratuita
-        </h2>
-        <form name="contact" method="POST" data-netlify="true" class="space-y-4">
-          <div>
-            <input type="text" name="name" placeholder="Tu nombre" required
-              class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-purple-500" />
-          </div>
-          <div>
-            <input type="email" name="email" placeholder="Tu correo" required
-              class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-purple-500" />
-          </div>
-          <button type="submit"
-            class="w-full bg-purple-600 text-white px-4 py-2 rounded font-semibold hover:bg-purple-700 transition">
-            Descargar guía
-          </button>
-        </form>
-      </section>
-    </div>
+  <footer>
+    <p>© 2025 Nayra Elhara · Todos los derechos reservados</p>
+  </footer>
 
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script>
-      particlesJS("particles-js", {
-        particles: {
-          number: { value: 80, density: { enable: true, value_area: 800 } },
-          color: { value: "#ffffff" },
-          shape: { type: "circle" },
-          opacity: { value: 0.5, random: true },
-          size: { value: 3, random: true },
-          line_linked: {
-            enable: true,
-            distance: 150,
-            color: "#a855f7",
-            opacity: 0.4,
-            width: 1
-          },
-          move: {
-            enable: true,
-            speed: 1.6,
-            direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out"
-          }
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: { enable: true, mode: "repulse" },
-            onclick: { enable: true, mode: "push" },
-            resize: true
-          },
-          modes: {
-            repulse: { distance: 100, duration: 0.4 },
-            push: { particles_nb: 4 }
-          }
-        },
-        retina_detect: true
-      });
-    </script>
-  </body>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="ia.js"></script>
+  <script>
+    particlesJS.load('particles-js', 'particles-config.json');
+  </script>
+</body>
 </html>
-
-
-
-
-
-
