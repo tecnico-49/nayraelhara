@@ -1,54 +1,75 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Nayra Elhara</title>
+  <title>Oráculo de Nayra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="estilo.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Karla:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
+  <div id="particles-js"></div>
   <div class="overlay">
-
-    <!-- Nombre -->
     <div class="logo">Nayra Elhara</div>
 
-    <!-- Menú -->
     <nav class="navbar">
       <ul class="nav-menu">
         <li><button onclick="location.href='#inicio'"><i class="fas fa-home"></i> Inicio</button></li>
         <li><button onclick="location.href='#canalizaciones'"><i class="fas fa-star-and-crescent"></i> Canalizaciones</button></li>
         <li><button onclick="location.href='#catalogo'"><i class="fas fa-shopping-bag"></i> Catálogo</button></li>
-        <li><button onclick="location.href='#iaespiritual'"><i class="fas fa-brain"></i> IA Espiritual</button></li>
-        <li><button onclick="location.href='#agenda'"><i class="fas fa-calendar-alt"></i> Agenda</button></li>
+        <li><button onclick="location.href='#oraculo'"><i class="fas fa-brain"></i> Oráculo</button></li>
+        <li><button onclick="location.href='#contacto'"><i class="fas fa-envelope"></i> Contacto</button></li>
       </ul>
     </nav>
 
-    <!-- Secciones -->
-    <section id="inicio">✨ Bienvenida al Portal Místico</section>
-    <section id="canalizaciones">🔮 Canalizaciones Espirituales para tu alma</section>
-    <section id="catalogo">🛍️ Catálogo de cuarzos, rituales y sabiduría</section>
-    <section id="iaespiritual">🤖 IA Espiritual: Tu guía digital con intuición</section>
-    <section id="agenda">📅 Agenda tus lecturas, consultas y más</section>
-
-    <!-- Preguntas espirituales -->
-    <section class="preguntas">
-      🌟 ¿Tienes <strong>preguntas espirituales</strong>? Te acompañamos con luz.
+    <section id="inicio">
+      <h2 class="titulo-dorado">Bienvenida al Portal de Nayra</h2>
+      <p>Un espacio para despertar tu luz interior con guía espiritual y energía sagrada.</p>
     </section>
 
-    <!-- Contacto -->
+    <section id="oraculo" class="oraculo">
+      <h2 class="titulo-dorado">Oráculo de Nayra</h2>
+      <p>Haz tu pregunta espiritual y el oráculo responderá con sabiduría.</p>
+      <input type="text" id="pregunta" placeholder="Escribe tu pregunta..."><br>
+      <button onclick="consultarOraculo()" class="btn-contacto"><i class="fas fa-magic"></i> Consultar</button>
+      <div id="respuestaOraculo" class="respuesta"></div>
+    </section>
+
     <section id="contacto" class="contacto-final">
-      <button class="btn-contacto" onclick="alert('Gracias por escribirnos 🕊️')">
-        <i class="fas fa-envelope"></i> Contáctanos
-      </button>
+      <h3 class="preguntas">Contáctanos</h3>
+      <form>
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="correo" placeholder="Tu correo" required>
+        <textarea name="mensaje" placeholder="Tu mensaje espiritual..." required></textarea>
+        <button type="submit" class="btn-contacto">Enviar</button>
+      </form>
     </section>
-
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="ia.js"></script>
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 70 },
+        color: { value: '#ffffff' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.3 },
+        size: { value: 2 },
+        move: { enable: true, speed: 0.6 }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: 'repulse' },
+          onclick: { enable: true, mode: 'push' }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
 </body>
-</html>
-
 </html>
 
 
