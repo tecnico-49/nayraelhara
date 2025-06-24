@@ -17,17 +17,32 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 header h1 {
   font-size: 1.8rem;
 }
 
-nav a {
+.botonera {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.boton-nav {
+  background-color: #3d0b60;
   color: #fff;
-  margin-left: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px rgba(248, 224, 255, 0.3);
+}
+
+.boton-nav:hover {
+  background-color: #6d27a8;
 }
 
 .hero {
@@ -119,6 +134,7 @@ footer {
   text-decoration: none;
   font-weight: bold;
 }
+
 
 
 
