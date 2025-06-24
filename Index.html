@@ -1,124 +1,39 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#8149a4" />
-  <meta name="description" content="Nayra Elhara - Canalizadora del alma, tarot, cuarzos y guía espiritual." />
-  <meta name="keywords" content="nayra, tarot, canalizadora, espiritualidad, cuarzos, rituales" />
-  <meta name="author" content="Nayra Elhara" />
-  <meta property="og:title" content="Nayra Elhara - Canalizadora del alma" />
-  <meta property="og:image" content="nayra.png" />
-  <meta property="og:description" content="Conecta con tu energía. Sesiones de tarot, cuarzos y canalización espiritual." />
-  <meta property="og:url" content="https://nayraelhara.netlify.app" />
-  <title>Nayra Elhara</title>
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-</head>
-<body>
-  <div id="particles-js"></div>
-  <header>
-    <h1>Nayra Elhara</h1>
-    <nav class="botonera">
-      <a href="#inicio" class="boton-nav">Inicio</a>
-      <a href="#servicios" class="boton-nav">Servicios</a>
-      <a href="#quien-soy" class="boton-nav">¿Quién soy?</a>
-      <a href="#contacto" class="boton-nav">Contáctame</a>
-      <a href="#catalogo" class="boton-nav">Catálogo</a>
-    </nav>
-  </header>
+<section id="catalogo">
+  <h2>Catálogo de Productos</h2>
+  <div id="lista-productos" class="catalogo-grid"></div>
+  <form id="form-producto" class="form-catalogo">
+    <input type="text" id="nombre-producto" placeholder="Nombre del producto" required />
+    <input type="text" id="descripcion-producto" placeholder="Descripción" required />
+    <input type="url" id="imagen-producto" placeholder="URL de imagen" required />
+    <a href="https://wa.me/573012344892" target="_blank">
+      <button type="submit" class="boton-mistico">Agregar al catálogo</button>
+    </a>
+  </form>
+</section>
 
-  <section id="inicio" class="hero">
-    <h2 class="titulo-dorado">Canalizadora del Alma</h2>
-    <p>Guía energética para tu despertar espiritual.</p>
-    <button class="boton-mistico" onclick="mostrarMensajeOraculo()">Consultar al Oráculo</button>
-  </section>
+<script>
+  document.getElementById('form-producto').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre-producto').value;
+    const descripcion = document.getElementById('descripcion-producto').value;
+    const imagen = document.getElementById('imagen-producto').value;
+    const lista = document.getElementById('lista-productos');
 
-  <section id="servicios">
-    <h2>Servicios</h2>
-    <ul>
-      <li>Lecturas de Tarot</li>
-      <li>Cuarzos y energías</li>
-      <li>Rituales personalizados</li>
-    </ul>
-  </section>
-
-  <section id="quien-soy">
-    <h2>¿Quién es Nayra Elhara?</h2>
-    <p>Soy canal de luz, guía espiritual, y acompañante en procesos de transformación interior.</p>
-  </section>
-
-  <section id="tienda">
-    <h2>Tienda Mística</h2>
-    <div class="producto">
-      <h3>Cuarzo Rosa</h3>
-      <p>Armoniza tus emociones y activa el amor propio.</p>
-      <button class="boton-mistico" onclick="alert('✨ Tu cuarzo ha sido activado energéticamente ✨')">Activar mi cuarzo</button>
-    </div>
-  </section>
-
-  <section id="catalogo">
-    <h2>Catálogo de Productos</h2>
-    <p>Próximamente podrás explorar y subir todos tus productos energéticos aquí.</p>
-    <button class="boton-mistico" onclick="alert('🛍️ Esta sección estará disponible muy pronto.')">Subir mis productos</button>
-  </section>
-
-  <section id="oraculo">
-    <h2>Oráculo Espiritual</h2>
-    <p id="mensaje-oraculo">Conecta y recibe una guía del universo.</p>
-  </section>
-
-  <section id="contacto">
-    <h2>Contáctame</h2>
-    <form action="https://formspree.io/f/movwkyay" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre" required />
-      <input type="email" name="email" placeholder="Tu correo" required />
-      <textarea name="mensaje" rows="5" placeholder="Tu mensaje"></textarea>
-      <button type="submit" class="boton-mistico">Enviar</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>© 2025 Nayra Elhara. Todos los derechos reservados.</p>
-    <div class="redes-sociales">
-      <a href="https://www.instagram.com/nayraelhara.tarot" target="_blank">Instagram: @nayraelhara.tarot</a><br />
-      <a href="tel:+573012344892">Llámanos: +57 301 234 4892</a>
-    </div>
-  </footer>
-
-  <script>
-    function mostrarMensajeOraculo() {
-      const mensajes = [
-        "Activa tu intuición. La respuesta vive en ti.",
-        "Confía. El universo ya se está alineando.",
-        "Hoy es un día para soltar lo que no vibra contigo.",
-        "Medita y respira, tu guía interior hablará.",
-        "Canaliza el amor, deja que fluya la luz."
-      ];
-      const indice = Math.floor(Math.random() * mensajes.length);
-      document.getElementById('mensaje-oraculo').innerText = mensajes[indice];
-    }
-  </script>
-
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(function(reg) {
-          console.log('✅ Service Worker registrado:', reg);
-        }).catch(function(error) {
-          console.log('❌ Error registrando Service Worker:', error);
-        });
-    }
-  </script>
-
-  <script>
-    particlesJS.load('particles-js', 'particles.json', function() {
-      console.log('✨ Partículas cargadas');
-    });
-  </script>
-</body>
-</html>
+    const item = document.createElement('div');
+    item.className = 'producto-card';
+    item.innerHTML = `
+      <img src="${imagen}" alt="${nombre}" class="producto-imagen" />
+      <h3>${nombre}</h3>
+      <p>${descripcion}</p>
+      <a href="https://wa.me/573012344892?text=Hola Nayra, quiero más información sobre: ${nombre}" target="_blank">
+        <button class="boton-mistico">Solicitar</button>
+      </a>
+    `;
+    lista.appendChild(item);
+    e.target.reset();
+  });
+</script>
 
 
 
