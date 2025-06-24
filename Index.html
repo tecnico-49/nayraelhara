@@ -3,111 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#8149a4" />
-  <meta name="description" content="Nayra Elhara - Canalizadora del alma, tarot, cuarzos y guía espiritual." />
-  <meta name="keywords" content="nayra, tarot, canalizadora, espiritualidad, cuarzos, rituales" />
-  <meta name="author" content="Nayra Elhara" />
-  <title>Nayra Elhara</title>
-  <link rel="manifest" href="manifest.json" />
+  <title>Nayra Elhara - Guía Mística</title>
+  <meta name="description" content="Canalizadora espiritual, oráculo de sabiduría y guía mística.">
+  <meta name="keywords" content="espiritualidad, canalizadora, guía, oráculo, energía, Nayra Elhara">
+  <meta name="theme-color" content="#8149a4">
+  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 <body>
   <div id="particles-js"></div>
+
   <header>
     <h1>Nayra Elhara</h1>
     <nav class="botonera">
       <a href="#inicio" class="boton-nav">Inicio</a>
       <a href="#servicios" class="boton-nav">Servicios</a>
-      <a href="#quien-soy" class="boton-nav">¿Quién soy?</a>
-      <a href="#contacto" class="boton-nav">Contáctame</a>
-      <a href="#catalogo" class="boton-nav">Catálogo</a>
+      <a href="#quien-soy" class="boton-nav">Quién soy</a>
+      <a href="#contacto" class="boton-nav">Contacto</a>
     </nav>
   </header>
 
-  <section id="catalogo">
-    <h2>Catálogo de Productos</h2>
-    <div id="lista-productos" class="catalogo-grid"></div>
-    <form id="form-producto" class="form-catalogo">
-      <input type="text" id="nombre-producto" placeholder="Nombre del producto" required />
-      <input type="text" id="descripcion-producto" placeholder="Descripción" required />
-      <input type="url" id="imagen-producto" placeholder="URL de imagen" required />
-      <button type="submit" class="boton-mistico">Agregar al catálogo</button>
+  <section id="inicio" class="hero">
+    <h2 class="titulo-dorado">Bienvenida a tu guía espiritual</h2>
+    <p>Conecta con tu esencia y sabiduría interior.</p>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios Místicos</h2>
+    <p>Lectura de cartas, sanación energética, conexión con guías y más.</p>
+  </section>
+
+  <section id="quien-soy">
+    <h2>¿Quién soy?</h2>
+    <p>Soy Nayra Elhara, canalizadora de mensajes de luz y guía espiritual.</p>
+  </section>
+
+  <section id="oraculo">
+    <h2>Oráculo Místico</h2>
+    <p>Escribe tu pregunta y el oráculo te responderá:</p>
+    <input type="text" id="pregunta" placeholder="Escribe tu duda..." />
+    <button class="boton-mistico" onclick="responderOraculo()">Consultar</button>
+    <p id="respuesta"></p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form action="https://formspree.io/f/your-code" method="POST">
+      <input type="text" name="nombre" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Tu email" required />
+      <textarea name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+      <button type="submit" class="boton-mistico">Enviar</button>
     </form>
   </section>
 
   <footer>
-    <p>© 2025 Nayra Elhara. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Nayra Elhara</p>
     <div class="redes-sociales">
-      <a href="https://www.instagram.com/nayraelhara.tarot" target="_blank">Instagram: @nayraelhara.tarot</a><br />
-      <a href="tel:+573012344892">Llámanos: +57 301 234 4892</a>
+      <a href="#">Instagram</a> | <a href="#">YouTube</a> | <a href="#">TikTok</a>
     </div>
   </footer>
 
   <script>
-    // Particles.js configuración para universo cuántico
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 90 },
-        "color": { "value": "#ffffff" },
-        "shape": { "type": "circle" },
-        "opacity": {
-          "value": 0.5,
-          "random": true
-        },
-        "size": {
-          "value": 3,
-          "random": true
-        },
-        "line_linked": {
-          "enable": false
-        },
-        "move": {
-          "enable": true,
-          "speed": 1.5,
-          "direction": "none",
-          "random": true,
-          "out_mode": "out"
-        }
-      },
-      "interactivity": {
-        "events": {
-          "onhover": { "enable": true, "mode": "repulse" },
-          "onclick": { "enable": true, "mode": "push" }
-        },
-        "modes": {
-          "repulse": { "distance": 100 },
-          "push": { "particles_nb": 4 }
-        }
-      },
-      "retina_detect": true
-    });
-  </script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('✅ Service Worker registrado:', reg))
+        .catch(err => console.error('❌ Error al registrar el Service Worker:', err));
+    }
 
-  <script>
-    document.getElementById('form-producto').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const nombre = document.getElementById('nombre-producto').value;
-      const descripcion = document.getElementById('descripcion-producto').value;
-      const imagen = document.getElementById('imagen-producto').value;
-      const lista = document.getElementById('lista-productos');
+    const frases = [
+      "La energía que das es la que recibes.",
+      "Tu alma ya sabe el camino.",
+      "Escucha el susurro del universo.",
+      "La sanación comienza en el corazón.",
+      "No estás sola, los guías te acompañan."
+    ];
 
-      const item = document.createElement('div');
-      item.className = 'producto-card';
-      item.innerHTML = `
-        <img src="${imagen}" alt="${nombre}" class="producto-imagen" />
-        <h3>${nombre}</h3>
-        <p>${descripcion}</p>
-        <a href="https://wa.me/573012344892?text=Hola Nayra, quiero más información sobre: ${nombre}" target="_blank">
-          <button class="boton-mistico">Solicitar</button>
-        </a>
-      `;
-      lista.appendChild(item);
-      e.target.reset();
-    });
+    function responderOraculo() {
+      const respuesta = frases[Math.floor(Math.random() * frases.length)];
+      document.getElementById('respuesta').textContent = respuesta;
+    }
+
+    particlesJS.load('particles-js', 'particles.json');
   </script>
 </body>
 </html>
+
 
 
 
