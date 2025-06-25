@@ -9,8 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
-  <!-- Encabezado fijo con logo y navegación -->
   <header class="header-fixed">
     <div class="logo">Nayra Elhara</div>
     <nav class="navbar">
@@ -24,10 +22,8 @@
     </nav>
   </header>
 
-  <!-- Fondo con partículas y contenido -->
   <div id="particles-js"></div>
   <div class="overlay">
-
     <section id="inicio">
       <div class="bienvenida-destacada">
         <h1>Bienvenida al Portal de Nayra</h1>
@@ -53,7 +49,6 @@
       <div id="respuestaOraculo" class="respuesta"></div>
     </section>
 
-    <!-- Sección de contacto con formulario -->
     <section id="contacto">
       <h3 class="preguntas">Contáctanos</h3>
       <form>
@@ -64,7 +59,6 @@
       </form>
     </section>
 
-    <!-- 🔮 NUEVA SECCIÓN: TIENDA MÍSTICA -->
     <section id="tienda">
       <h2 class="titulo-dorado">Tienda Mística</h2>
       <div class="productos">
@@ -72,18 +66,19 @@
           <img src="cuarzo-rosa.jpg" alt="Cuarzo Rosa">
           <h3>Cuarzo Rosa</h3>
           <p>Conecta con tu amor propio y armonía interior.</p>
-          <button class="btn-comprar">Comprar</button>
+          <a href="https://www.paypal.com/paypalme/tucuenta" target="_blank" class="btn-comprar">Comprar con PayPal</a>
+          <button onclick="mostrarQR('nequi.png')" class="btn-comprar">Pagar con Nequi</button>
         </div>
         <div class="producto">
           <img src="amatista.jpg" alt="Amatista">
           <h3>Amatista</h3>
           <p>Protección espiritual y calma mental.</p>
-          <button class="btn-comprar">Comprar</button>
+          <a href="https://www.paypal.com/paypalme/tucuenta" target="_blank" class="btn-comprar">Comprar con PayPal</a>
+          <button onclick="mostrarQR('nequi.png')" class="btn-comprar">Pagar con Nequi</button>
         </div>
       </div>
     </section>
 
-    <!-- 🧘 NUEVA SECCIÓN: SERVICIOS ESPIRITUALES -->
     <section id="servicios">
       <h2 class="titulo-dorado">Servicios Espirituales</h2>
       <ul class="lista-servicios">
@@ -94,10 +89,14 @@
       </ul>
       <button class="btn-contacto">Agendar Cita</button>
     </section>
-
   </div>
 
-  <!-- Scripts -->
+  <!-- Modal QR -->
+  <div id="qrModal" class="modal">
+    <span class="cerrar" onclick="cerrarQR()">&times;</span>
+    <img id="qrImagen" src="" alt="QR de pago">
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
     particlesJS('particles-js', {
@@ -119,6 +118,15 @@
     });
   </script>
   <script src="ia.js"></script>
+  <script>
+    function mostrarQR(imagen) {
+      document.getElementById('qrImagen').src = imagen;
+      document.getElementById('qrModal').style.display = 'flex';
+    }
+    function cerrarQR() {
+      document.getElementById('qrModal').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
 
