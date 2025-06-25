@@ -1,21 +1,257 @@
-<!-- Sección para reservar citas -->
-<section id="agenda">
-  <h2 class="titulo-dorado">Reserva tu Cita Espiritual</h2>
-  <form id="formAgenda">
-    <input type="text" name="nombreCita" placeholder="Tu nombre" required>
-    <input type="email" name="emailCita" placeholder="Tu correo" required>
-    <input type="date" name="fechaCita" required>
-    <input type="time" name="horaCita" required>
-    <select name="tipoCita" required>
-      <option value="">Selecciona el tipo de cita</option>
-      <option value="canalización">Canalización Espiritual</option>
-      <option value="lecturaCartas">Lectura de Cartas</option>
-      <option value="sanacion">Sanación Energética</option>
-    </select>
-    <button type="submit" class="btn-contacto">Reservar Cita</button>
-    <div id="mensajeReserva" class="respuesta"></div>
-  </form>
-</section>
+/* === ESTILOS GENERALES === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Karla', sans-serif;
+  color: #ffffff;
+  background: url('nayra.png') no-repeat center center fixed;
+  background-size: cover;
+  overflow-x: hidden; /* Previene desbordamiento horizontal */
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  min-height: 100vh;
+  padding-top: 6rem;
+  padding-bottom: 5rem;
+}
+
+/* === ENCABEZADO FIJO === */
+.header-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(20, 0, 40, 0.85);
+  z-index: 999;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  box-shadow: 0 0 10px #000000aa;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
+}
+
+.navbar {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  overflow-x: auto;
+  padding-left: 1rem;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+}
+
+.nav-menu li button {
+  background-color: #fff0ff;
+  color: #6a1b9a;
+  border: 1px solid #b39ddb;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: 'Cinzel', serif;
+  cursor: pointer;
+  font-weight: bold;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-menu li button:hover {
+  background-color: #ce93d8;
+  color: white;
+  box-shadow: 0 0 10px #b39ddb;
+}
+
+/* === SECCIONES === */
+section {
+  padding: 2rem;
+  margin: auto;
+  max-width: 800px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
+  border-radius: 12px;
+}
+
+.bienvenida-destacada h1 {
+  font-family: 'Cinzel', serif;
+  color: #fff0ff;
+  border: 2px solid gold;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 12px #ffd700aa;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.titulo-dorado {
+  color: #f5e663;
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  border: 2px solid gold;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #f5e663;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* === FORMULARIO === */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+form input,
+form textarea,
+form select {
+  width: 90%;
+  max-width: 500px;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #eee;
+}
+
+form select option {
+  color: black;
+}
+
+.btn-contacto {
+  background: linear-gradient(to right, #e1bee7, #ba68c8);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  border-radius: 10px;
+  border: none;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  max-width: 200px;
+}
+
+.btn-contacto:hover {
+  box-shadow: 0 0 10px #ce93d8;
+  transform: scale(1.05);
+}
+
+.respuesta {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #ffd700;
+  font-size: 1.1rem;
+}
+
+/* === TIENDA === */
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.producto {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  width: 250px;
+  box-shadow: 0 0 10px #00000033;
+}
+
+.producto img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.btn-comprar {
+  display: inline-block;
+  margin: 0.5rem;
+  background-color: #fff0ff;
+  color: #6a1b9a;
+  border: 1px solid #b39ddb;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: 'Cinzel', serif;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn-comprar:hover {
+  background-color: #ce93d8;
+  color: white;
+  box-shadow: 0 0 10px #b39ddb;
+}
+
+/* === MODAL QR === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal img {
+  max-width: 300px;
+  border-radius: 12px;
+  border: 3px solid #ffd700;
+  box-shadow: 0 0 20px #ffd700aa;
+}
+
+.cerrar {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* === LISTA SERVICIOS === */
+.lista-servicios {
+  list-style: none;
+  padding: 0;
+  font-family: 'Karla', sans-serif;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.lista-servicios li::before {
+  content: '✨ ';
+  color: #ffd700;
+}
 
 
 
