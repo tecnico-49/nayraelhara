@@ -1,3 +1,7 @@
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Karla:wght@400;700&family=Playfair+Display:wght@500;700&display=swap');
+
+/* === CUERPO Y FONDO === */
 body {
   margin: 0;
   padding: 0;
@@ -7,112 +11,31 @@ body {
   background-size: cover;
 }
 
-.overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-  min-height: 100vh;
-  padding-bottom: 5rem;
-}
-
-.logo {
-  font-size: 2rem;
-  padding: 1rem 2rem;
-  font-family: 'Playfair Display', serif;
-  color: white;
-  text-shadow: 0 0 10px #fff;
-}
-
-.navbar {
-  text-align: center;
-  background-color: rgba(20, 0, 40, 0.8);
-  padding: 1rem 0;
-}
-
-.nav-menu {
-  list-style: none;
+/* === CABECERA FIJA === */
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: rgba(20, 0, 40, 0.9);
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  box-shadow: 0 0 10px gold;
 }
 
-.nav-menu li button {
-  background: #3e3e58;
-  color: #f0e6d2;
-  border: 1px solid #ffd700;
-  padding: 0.6rem 1rem;
-  border-radius: 10px;
-  font-family: 'Cinzel', serif;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.nav-menu li button:hover {
-  background-color: #ffd700;
-  color: #2a2a3d;
-  box-shadow: 0 0 10px #ffd700;
-}
-
-section {
-  padding: 2rem;
-  margin: auto;
-  max-width: 800px;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  margin-bottom: 2rem;
-  border-radius: 12px;
-}
-
-.titulo-dorado {
-  color: #f5e663;
-  font-family: 'Cinzel', serif;
-  font-size: 2rem;
-  border: 2px solid gold;
-  display: inline-block;
-  padding: 0.5rem 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #f5e663;
-  margin-bottom: 1rem;
-}
-
-input, textarea {
-  width: 90%;
-  margin: 0.5rem 0;
-  padding: 0.8rem;
-  border-radius: 10px;
-  border: none;
-  background: rgba(255, 255, 255, 0.2);
+/* === LOGO === */
+.header-fixed .logo,
+.logo {
+  font-size: 1.8rem;
+  font-family: 'Playfair Display', serif;
   color: #fff;
+  text-shadow: 0 0 5px #ffd700;
 }
 
-input::placeholder, textarea::placeholder {
-  color: #eee;
-}
-
-.btn-contacto {
-  background: linear-gradient(to right, #ffcc70, #ffd700);
-  color: #2a2a3d;
-  padding: 0.8rem 1.5rem;
-  font-weight: bold;
-  font-family: 'Cinzel', serif;
-  border-radius: 10px;
-  border: none;
-  margin-top: 1rem;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.btn-contacto:hover {
-  box-shadow: 0 0 10px #ffd700;
-  transform: scale(1.05);
-}
-
-.respuesta {
-  margin-top: 1rem;
-  font-style: italic;
-  color: #ffd700;
-  font-size: 1.1rem;
-}
+/
 
 
 
