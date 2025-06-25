@@ -119,7 +119,8 @@ form {
 }
 
 form input,
-form textarea {
+form textarea,
+form select {
   width: 90%;
   max-width: 500px;
   margin-bottom: 1rem;
@@ -133,6 +134,10 @@ form textarea {
 form input::placeholder,
 form textarea::placeholder {
   color: #eee;
+}
+
+form select option {
+  color: black;
 }
 
 .btn-contacto {
@@ -247,6 +252,5 @@ form textarea::placeholder {
   content: '✨ ';
   color: #ffd700;
 }
-
 
 
