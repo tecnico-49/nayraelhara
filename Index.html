@@ -4,9 +4,17 @@
   <meta charset="UTF-8">
   <title>Oráculo de Nayra</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Enlace al archivo de estilos externo -->
   <link rel="stylesheet" href="estilo.css">
+  
+  <!-- Fuentes elegantes para textos y títulos -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Karla:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Íconos de Font Awesome (para los botones) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Fondo de página y fuentes generales -->
   <style>
     body {
       margin: 0;
@@ -16,171 +24,99 @@
       background: url('nayra.png') no-repeat center center fixed;
       background-size: cover;
     }
-
-    /* === CABECERA FIJA MORADA Y BRILLANTE === */
-    .header-fixed {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 999;
-      background-color: #2d004d; /* morado oscuro */
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      box-shadow: 0 0 15px gold;
-    }
-
-    .header-fixed .logo {
-      font-size: 2rem;
-      font-family: 'Playfair Display', serif;
-      color: #ffd700;
-      text-shadow: 0 0 10px #ffd700;
-    }
-
-    /* === NAVBAR Y BOTONES HORIZONTALES === */
-    .navbar {
-      display: flex;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      padding: 0;
-      margin: 0;
-    }
-
-    .nav-menu li button {
-      background: transparent;
-      color: #ffd700;
-      border: 1px solid #ffd700;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      font-family: 'Cinzel', serif;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.3s ease-in-out;
-      box-shadow: 0 0 5px #ffd70066;
-    }
-
-    .nav-menu li button:hover {
-      background-color: #ffd700;
-      color: #2d004d;
-      box-shadow: 0 0 15px #ffd700, 0 0 5px #fff;
-    }
-
-    /* === FONDO OSCURO DE CONTENIDO === */
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding-top: 6rem; /* espacio para cabecera fija */
-      padding-bottom: 5rem;
-      min-height: 100vh;
-    }
-
-    /* === SECCIONES === */
-    section {
-      padding: 2rem;
-      margin: auto;
-      max-width: 800px;
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.5);
-      margin-bottom: 2rem;
-      border-radius: 12px;
-    }
-
-    .titulo-dorado {
-      color: #f5e663;
-      font-family: 'Cinzel', serif;
-      font-size: 2rem;
-      border: 2px solid gold;
-      display: inline-block;
-      padding: 0.5rem 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #f5e663;
-      margin-bottom: 1rem;
-    }
-
-    /* === BIENVENIDA === */
-    .bienvenida-destacada h1 {
-      font-size: 2.5rem;
-      color: #d9b3ff;
-      border: 2px solid gold;
-      padding: 1rem 2rem;
-      border-radius: 15px;
-      display: inline-block;
-      box-shadow: 0 0 20px gold;
-      background-color: rgba(50, 0, 80, 0.4);
-      font-family: 'Cinzel', serif;
-      margin-bottom: 1rem;
-    }
-
-    /* === FORMULARIOS E INPUTS === */
-    input, textarea {
-      width: 90%;
-      margin: 0.5rem 0;
-      padding: 0.8rem;
-      border-radius: 10px;
-      border: none;
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
-      font-family: 'Karla', sans-serif;
-    }
-
-    input::placeholder, textarea::placeholder {
-      color: #eee;
-    }
-
-    .btn-contacto {
-      background: linear-gradient(to right, #ffcc70, #ffd700);
-      color: #2a2a3d;
-      padding: 0.8rem 1.5rem;
-      font-weight: bold;
-      font-family: 'Cinzel', serif;
-      border-radius: 10px;
-      border: none;
-      margin-top: 1rem;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-
-    .btn-contacto:hover {
-      box-shadow: 0 0 10px #ffd700;
-      transform: scale(1.05);
-    }
-
-    .respuesta {
-      margin-top: 1rem;
-      font-style: italic;
-      color: #ffd700;
-      font-size: 1.1rem;
-    }
-
-    @media screen and (max-width: 768px) {
-      .header-fixed {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-menu {
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .nav-menu li button {
-        width: 100%;
-        text-align: left;
-      }
-    }
   </style>
 </head>
+
 <body>
+
+  <!-- CABECERA FIJA MORADA Y BRILLANTE -->
+  <header class="header-fixed">
+    <!-- Logo o título de la página -->
+    <div class="logo">Nayra Elhara</div>
+    <!-- Menú de navegación con botones -->
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li><button onclick="location.href='#inicio'">Inicio</button></li>
+        <li><button onclick="location.href='#canalizaciones'">Canalizaciones</button></li>
+        <li><button onclick="location.href='#catalogo'">Catálogo</button></li>
+        <li><button onclick="location.href='#oraculo'">Oráculo</button></li>
+        <li><button onclick="location.href='#contacto'">Contacto</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Fondo animado de partículas (estrellas flotantes) -->
   <div id="particles-js"></div>
 
-  <!-- CABECERA FIJA -->
-  <header class="header-fixed">
-    <div class="logo">Nayra Elha
+  <!-- Contenedor oscuro translúcido con todo el contenido principal -->
+  <div class="overlay">
+
+    <!-- Sección de bienvenida principal -->
+    <section id="inicio" class="bienvenida-destacada">
+      <h1>Bienvenida al Portal de Nayra</h1>
+      <p>Un espacio para despertar tu luz interior con guía espiritual y energía sagrada.</p>
+    </section>
+
+    <!-- Sección de canalizaciones espirituales -->
+    <section id="canalizaciones">
+      <h2 class="titulo-dorado">Canalizaciones</h2>
+      <p>Recibe mensajes del alma a través de Nayra y sus dones espirituales.</p>
+    </section>
+
+    <!-- Sección de catálogo de productos -->
+    <section id="catalogo">
+      <h2 class="titulo-dorado">Catálogo</h2>
+      <p>Descubre amuletos, cuarzos y herramientas para tu camino espiritual.</p>
+    </section>
+
+    <!-- Sección interactiva del oráculo espiritual -->
+    <section id="oraculo">
+      <h2 class="titulo-dorado">Oráculo de Nayra</h2>
+      <p>Haz tu pregunta espiritual y el oráculo responderá con sabiduría.</p>
+      <input type="text" id="pregunta" placeholder="Escribe tu pregunta..."><br>
+      <button onclick="consultarOraculo()" class="btn-contacto"><i class="fas fa-magic"></i> Consultar</button>
+      <div id="respuestaOraculo" class="respuesta"></div>
+    </section>
+
+    <!-- Sección de contacto con formulario -->
+    <section id="contacto">
+      <h3 class="preguntas">Contáctanos</h3>
+      <form>
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="correo" placeholder="Tu correo" required>
+        <textarea name="mensaje" placeholder="Tu mensaje espiritual..." required></textarea>
+        <button type="submit" class="btn-contacto">Enviar</button>
+      </form>
+    </section>
+  </div>
+
+  <!-- Librería de partículas (estrellas animadas de fondo) -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    // Configuración de partículas
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 70 },
+        color: { value: '#ffffff' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.3 },
+        size: { value: 2 },
+        move: { enable: true, speed: 0.6 }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: 'repulse' },
+          onclick: { enable: true, mode: 'push' }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+
+  <!-- Archivo donde irá la lógica del oráculo personalizado -->
+  <script src="ia.js"></script>
+</body>
+</html>
 
 
 
