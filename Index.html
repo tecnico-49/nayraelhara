@@ -1,257 +1,167 @@
-/* === ESTILOS GENERALES === */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Karla', sans-serif;
-  color: #ffffff;
-  background: url('nayra.png') no-repeat center center fixed;
-  background-size: cover;
-  overflow-x: hidden; /* Previene desbordamiento horizontal */
-}
+<!-- index.html completo con sección de agenda y correcciones visuales -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Oráculo de Nayra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Karla:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    .overlay {
+      padding-top: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
 
-.overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-  min-height: 100vh;
-  padding-top: 6rem;
-  padding-bottom: 5rem;
-}
+  <div class="header-fixed">
+    <div class="logo">Nayra Elhara</div>
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li><button onclick="location.href='#inicio'"><i class="fas fa-home"></i> Inicio</button></li>
+        <li><button onclick="location.href='#canalizaciones'"><i class="fas fa-star-and-crescent"></i> Canalizaciones</button></li>
+        <li><button onclick="location.href='#catalogo'"><i class="fas fa-shopping-bag"></i> Catálogo</button></li>
+        <li><button onclick="location.href='#oraculo'"><i class="fas fa-brain"></i> Oráculo</button></li>
+        <li><button onclick="location.href='#agenda'"><i class="fas fa-calendar-alt"></i> Agenda</button></li>
+        <li><button onclick="location.href='#contacto'"><i class="fas fa-envelope"></i> Contacto</button></li>
+      </ul>
+    </nav>
+  </div>
 
-/* === ENCABEZADO FIJO === */
-.header-fixed {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: rgba(20, 0, 40, 0.85);
-  z-index: 999;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.8rem 1rem;
-  box-shadow: 0 0 10px #000000aa;
-  box-sizing: border-box;
-}
+  <div class="overlay">
+    <section id="inicio">
+      <div class="bienvenida-destacada">
+        <h1>Bienvenida al Portal de Nayra</h1>
+      </div>
+      <p>Un espacio para despertar tu luz interior con guía espiritual y energía sagrada.</p>
+    </section>
 
-.logo {
-  font-size: 1.8rem;
-  font-family: 'Playfair Display', serif;
-  color: #fff;
-  text-shadow: 0 0 10px #fff;
-}
+    <section id="canalizaciones">
+      <h2 class="titulo-dorado">Canalizaciones</h2>
+      <p>Recibe mensajes del alma a través de Nayra y sus dones espirituales.</p>
+    </section>
 
-.navbar {
-  display: flex;
-  flex: 1;
-  justify-content: flex-end;
-  overflow-x: auto;
-  padding-left: 1rem;
-}
+    <section id="catalogo">
+      <h2 class="titulo-dorado">Catálogo</h2>
+      <p>Descubre amuletos, cuarzos y herramientas para tu camino espiritual.</p>
+    </section>
 
-.nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 0.5rem;
-  margin: 0;
-  padding: 0;
-  flex-wrap: nowrap;
-}
+    <section id="oraculo">
+      <h2 class="titulo-dorado">Oráculo de Nayra</h2>
+      <p>Haz tu pregunta espiritual y el oráculo responderá con sabiduría.</p>
+      <input type="text" id="pregunta" placeholder="Escribe tu pregunta..."><br>
+      <button onclick="consultarOraculo()" class="btn-contacto"><i class="fas fa-magic"></i> Consultar</button>
+      <div id="respuestaOraculo" class="respuesta"></div>
+    </section>
 
-.nav-menu li button {
-  background-color: #fff0ff;
-  color: #6a1b9a;
-  border: 1px solid #b39ddb;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-family: 'Cinzel', serif;
-  cursor: pointer;
-  font-weight: bold;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
+    <!-- Sección de agenda -->
+    <section id="agenda">
+      <h2 class="titulo-dorado">Reserva tu Cita Espiritual</h2>
+      <form id="formAgenda">
+        <input type="text" name="nombreCita" placeholder="Tu nombre" required>
+        <input type="email" name="emailCita" placeholder="Tu correo" required>
+        <input type="date" name="fechaCita" required>
+        <input type="time" name="horaCita" required>
+        <select name="tipoCita" required>
+          <option value="">Selecciona el tipo de cita</option>
+          <option value="canalización">Canalización Espiritual</option>
+          <option value="lecturaCartas">Lectura de Cartas</option>
+          <option value="sanacion">Sanación Energética</option>
+        </select>
+        <button type="submit" class="btn-contacto">Reservar Cita</button>
+        <div id="mensajeReserva" class="respuesta"></div>
+      </form>
+    </section>
 
-.nav-menu li button:hover {
-  background-color: #ce93d8;
-  color: white;
-  box-shadow: 0 0 10px #b39ddb;
-}
+    <!-- Sección de contacto con formulario -->
+    <section id="contacto">
+      <h2 class="titulo-dorado">Contáctanos</h2>
+      <form>
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="correo" placeholder="Tu correo" required>
+        <textarea name="mensaje" placeholder="Tu mensaje espiritual..." required></textarea>
+        <button type="submit" class="btn-contacto">Enviar</button>
+      </form>
+    </section>
+  </div>
 
-/* === SECCIONES === */
-section {
-  padding: 2rem;
-  margin: auto;
-  max-width: 800px;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  margin-bottom: 2rem;
-  border-radius: 12px;
-}
+  <!-- Partículas -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 70 },
+        color: { value: '#ffffff' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.3 },
+        size: { value: 2 },
+        move: { enable: true, speed: 0.6 }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: 'repulse' },
+          onclick: { enable: true, mode: 'push' }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
 
-.bienvenida-destacada h1 {
-  font-family: 'Cinzel', serif;
-  color: #fff0ff;
-  border: 2px solid gold;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 12px #ffd700aa;
-  display: inline-block;
-  background-color: rgba(255, 255, 255, 0.1);
-}
+  <!-- Lógica del Oráculo -->
+  <script>
+    function consultarOraculo() {
+      const frasesOraculo = [
+        "Confía, el universo ya está trabajando a tu favor.",
+        "Recuerda quién eres: una chispa eterna de luz.",
+        "Lo que hoy duele, mañana será tu poder.",
+        "Abre tu corazón: el amor divino te rodea.",
+        "Los ciclos que terminan son puertas que se abren.",
+        "No temas al cambio, Nayra te guía en cada paso.",
+        "Tu intuición es más sabia de lo que crees.",
+        "Cada noche oscura da paso a un amanecer dorado.",
+        "Suelta el pasado con gratitud, no con miedo.",
+        "Eres sostenida por la energía del todo.",
+        "Tu alma eligió esta lección, y ya la estás dominando.",
+        "En el silencio encontrarás las respuestas que buscas.",
+        "La respuesta está en ti. Respira y escucha."
+      ];
 
-.titulo-dorado {
-  color: #f5e663;
-  font-family: 'Cinzel', serif;
-  font-size: 2rem;
-  border: 2px solid gold;
-  display: inline-block;
-  padding: 0.5rem 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #f5e663;
-  margin-bottom: 1rem;
-  background-color: rgba(255, 255, 255, 0.05);
-}
+      const pregunta = document.getElementById("pregunta").value.trim();
+      const respuestaDiv = document.getElementById("respuestaOraculo");
 
-/* === FORMULARIO === */
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-}
+      if (pregunta === "") {
+        respuestaDiv.innerText = "🌌 Escribe tu pregunta para recibir una guía del Oráculo.";
+      } else {
+        const indice = Math.floor(Math.random() * frasesOraculo.length);
+        respuestaDiv.innerText = `🔮 ${frasesOraculo[indice]}`;
+      }
+    }
+  </script>
 
-form input,
-form textarea,
-form select {
-  width: 90%;
-  max-width: 500px;
-  margin-bottom: 1rem;
-  padding: 0.8rem;
-  border: none;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-}
+  <!-- Script Agenda -->
+  <script>
+    document.getElementById("formAgenda").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const nombre = e.target.nombreCita.value;
+      const fecha = e.target.fechaCita.value;
+      const hora = e.target.horaCita.value;
+      const tipo = e.target.tipoCita.value;
 
-form input::placeholder,
-form textarea::placeholder {
-  color: #eee;
-}
-
-form select option {
-  color: black;
-}
-
-.btn-contacto {
-  background: linear-gradient(to right, #e1bee7, #ba68c8);
-  color: white;
-  padding: 0.8rem 1.5rem;
-  font-weight: bold;
-  font-family: 'Cinzel', serif;
-  border-radius: 10px;
-  border: none;
-  margin-top: 1rem;
-  cursor: pointer;
-  transition: 0.3s ease;
-  max-width: 200px;
-}
-
-.btn-contacto:hover {
-  box-shadow: 0 0 10px #ce93d8;
-  transform: scale(1.05);
-}
-
-.respuesta {
-  margin-top: 1rem;
-  font-style: italic;
-  color: #ffd700;
-  font-size: 1.1rem;
-}
-
-/* === TIENDA === */
-.productos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.producto {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 1rem;
-  text-align: center;
-  width: 250px;
-  box-shadow: 0 0 10px #00000033;
-}
-
-.producto img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 0.5rem;
-}
-
-.btn-comprar {
-  display: inline-block;
-  margin: 0.5rem;
-  background-color: #fff0ff;
-  color: #6a1b9a;
-  border: 1px solid #b39ddb;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-family: 'Cinzel', serif;
-  cursor: pointer;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.btn-comprar:hover {
-  background-color: #ce93d8;
-  color: white;
-  box-shadow: 0 0 10px #b39ddb;
-}
-
-/* === MODAL QR === */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal img {
-  max-width: 300px;
-  border-radius: 12px;
-  border: 3px solid #ffd700;
-  box-shadow: 0 0 20px #ffd700aa;
-}
-
-.cerrar {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
-}
-
-/* === LISTA SERVICIOS === */
-.lista-servicios {
-  list-style: none;
-  padding: 0;
-  font-family: 'Karla', sans-serif;
-  font-size: 1.1rem;
-  color: #fff;
-}
-
-.lista-servicios li::before {
-  content: '✨ ';
-  color: #ffd700;
-}
+      const mensaje = `✨ Gracias ${nombre}, tu cita de "${tipo}" ha sido reservada para el ${fecha} a las ${hora}. Te llegará un correo con más detalles.`;
+      document.getElementById("mensajeReserva").innerText = mensaje;
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
 
 
 
