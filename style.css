@@ -6,6 +6,7 @@ body {
   color: #ffffff;
   background: url('nayra.png') no-repeat center center fixed;
   background-size: cover;
+  overflow-x: hidden; /* Previene desbordamiento horizontal */
 }
 
 .overlay {
@@ -27,6 +28,7 @@ body {
   align-items: center;
   padding: 0.8rem 2rem;
   box-shadow: 0 0 10px #000000aa;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -38,6 +40,9 @@ body {
 
 .navbar {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 100%;
 }
 
 .nav-menu {
@@ -46,6 +51,7 @@ body {
   gap: 1rem;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 .nav-menu li button {
@@ -57,6 +63,7 @@ body {
   font-family: 'Cinzel', serif;
   cursor: pointer;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .nav-menu li button:hover {
@@ -237,5 +244,6 @@ form textarea::placeholder {
   content: '✨ ';
   color: #ffd700;
 }
+
 
 
