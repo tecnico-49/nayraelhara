@@ -4,73 +4,47 @@
   <meta charset="UTF-8">
   <title>Oráculo de Nayra</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Enlace al archivo de estilos externo -->
- <link rel="stylesheet" href="style.css">
-
-  
-  <!-- Fuentes elegantes para textos y títulos -->
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Karla:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-  
-  <!-- Íconos de Font Awesome (para los botones) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
-  <!-- Fondo de página y fuentes generales -->
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Karla', sans-serif;
-      color: #ffffff;
-      background: url('nayra.png') no-repeat center center fixed;
-      background-size: cover;
-    }
-  </style>
 </head>
-
 <body>
 
- <header class="header-fixed">
-  <div class="logo">Nayra Elhara</div>
-  <nav class="navbar">
-    <!-- AQUÍ AGREGA LA CLASE nav-menu -->
-    <ul class="nav-menu">
-      <li><button onclick="location.href='#inicio'">Inicio</button></li>
-      <li><button onclick="location.href='#canalizaciones'">Canalizaciones</button></li>
-      <li><button onclick="location.href='#catalogo'">Catálogo</button></li>
-      <li><button onclick="location.href='#oraculo'">Oráculo</button></li>
-      <li><button onclick="location.href='#contacto'">Contacto</button></li>
-    </ul>
-  </nav>
-</header>
+  <!-- Encabezado fijo con logo y navegación -->
+  <header class="header-fixed">
+    <div class="logo">Nayra Elhara</div>
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li><button onclick="location.href='#inicio'">Inicio</button></li>
+        <li><button onclick="location.href='#canalizaciones'">Canalizaciones</button></li>
+        <li><button onclick="location.href='#catalogo'">Catálogo</button></li>
+        <li><button onclick="location.href='#oraculo'">Oráculo</button></li>
+        <li><button onclick="location.href='#contacto'">Contacto</button></li>
+      </ul>
+    </nav>
+  </header>
 
-
-
-  <!-- Fondo animado de partículas (estrellas flotantes) -->
+  <!-- Fondo con partículas y contenido -->
   <div id="particles-js"></div>
-
-  <!-- Contenedor oscuro translúcido con todo el contenido principal -->
   <div class="overlay">
 
-    <!-- Sección de bienvenida principal -->
-    <section id="inicio" class="bienvenida-destacada">
-      <h1>Bienvenida al Portal de Nayra</h1>
+    <section id="inicio">
+      <div class="bienvenida-destacada">
+        <h1>Bienvenida al Portal de Nayra</h1>
+      </div>
       <p>Un espacio para despertar tu luz interior con guía espiritual y energía sagrada.</p>
     </section>
 
-    <!-- Sección de canalizaciones espirituales -->
     <section id="canalizaciones">
       <h2 class="titulo-dorado">Canalizaciones</h2>
       <p>Recibe mensajes del alma a través de Nayra y sus dones espirituales.</p>
     </section>
 
-    <!-- Sección de catálogo de productos -->
     <section id="catalogo">
       <h2 class="titulo-dorado">Catálogo</h2>
       <p>Descubre amuletos, cuarzos y herramientas para tu camino espiritual.</p>
     </section>
 
-    <!-- Sección interactiva del oráculo espiritual -->
     <section id="oraculo">
       <h2 class="titulo-dorado">Oráculo de Nayra</h2>
       <p>Haz tu pregunta espiritual y el oráculo responderá con sabiduría.</p>
@@ -89,12 +63,43 @@
         <button type="submit" class="btn-contacto">Enviar</button>
       </form>
     </section>
+
+    <!-- 🔮 NUEVA SECCIÓN: TIENDA MÍSTICA -->
+    <section id="tienda">
+      <h2 class="titulo-dorado">Tienda Mística</h2>
+      <div class="productos">
+        <div class="producto">
+          <img src="cuarzo-rosa.jpg" alt="Cuarzo Rosa">
+          <h3>Cuarzo Rosa</h3>
+          <p>Conecta con tu amor propio y armonía interior.</p>
+          <button class="btn-comprar">Comprar</button>
+        </div>
+        <div class="producto">
+          <img src="amatista.jpg" alt="Amatista">
+          <h3>Amatista</h3>
+          <p>Protección espiritual y calma mental.</p>
+          <button class="btn-comprar">Comprar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🧘 NUEVA SECCIÓN: SERVICIOS ESPIRITUALES -->
+    <section id="servicios">
+      <h2 class="titulo-dorado">Servicios Espirituales</h2>
+      <ul class="lista-servicios">
+        <li>Lectura de Tarot en vivo</li>
+        <li>Sesión de canalización personalizada</li>
+        <li>Activación energética del alma</li>
+        <li>Oráculo con IA espiritual (24/7)</li>
+      </ul>
+      <button class="btn-contacto">Agendar Cita</button>
+    </section>
+
   </div>
 
-  <!-- Librería de partículas (estrellas animadas de fondo) -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
-    // Configuración de partículas
     particlesJS('particles-js', {
       particles: {
         number: { value: 70 },
@@ -113,11 +118,10 @@
       retina_detect: true
     });
   </script>
-
-  <!-- Archivo donde irá la lógica del oráculo personalizado -->
   <script src="ia.js"></script>
 </body>
 </html>
+
 
 
 
