@@ -1,161 +1,22 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Oráculo de Nayra</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Karla:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
-  <header class="header-fixed">
-    <div class="logo">Nayra Elhara</div>
-    <nav class="navbar">
-      <ul class="nav-menu">
-        <li><button onclick="location.href='#inicio'">Inicio</button></li>
-        <li><button onclick="location.href='#canalizaciones'">Canalizaciones</button></li>
-        <li><button onclick="location.href='#catalogo'">Catálogo</button></li>
-        <li><button onclick="location.href='#oraculo'">Oráculo</button></li>
-        <li><button onclick="location.href='#contacto'">Contacto</button></li>
-      </ul>
-    </nav>
-  </header>
+<!-- Sección para reservar citas -->
+<section id="agenda">
+  <h2 class="titulo-dorado">Reserva tu Cita Espiritual</h2>
+  <form id="formAgenda">
+    <input type="text" name="nombreCita" placeholder="Tu nombre" required>
+    <input type="email" name="emailCita" placeholder="Tu correo" required>
+    <input type="date" name="fechaCita" required>
+    <input type="time" name="horaCita" required>
+    <select name="tipoCita" required>
+      <option value="">Selecciona el tipo de cita</option>
+      <option value="canalización">Canalización Espiritual</option>
+      <option value="lecturaCartas">Lectura de Cartas</option>
+      <option value="sanacion">Sanación Energética</option>
+    </select>
+    <button type="submit" class="btn-contacto">Reservar Cita</button>
+    <div id="mensajeReserva" class="respuesta"></div>
+  </form>
+</section>
 
-  <div id="particles-js"></div>
-  <div class="overlay">
-    <section id="inicio">
-      <div class="bienvenida-destacada">
-        <h1>Bienvenida al Portal de Nayra</h1>
-      </div>
-      <p>Un espacio para despertar tu luz interior con guía espiritual y energía sagrada.</p>
-    </section>
-
-    <section id="canalizaciones">
-      <h2 class="titulo-dorado">Canalizaciones</h2>
-      <p>Recibe mensajes del alma a través de Nayra y sus dones espirituales.</p>
-    </section>
-
-    <section id="catalogo">
-      <h2 class="titulo-dorado">Catálogo</h2>
-      <p>Descubre amuletos, cuarzos y herramientas para tu camino espiritual.</p>
-    </section>
-
-    <section id="oraculo">
-      <h2 class="titulo-dorado">Oráculo de Nayra</h2>
-      <p>Haz tu pregunta espiritual y el oráculo responderá con sabiduría.</p>
-      <input type="text" id="pregunta" placeholder="Escribe tu pregunta..."><br>
-      <button onclick="consultarOraculo()" class="btn-contacto"><i class="fas fa-magic"></i> Consultar</button>
-      <div id="respuestaOraculo" class="respuesta"></div>
-    </section>
-
-    <section id="contacto">
-      <h3 class="preguntas">Contáctanos</h3>
-      <form>
-        <input type="text" name="nombre" placeholder="Tu nombre" required>
-        <input type="email" name="correo" placeholder="Tu correo" required>
-        <textarea name="mensaje" placeholder="Tu mensaje espiritual..." required></textarea>
-        <button type="submit" class="btn-contacto">Enviar</button>
-      </form>
-    </section>
-
-    <section id="tienda">
-      <h2 class="titulo-dorado">Tienda Mística</h2>
-      <div class="productos">
-        <div class="producto">
-          <img src="cuarzo-rosa.jpg" alt="Cuarzo Rosa">
-          <h3>Cuarzo Rosa</h3>
-          <p>Conecta con tu amor propio y armonía interior.</p>
-          <a href="https://www.paypal.com/paypalme/tucuenta" target="_blank" class="btn-comprar">Comprar con PayPal</a>
-          <button onclick="mostrarQR('nequi.png')" class="btn-comprar">Pagar con Nequi</button>
-        </div>
-        <div class="producto">
-          <img src="amatista.jpg" alt="Amatista">
-          <h3>Amatista</h3>
-          <p>Protección espiritual y calma mental.</p>
-          <a href="https://www.paypal.com/paypalme/tucuenta" target="_blank" class="btn-comprar">Comprar con PayPal</a>
-          <button onclick="mostrarQR('nequi.png')" class="btn-comprar">Pagar con Nequi</button>
-        </div>
-      </div>
-    </section>
-
-    <section id="servicios">
-      <h2 class="titulo-dorado">Servicios Espirituales</h2>
-      <ul class="lista-servicios">
-        <li>Lectura de Tarot en vivo</li>
-        <li>Sesión de canalización personalizada</li>
-        <li>Activación energética del alma</li>
-        <li>Oráculo con IA espiritual (24/7)</li>
-      </ul>
-      <button class="btn-contacto">Agendar Cita</button>
-    </section>
-  </div>
-
-  <!-- Modal QR -->
-  <div id="qrModal" class="modal">
-    <span class="cerrar" onclick="cerrarQR()">&times;</span>
-    <img id="qrImagen" src="" alt="QR de pago">
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 70 },
-        color: { value: '#ffffff' },
-        shape: { type: 'circle' },
-        opacity: { value: 0.3 },
-        size: { value: 2 },
-        move: { enable: true, speed: 0.6 }
-      },
-      interactivity: {
-        events: {
-          onhover: { enable: true, mode: 'repulse' },
-          onclick: { enable: true, mode: 'push' }
-        }
-      },
-      retina_detect: true
-    });
-
-    function mostrarQR(imagen) {
-      document.getElementById('qrImagen').src = imagen;
-      document.getElementById('qrModal').style.display = 'flex';
-    }
-
-    function cerrarQR() {
-      document.getElementById('qrModal').style.display = 'none';
-    }
-
-    function consultarOraculo() {
-      const frasesOraculo = [
-        "Confía, el universo ya está trabajando a tu favor.",
-        "Recuerda quién eres: una chispa eterna de luz.",
-        "Lo que hoy duele, mañana será tu poder.",
-        "Abre tu corazón: el amor divino te rodea.",
-        "Los ciclos que terminan son puertas que se abren.",
-        "No temas al cambio, Nayra te guía en cada paso.",
-        "Tu intuición es más sabia de lo que crees.",
-        "Cada noche oscura da paso a un amanecer dorado.",
-        "Suelta el pasado con gratitud, no con miedo.",
-        "Eres sostenida por la energía del todo.",
-        "Tu alma eligió esta lección, y ya la estás dominando.",
-        "En el silencio encontrarás las respuestas que buscas.",
-        "La respuesta está en ti. Respira y escucha."
-      ];
-
-      const pregunta = document.getElementById("pregunta").value.trim();
-      const respuestaDiv = document.getElementById("respuestaOraculo");
-
-      if (pregunta === "") {
-        respuestaDiv.innerText = "🌌 Escribe tu pregunta para recibir una guía del Oráculo.";
-      } else {
-        const indice = Math.floor(Math.random() * frasesOraculo.length);
-        respuestaDiv.innerText = `🔮 ${frasesOraculo[indice]}`;
-      }
-    }
-  </script>
-</body>
-</html>
 
 
 
