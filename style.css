@@ -11,72 +11,85 @@ body {
   background-size: cover;
 }
 
-/* === CABECERA FIJA === */
+/* === IMPORTACIÓN DE FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Karla:wght@400;700&family=Playfair+Display:wght@500;700&display=swap');
+
+/* === CUERPO DE LA PÁGINA === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Karla', sans-serif;
+  color: #ffffff;
+  background: url('nayra.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* === CABECERA FIJA (HEADER) === */
 .header-fixed {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
-  background-color: rgba(20, 0, 40, 0.9);
+  background-color: #2d004d; /* morado oscuro */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 2rem;
-  box-shadow: 0 0 10px gold;
+  padding: 1rem 2rem;
+  box-shadow: 0 0 15px gold;
 }
 
-/* === LOGO === */
-.header-fixed .logo,
-.logo {
-  font-size: 1.8rem;
+/* === LOGO IZQUIERDA === */
+.header-fixed .logo {
+  font-size: 2rem;
   font-family: 'Playfair Display', serif;
-  color: #fff;
-  text-shadow: 0 0 5px #ffd700;
+  color: #ffd700;
+  text-shadow: 0 0 10px #ffd700;
 }
 
-/* === NAVBAR === */
+/* === NAVBAR DERECHA === */
 .navbar {
-  text-align: center;
+  display: flex;
 }
 
+/* === MENÚ DE BOTONES EN HORIZONTAL === */
 .nav-menu {
   list-style: none;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 1rem;
   padding: 0;
   margin: 0;
 }
 
+/* === BOTONES DEL MENÚ === */
 .nav-menu li button {
   background: transparent;
-  color: #ffd700;
-  border: 1px solid #ffd700;
+  color: #b87aff; /* morado brillante */
+  border: 1px solid #b87aff;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   font-family: 'Cinzel', serif;
   font-size: 1rem;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0 5px #b87aff66;
 }
 
 .nav-menu li button:hover {
   background-color: #ffd700;
-  color: #2a2a3d;
-  box-shadow: 0 0 10px #ffd700;
+  color: #2d004d;
+  box-shadow: 0 0 15px #ffd700, 0 0 5px #fff;
 }
 
-/* === FONDO OSCURO DE CONTENIDO === */
+/* === CONTENIDO CON FONDO TRANSLÚCIDO OSCURO === */
 .overlay {
   background-color: rgba(0, 0, 0, 0.6);
-  min-height: 100vh;
-  padding-top: 6rem; /* espacio para la cabecera */
+  padding-top: 6rem; /* espacio para header fijo */
   padding-bottom: 5rem;
+  min-height: 100vh;
 }
 
-/* === SECCIONES === */
+/* === SECCIONES DEL CONTENIDO === */
 section {
   padding: 2rem;
   margin: auto;
@@ -87,7 +100,20 @@ section {
   border-radius: 12px;
 }
 
-/* === BIENVENIDA DESTACADA === */
+/* === TÍTULO PRINCIPAL DE CADA SECCIÓN === */
+.titulo-dorado {
+  color: #f5e663;
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  border: 2px solid gold;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #f5e663;
+  margin-bottom: 1rem;
+}
+
+/* === BIENVENIDA DESTACADA EN LA SECCIÓN DE INICIO === */
 .bienvenida-destacada h1 {
   font-size: 2.5rem;
   color: #d9b3ff;
@@ -101,20 +127,7 @@ section {
   margin-bottom: 1rem;
 }
 
-/* === TÍTULOS DESTACADOS === */
-.titulo-dorado {
-  color: #f5e663;
-  font-family: 'Cinzel', serif;
-  font-size: 2rem;
-  border: 2px solid gold;
-  display: inline-block;
-  padding: 0.5rem 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #f5e663;
-  margin-bottom: 1rem;
-}
-
-/* === INPUTS Y TEXTAREAS === */
+/* === CAMPOS DE FORMULARIO === */
 input, textarea {
   width: 90%;
   margin: 0.5rem 0;
@@ -130,7 +143,7 @@ input::placeholder, textarea::placeholder {
   color: #eee;
 }
 
-/* === BOTÓN DE CONTACTO === */
+/* === BOTÓN DE CONTACTO Y ORÁCULO === */
 .btn-contacto {
   background: linear-gradient(to right, #ffcc70, #ffd700);
   color: #2a2a3d;
@@ -157,7 +170,7 @@ input::placeholder, textarea::placeholder {
   font-size: 1.1rem;
 }
 
-/* === MEDIA QUERY RESPONSIVE BÁSICO === */
+/* === RESPONSIVE PARA MÓVILES === */
 @media screen and (max-width: 768px) {
   .header-fixed {
     flex-direction: column;
@@ -180,10 +193,5 @@ input::placeholder, textarea::placeholder {
     margin-bottom: 0.5rem;
   }
 }
-
-
-
-
-
 
 
