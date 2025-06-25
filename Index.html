@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,21 +20,24 @@
 </head>
 <body>
   <div id="particles-js"></div>
-  <div class="overlay">
-    <div class="logo">Nayra Elhara</div>
 
+  <header class="header-fixed">
+    <div class="logo">Nayra Elhara</div>
     <nav class="navbar">
       <ul class="nav-menu">
-        <li><button onclick="location.href='#inicio'"><i class="fas fa-home"></i> Inicio</button></li>
-        <li><button onclick="location.href='#canalizaciones'"><i class="fas fa-star-and-crescent"></i> Canalizaciones</button></li>
-        <li><button onclick="location.href='#catalogo'"><i class="fas fa-shopping-bag"></i> Catálogo</button></li>
-        <li><button onclick="location.href='#oraculo'"><i class="fas fa-brain"></i> Oráculo</button></li>
-        <li><button onclick="location.href='#contacto'"><i class="fas fa-envelope"></i> Contacto</button></li>
+        <li><button onclick="location.href='#inicio'">Inicio</button></li>
+        <li><button onclick="location.href='#canalizaciones'">Canalizaciones</button></li>
+        <li><button onclick="location.href='#catalogo'">Catálogo</button></li>
+        <li><button onclick="location.href='#oraculo'">Oráculo</button></li>
+        <li><button onclick="location.href='#contacto'">Contacto</button></li>
       </ul>
     </nav>
+  </header>
 
-    <section id="inicio">
-      <h2 class="titulo-dorado">Bienvenida al Portal de Nayra</h2>
+  <div class="overlay">
+
+    <section id="inicio" class="bienvenida-destacada">
+      <h1>Bienvenida al Portal de Nayra</h1>
       <p>Un espacio para despertar tu luz interior con guía espiritual y energía sagrada.</p>
     </section>
 
@@ -66,6 +68,7 @@
         <button type="submit" class="btn-contacto">Enviar</button>
       </form>
     </section>
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
@@ -91,5 +94,6 @@
   <script src="ia.js"></script>
 </body>
 </html>
+
 
 
