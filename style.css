@@ -1,7 +1,4 @@
-/* === FUENTES === */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Karla:wght@400;700&family=Playfair+Display:wght@500;700&display=swap');
-
-/* === CUERPO === */
+/* === FUENTES Y BODY GENERAL === */
 body {
   margin: 0;
   padding: 0;
@@ -11,70 +8,64 @@ body {
   background-size: cover;
 }
 
-/* === CABECERA FIJA ARRIBA === */
+/* === ENCABEZADO FIJO === */
 .header-fixed {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  background-color: #2d004d;
+  background-color: rgba(40, 0, 80, 0.8);
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  box-shadow: 0 0 15px gold;
-  z-index: 999;
+  box-shadow: 0 0 10px #ffd700aa;
 }
 
-/* === LOGO A LA IZQUIERDA === */
 .logo {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-family: 'Playfair Display', serif;
-  color: #ffd700;
-  text-shadow: 0 0 10px #ffd700;
+  color: white;
+  text-shadow: 0 0 8px #fff;
 }
 
-/* === NAVBAR A LA DERECHA === */
+/* === NAVBAR === */
 .navbar {
   display: flex;
   align-items: center;
 }
 
-/* === LISTA DE BOTONES EN HORIZONTAL === */
 .nav-menu {
   list-style: none;
   display: flex;
   gap: 1rem;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
-/* === BOTONES MORADOS ELEGANTES === */
 .nav-menu li button {
-  background: transparent;
-  color: #b87aff;
-  border: 1px solid #b87aff;
-  padding: 0.5rem 1rem;
+  background: #fff0ff;
+  color: #5a0270;
+  border: 2px solid #d68aff;
+  padding: 0.6rem 1rem;
   border-radius: 8px;
   font-family: 'Cinzel', serif;
   font-size: 1rem;
   cursor: pointer;
-  transition: 0.3s ease-in-out;
-  box-shadow: 0 0 5px #b87aff66;
+  transition: all 0.3s ease;
 }
 
 .nav-menu li button:hover {
-  background-color: #ffd700;
-  color: #2d004d;
-  box-shadow: 0 0 15px #ffd700, 0 0 5px #fff;
+  background-color: #d68aff;
+  color: white;
+  box-shadow: 0 0 10px #ffd700;
 }
 
-/* === CONTENIDO CON FONDO TRANSLÚCIDO OSCURO === */
+/* === CONTENIDO PRINCIPAL === */
 .overlay {
   background-color: rgba(0, 0, 0, 0.6);
-  padding-top: 6rem; /* espacio para header fijo */
+  padding-top: 120px;
   padding-bottom: 5rem;
-  min-height: 100vh;
 }
 
 /* === SECCIONES === */
@@ -88,7 +79,6 @@ section {
   border-radius: 12px;
 }
 
-/* === TÍTULO DORADO === */
 .titulo-dorado {
   color: #f5e663;
   font-family: 'Cinzel', serif;
@@ -101,18 +91,15 @@ section {
   margin-bottom: 1rem;
 }
 
-/* === TÍTULO BIENVENIDA PRINCIPAL === */
 .bienvenida-destacada h1 {
-  font-size: 2.5rem;
-  color: #d9b3ff;
-  border: 2px solid gold;
-  padding: 1rem 2rem;
-  border-radius: 15px;
-  display: inline-block;
-  box-shadow: 0 0 20px gold;
-  background-color: rgba(50, 0, 80, 0.4);
+  color: #d8a9ff;
   font-family: 'Cinzel', serif;
-  margin-bottom: 1rem;
+  text-shadow: 0 0 10px gold;
+  border: 2px solid gold;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* === FORMULARIOS === */
@@ -124,14 +111,12 @@ input, textarea {
   border: none;
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
-  font-family: 'Karla', sans-serif;
 }
 
 input::placeholder, textarea::placeholder {
   color: #eee;
 }
 
-/* === BOTÓN DE CONTACTO / ORÁCULO === */
 .btn-contacto {
   background: linear-gradient(to right, #ffcc70, #ffd700);
   color: #2a2a3d;
@@ -158,27 +143,81 @@ input::placeholder, textarea::placeholder {
   font-size: 1.1rem;
 }
 
-/* === RESPONSIVE PARA MÓVILES === */
-@media screen and (max-width: 768px) {
-  .header-fixed {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    padding: 0.5rem 1rem;
-  }
-
-  .nav-menu li button {
-    width: 100%;
-    text-align: left;
-  }
-
-  .logo {
-    margin-bottom: 0.5rem;
-  }
+/* === TIENDA === */
+.productos {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
+
+.producto {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  width: 240px;
+  box-shadow: 0 0 10px #ffd70044;
+}
+
+.producto img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.btn-comprar {
+  background-color: #800080;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-family: 'Cinzel', serif;
+}
+
+.btn-comprar:hover {
+  background-color: #ff69b4;
+  box-shadow: 0 0 10px #ffd700;
+}
+
+/* === SERVICIOS === */
+.lista-servicios {
+  list-style: none;
+  padding: 0;
+  color: #eee;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* === MODAL QR === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal img {
+  max-width: 300px;
+  border-radius: 12px;
+  border: 3px solid #ffd700;
+  box-shadow: 0 0 20px #ffd700aa;
+}
+
+.cerrar {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
 
