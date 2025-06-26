@@ -1,3 +1,4 @@
+<!-- HTML actualizado con filtros por categoría en la tienda, sin modificar el diseño existente -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -27,6 +28,17 @@
       text-align: center;
       box-shadow: none !important;
     }
+    .galeria-productos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .filtro-categorias {
+      margin-bottom: 1rem;
+      font-weight: bold;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -40,6 +52,7 @@
           <li><a href="#canalizaciones">Canalizaciones</a></li>
           <li><a href="#catalogo">Catálogo</a></li>
           <li><a href="#oraculo">Oráculo</a></li>
+          <li><a href="#servicios">Servicios</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
@@ -57,33 +70,34 @@
 
     <section id="catalogo">
       <h2 class="titulo-dorado">Catálogo Espiritual</h2>
-      <p>Elige según tu intención:</p>
-      <select>
+      <label class="filtro-categorias">Filtrar por intención:</label>
+      <select onchange="filtrarProductos(this.value)">
+        <option value="todos">Todos</option>
         <option value="amor">Amor</option>
         <option value="proteccion">Protección</option>
         <option value="abundancia">Abundancia</option>
       </select>
 
       <div class="galeria-productos">
-        <div class="producto">
+        <div class="producto" data-categoria="amor">
           <img src="cuarzo-rosa.jpg" alt="Cuarzo Rosa">
           <h4>Cuarzo Rosa</h4>
           <p>Amor propio y sanación emocional.</p>
         </div>
 
-        <div class="producto">
+        <div class="producto" data-categoria="abundancia">
           <img src="amatista.jpg" alt="Amatista">
           <h4>Amatista</h4>
           <p>Calma mental y conexión espiritual.</p>
         </div>
 
-        <div class="producto">
+        <div class="producto" data-categoria="proteccion">
           <img src="obsidiana.jpg" alt="Obsidiana Negra">
           <h4>Obsidiana Negra</h4>
           <p>Protección energética profunda.</p>
         </div>
 
-        <div class="producto">
+        <div class="producto" data-categoria="amor">
           <img src="amuleto-lunar.jpg" alt="Amuleto Lunar">
           <h4>Amuleto Lunar</h4>
           <p>Intuición y conexión con lo femenino sagrado.</p>
@@ -96,6 +110,15 @@
       <input type="text" id="pregunta" placeholder="Escribe tu pregunta...">
       <button onclick="consultarOraculo()">Consultar</button>
       <div id="respuestaOraculo" class="respuesta"></div>
+    </section>
+
+    <section id="servicios">
+      <h2 class="titulo-dorado">Servicios Espirituales</h2>
+      <ul>
+        <li><strong>Libros Canalizados:</strong> Publicaciones escritas por Nayra con mensajes de luz.</li>
+        <li><strong>Retiros Espirituales:</strong> Viajes y encuentros sagrados en Villa de Leyva.</li>
+        <li><strong>Sesiones Personalizadas:</strong> Lecturas, oráculos y activaciones energéticas por cita.</li>
+      </ul>
     </section>
 
     <section id="contacto">
@@ -179,6 +202,18 @@
         const indice = Math.floor(Math.random() * frasesOraculo.length);
         respuestaDiv.innerText = `🔮 ${frasesOraculo[indice]}`;
       }
+    }
+
+    function filtrarProductos(categoria) {
+      const productos = document.querySelectorAll('.producto');
+      productos.forEach(p => {
+        const cat = p.getAttribute('data-categoria');
+        if (categoria === 'todos' || categoria === cat) {
+          p.style.display = 'block';
+        } else {
+          p.style.display = 'none';
+        }
+      });
     }
   </script>
 </body>
