@@ -5,23 +5,24 @@
   <title>Oráculo de Nayra</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Karla:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Karla:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <div id="particles-js"></div>
   <div class="overlay">
-    <div class="logo">Nayra Elhara</div>
-
-    <nav class="navbar">
-      <ul class="nav-menu">
-        <li><button onclick="location.href='#inicio'"><i class="fas fa-home"></i> Inicio</button></li>
-        <li><button onclick="location.href='#canalizaciones'"><i class="fas fa-star-and-crescent"></i> Canalizaciones</button></li>
-        <li><button onclick="location.href='#catalogo'"><i class="fas fa-gem"></i> Catálogo</button></li>
-        <li><button onclick="location.href='#oraculo'"><i class="fas fa-brain"></i> Oráculo</button></li>
-        <li><button onclick="location.href='#contacto'"><i class="fas fa-envelope"></i> Contacto</button></li>
-      </ul>
-    </nav>
+    <header class="header">
+      <div class="logo">Nayra Elhara</div>
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#canalizaciones">Canalizaciones</a></li>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#oraculo">Oráculo</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <section id="inicio">
       <h2 class="titulo-dorado">Bienvenida al Portal de Nayra</h2>
@@ -41,108 +42,64 @@
         <option value="proteccion">Protección</option>
         <option value="abundancia">Abundancia</option>
       </select>
-      <p>Cuarzos, amuletos y libros espirituales próximamente disponibles.</p>
+
+      <div class="galeria-productos">
+        <div class="producto">
+          <img src="cuarzo-rosa.jpg" alt="Cuarzo Rosa">
+          <h4>Cuarzo Rosa</h4>
+          <p>Amor propio y sanación emocional.</p>
+        </div>
+
+        <div class="producto">
+          <img src="amatista.jpg" alt="Amatista">
+          <h4>Amatista</h4>
+          <p>Calma mental y conexión espiritual.</p>
+        </div>
+
+        <div class="producto">
+          <img src="obsidiana.jpg" alt="Obsidiana Negra">
+          <h4>Obsidiana Negra</h4>
+          <p>Protección energética profunda.</p>
+        </div>
+
+        <div class="producto">
+          <img src="amuleto-lunar.jpg" alt="Amuleto Lunar">
+          <h4>Amuleto Lunar</h4>
+          <p>Intuición y conexión con lo femenino sagrado.</p>
+        </div>
+      </div>
     </section>
 
     <section id="oraculo">
       <h2 class="titulo-dorado">Oráculo de Nayra</h2>
-      <input type="text" id="pregunta" placeholder="Escribe tu pregunta espiritual..."><br>
-      <button onclick="consultarOraculo()" class="btn-contacto"><i class="fas fa-magic"></i> Consultar</button>
-      <div id="respuestaOraculo" class="respuesta"></div>
+      <input type="text" id="pregunta" placeholder="Escribe tu pregunta...">
+      <button onclick="consultarOraculo()">Consultar</button>
+      <div id="respuestaOraculo"></div>
     </section>
 
     <section id="contacto">
       <h2 class="titulo-dorado">Contáctanos</h2>
-      <form>
+      <form action="enviar.php" method="POST">
         <input type="text" name="nombre" placeholder="Tu nombre" required>
         <input type="email" name="correo" placeholder="Tu correo" required>
         <textarea name="mensaje" placeholder="Tu mensaje espiritual..." required></textarea>
         <button type="submit" class="btn-contacto">Enviar</button>
       </form>
-      <br>
-      <h3>Apoya este portal con un aporte espiritual:</h3>
-      <button class="btn-contacto" onclick="mostrarQR('nequi-qr.png')"><i class="fas fa-mobile-alt"></i> Nequi</button>
-      <button class="btn-contacto" onclick="mostrarQR('bancolombia-qr.png')"><i class="fas fa-university"></i> Bancolombia</button>
-      <button class="btn-contacto" onclick="window.open('https://www.paypal.com/', '_blank')"><i class="fab fa-paypal"></i> PayPal</button>
     </section>
-  </div>
 
-  <!-- Modal de QR -->
-  <div id="qrModal" class="modal" style="display:none;">
-    <span class="cerrar" onclick="cerrarQR()">&times;</span>
-    <img id="qrImagen" src="" alt="QR de pago">
+    <footer class="footer-derechos">
+      <p>&copy; 2025 Nayra Elhara. Todos los derechos reservados. | Hecho con 💫 para el despertar espiritual.</p>
+      <div class="footer-redes">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fas fa-file-contract"></i> Políticas</a>
+      </div>
+    </footer>
   </div>
-
-  <footer class="footer-derechos">
-    <p>&copy; 2025 Nayra Elhara. Todos los derechos reservados. | Hecho con 💫 para el despertar espiritual.</p>
-    <div class="footer-redes">
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
-      <a href="#"><i class="fas fa-file-contract"></i> Políticas</a>
-    </div>
-  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    // Partículas de fondo
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 70 },
-        color: { value: '#ffffff' },
-        shape: { type: 'circle' },
-        opacity: { value: 0.3 },
-        size: { value: 2 },
-        move: { enable: true, speed: 0.6 }
-      },
-      interactivity: {
-        events: {
-          onhover: { enable: true, mode: 'repulse' },
-          onclick: { enable: true, mode: 'push' }
-        }
-      },
-      retina_detect: true
-    });
-
-    // Oráculo
-    function consultarOraculo() {
-      const frasesOraculo = [
-        "Confía, el universo ya está trabajando a tu favor.",
-        "Recuerda quién eres: una chispa eterna de luz.",
-        "Lo que hoy duele, mañana será tu poder.",
-        "Abre tu corazón: el amor divino te rodea.",
-        "Los ciclos que terminan son puertas que se abren.",
-        "No temas al cambio, Nayra te guía en cada paso.",
-        "Tu intuición es más sabia de lo que crees.",
-        "Cada noche oscura da paso a un amanecer dorado.",
-        "Suelta el pasado con gratitud, no con miedo.",
-        "Eres sostenida por la energía del todo.",
-        "Tu alma eligió esta lección, y ya la estás dominando.",
-        "En el silencio encontrarás las respuestas que buscas.",
-        "La respuesta está en ti. Respira y escucha."
-      ];
-
-      const pregunta = document.getElementById("pregunta").value.trim();
-      const respuestaDiv = document.getElementById("respuestaOraculo");
-
-      if (pregunta === "") {
-        respuestaDiv.innerText = "🌌 Escribe tu pregunta para recibir una guía del Oráculo.";
-      } else {
-        const indice = Math.floor(Math.random() * frasesOraculo.length);
-        respuestaDiv.innerText = `🔮 ${frasesOraculo[indice]}`;
-      }
-    }
-
-    // Mostrar QR
-    function mostrarQR(imagen) {
-      document.getElementById("qrImagen").src = imagen;
-      document.getElementById("qrModal").style.display = "flex";
-    }
-
-    function cerrarQR() {
-      document.getElementById("qrModal").style.display = "none";
-    }
-  </script>
+  <script src="oraculo.js"></script>
 </body>
 </html>
 
