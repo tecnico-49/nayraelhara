@@ -187,6 +187,7 @@ input::placeholder, textarea::placeholder {
   color: #ffffff;
 }
 
+/* Responsivo para móviles */
 @media screen and (max-width: 768px) {
   .nav-menu {
     flex-direction: column;
@@ -197,19 +198,6 @@ input::placeholder, textarea::placeholder {
     width: 95%;
   }
 }
-
-/* === FOOTER HTML SUGERIDO PARA TU index.html === */
-/*
-<footer class="footer-derechos">
-  <p>&copy; 2025 Nayra Elhara. Todos los derechos reservados. | Hecho con 💫 para el despertar espiritual.</p>
-  <div class="footer-redes">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-whatsapp"></i></a>
-    <a href="#"><i class="fas fa-file-contract"></i> Políticas</a>
-  </div>
-</footer>
-*/
 
 
 
