@@ -20,6 +20,17 @@ body {
   font-family: 'Playfair Display', serif;
   color: white;
   text-shadow: 0 0 10px #fff;
+  text-align: center;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #f5e663, 0 0 30px #ffd700;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #f5e663, 0 0 40px #ffd700;
+  }
 }
 
 .navbar {
@@ -76,6 +87,7 @@ section {
   border-radius: 10px;
   box-shadow: 0 0 10px #f5e663;
   margin-bottom: 1rem;
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
 input, textarea, select {
@@ -185,5 +197,19 @@ input::placeholder, textarea::placeholder {
     width: 95%;
   }
 }
+
+/* === FOOTER HTML SUGERIDO PARA TU index.html === */
+/*
+<footer class="footer-derechos">
+  <p>&copy; 2025 Nayra Elhara. Todos los derechos reservados. | Hecho con 💫 para el despertar espiritual.</p>
+  <div class="footer-redes">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+    <a href="#"><i class="fas fa-file-contract"></i> Políticas</a>
+  </div>
+</footer>
+*/
+
 
 
