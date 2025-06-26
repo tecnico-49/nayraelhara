@@ -1,5 +1,4 @@
-/* === ESTILOS PRINCIPALES PARA NAYRA ELHARA === */
-
+/* === ESTILOS BASE === */
 body {
   margin: 0;
   padding: 0;
@@ -9,74 +8,46 @@ body {
   background-size: cover;
 }
 
-html, body {
-  height: 100%;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-/* === OVERLAY OSCURO PARA FONDO === */
 .overlay {
   background-color: rgba(0, 0, 0, 0.6);
   min-height: 100vh;
   padding-bottom: 5rem;
-  padding-top: 200px;
-}
-
-/* === CABECERA FIJA === */
-.header-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1b002b;
-  padding: 1rem 2rem;
-  z-index: 1000;
-  border-bottom: 2px solid gold;
 }
 
 .logo {
   font-size: 2rem;
+  padding: 1rem 2rem;
   font-family: 'Playfair Display', serif;
   color: white;
   text-shadow: 0 0 10px #fff;
 }
 
-/* === MENÚ DE NAVEGACIÓN === */
 .navbar {
   text-align: right;
+  background-color: rgba(20, 0, 40, 0.8);
+  padding: 1rem 2rem;
 }
 
 .nav-menu {
   list-style: none;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 1rem;
   padding: 0;
   margin: 0;
 }
 
 .nav-menu li button {
-  background: #4b0082;
-  color: #fcdfff;
-  border: 2px solid #ffd700;
-  padding: 0.6rem 1.4rem;
-  border-radius: 12px;
+  background: #fcefff;
+  color: #620071;
+  border: 1px solid #ffd700;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
   font-family: 'Cinzel', serif;
   font-size: 1rem;
   cursor: pointer;
-  min-width: 150px;
-  white-space: nowrap;
-  transition: all 0.3s ease;
-  text-align: center;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  transition: 0.3s ease;
 }
 
 .nav-menu li button:hover {
@@ -85,7 +56,6 @@ html, body {
   box-shadow: 0 0 10px #ffd700;
 }
 
-/* === SECCIONES === */
 section {
   padding: 2rem;
   margin: auto;
@@ -94,14 +64,6 @@ section {
   background-color: rgba(0, 0, 0, 0.5);
   margin-bottom: 2rem;
   border-radius: 12px;
-}
-
-.bienvenida-destacada h1 {
-  font-family: 'Cinzel', serif;
-  font-size: 2.2rem;
-  color: #ffd700;
-  text-shadow: 0 0 12px #fff;
-  margin-bottom: 1rem;
 }
 
 .titulo-dorado {
@@ -124,7 +86,6 @@ input, textarea, select {
   border: none;
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
-  font-family: 'Karla', sans-serif;
 }
 
 input::placeholder, textarea::placeholder {
@@ -156,28 +117,72 @@ input::placeholder, textarea::placeholder {
   font-size: 1.1rem;
 }
 
-.pagos-buttons {
+.modal {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  flex-direction: column;
 }
 
-.pagos-buttons button {
-  background-color: #64009b;
+.modal img {
+  max-width: 300px;
+  max-height: 300px;
+  border: 5px solid #fff;
+  border-radius: 12px;
+}
+
+.modal .cerrar {
   color: #fff;
-  border: 2px solid gold;
-  padding: 0.8rem 1.2rem;
-  font-family: 'Cinzel', serif;
-  border-radius: 10px;
+  font-size: 2rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  position: absolute;
+  top: 20px;
+  right: 30px;
 }
 
-.pagos-buttons button:hover {
-  background-color: #ffd700;
-  color: #2a2a3d;
-  box-shadow: 0 0 10px #ffd700;
+.footer-derechos {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fcefff;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid gold;
+  margin-top: 3rem;
+}
+
+.footer-redes {
+  margin-top: 0.5rem;
+}
+
+.footer-redes a {
+  color: #f5e663;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.footer-redes a:hover {
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  section {
+    width: 95%;
+  }
 }
 
