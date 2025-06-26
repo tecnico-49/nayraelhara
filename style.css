@@ -1,9 +1,11 @@
+/* === Fuente y colores base === */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Karla', sans-serif;
-  color: #fff;
-  background-color: #000;
+  color: #ffffff;
+  background: url('nayra.png') no-repeat center center fixed;
+  background-size: cover;
 }
 
 .overlay {
@@ -12,50 +14,60 @@ body {
   padding-bottom: 5rem;
 }
 
-/* Logo */
 .logo {
-  font-size: 2rem;
+  font-size: 2.2rem;
   padding: 1rem 2rem;
   font-family: 'Cinzel', serif;
   color: white;
   text-shadow: 0 0 10px #fff;
+  text-align: center;
 }
 
-/* Navbar */
 .navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: right;
+  background-color: rgba(20, 0, 40, 0.8);
+  padding: 0.5rem 1rem;
 }
 
 .nav-menu {
   list-style: none;
   display: flex;
+  justify-content: flex-end;
   flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0;
+  gap: 0.7rem;
   margin: 0;
+  padding: 0;
 }
 
 .nav-menu li a {
-  background: transparent;
-  color: #e6ccff;
-  border: 1px solid #e6ccff;
-  padding: 0.6rem 1rem;
+  text-decoration: none;
+  color: #d8b4fe;
+  background: #2d1a3c;
+  padding: 0.5rem 1rem;
   border-radius: 10px;
   font-family: 'Cinzel', serif;
   font-size: 1rem;
-  text-decoration: none;
-  transition: 0.3s;
+  border: 1px solid #a855f7;
+  transition: all 0.3s ease;
 }
 
 .nav-menu li a:hover {
-  background-color: #e6ccff;
+  background-color: #a855f7;
   color: #2a2a3d;
-  box-shadow: 0 0 10px #ffd700;
+  box-shadow: 0 0 10px #a855f7;
 }
 
-/* Títulos */
+section {
+  padding: 2rem;
+  margin: auto;
+  max-width: 800px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
 .titulo-dorado {
   color: #f5e663;
   font-family: 'Cinzel', serif;
@@ -66,22 +78,9 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 10px #f5e663;
   margin-bottom: 1rem;
-  text-align: center;
 }
 
-/* Secciones */
-section {
-  padding: 2rem;
-  margin: auto;
-  max-width: 800px;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  margin-bottom: 2rem;
-  border-radius: 12px;
-}
-
-/* Formularios */
-input, textarea {
+input, textarea, select {
   width: 90%;
   margin: 0.5rem 0;
   padding: 0.8rem;
@@ -113,43 +112,6 @@ input::placeholder, textarea::placeholder {
   transform: scale(1.05);
 }
 
-/* Galería de productos */
-.galeria-productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.producto {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 1rem;
-  border-radius: 12px;
-  text-align: center;
-  color: #fff;
-}
-
-.producto img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 0.5rem;
-}
-
-/* Filtros */
-.filtro-categorias {
-  display: block;
-  margin-top: 1rem;
-  font-weight: bold;
-  color: #f0e6d2;
-}
-
-select {
-  padding: 0.5rem;
-  border-radius: 8px;
-  margin-top: 0.5rem;
-}
-
-/* Oráculo */
 .respuesta {
   margin-top: 1rem;
   font-style: italic;
@@ -157,35 +119,16 @@ select {
   font-size: 1.1rem;
 }
 
-/* Servicios */
-#servicios ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-#servicios li {
-  margin-bottom: 0.8rem;
-  background-color: rgba(255, 255, 255, 0.07);
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-/* Footer */
 .footer-derechos {
   text-align: center;
-  color: #ccc;
   font-size: 0.9rem;
-  padding: 1.5rem 1rem 2rem;
-  border-top: 1px solid #444;
-}
-
-.footer-redes {
-  margin-top: 0.8rem;
+  color: #ddd;
+  padding: 1.5rem 1rem 3rem;
 }
 
 .footer-redes a {
-  color: #e6ccff;
-  margin: 0 10px;
+  color: #ccc;
+  margin: 0 0.6rem;
   font-size: 1.2rem;
   transition: 0.3s;
 }
@@ -194,15 +137,33 @@ select {
   color: #ffd700;
 }
 
-/* Responsivo extra */
-@media (max-width: 768px) {
-  section {
-    padding: 1rem;
-  }
-  .nav-menu li {
-    width: 100%;
-  }
+.filtro-categorias {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
 }
+
+.galeria-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.producto {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.producto img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
 
 
   .logo {
