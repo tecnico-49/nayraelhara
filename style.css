@@ -1,127 +1,92 @@
+/* === FUENTES Y COLORES BASE === */
 body {
   margin: 0;
-  padding: 0;
   font-family: 'Karla', sans-serif;
-  color: #ffffff;
-  background: #1a0826;
+  color: #f4eaff;
+  background-color: #1a0826;
 }
 
-.overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-  min-height: 100vh;
-  padding-bottom: 5rem;
+h2, h3, .logo {
+  font-family: 'Cinzel', serif;
+}
+
+a {
+  color: #f4eaff;
+  text-decoration: none;
+}
+
+/* === ENCABEZADO Y MENÚ === */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(20, 0, 40, 0.8);
+  border-bottom: 2px solid gold;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .logo {
-  font-size: 2.2rem;
-  padding: 1rem 2rem;
-  font-family: 'Cinzel', serif;
-  color: white;
-  text-align: center;
-  text-shadow: 0 0 15px #ffd700;
-}
-
-.navbar {
-  text-align: center;
-  background-color: rgba(20, 0, 40, 0.9);
-  padding: 1rem 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff8dc;
+  text-shadow: 0 0 10px gold;
 }
 
 .nav-menu {
   list-style: none;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 1rem;
   padding: 0;
   margin: 0;
 }
 
 .nav-menu li a {
-  background: #4b006e;
-  color: #fbefff;
-  border: 2px solid #ffd700;
-  padding: 0.6rem 1.2rem;
-  border-radius: 12px;
-  font-family: 'Cinzel', serif;
-  font-size: 1rem;
-  text-decoration: none;
   display: inline-block;
-  transition: 0.3s ease;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid gold;
+  border-radius: 12px;
+  background-color: #3b0066;
+  color: #fcdfff;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .nav-menu li a:hover {
-  background-color: #ffd700;
-  color: #2a2a3d;
-  box-shadow: 0 0 12px #ffd700;
+  background-color: gold;
+  color: #3b0066;
 }
 
-section {
-  padding: 2rem;
-  margin: auto;
-  max-width: 900px;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  margin-bottom: 2rem;
-  border-radius: 15px;
-}
-
+/* === TÍTULOS DESTACADOS === */
 .titulo-dorado {
-  color: #f5e663;
-  font-family: 'Cinzel', serif;
+  text-align: center;
+  color: gold;
+  text-shadow: 0 0 10px #fff;
   font-size: 2rem;
-  border: 2px solid gold;
-  display: inline-block;
-  padding: 0.5rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 18px #ffd700;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
 }
 
-input, textarea, select {
-  width: 90%;
-  margin: 0.5rem 0;
-  padding: 0.8rem;
-  border-radius: 10px;
-  border: none;
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+/* === SECCIONES === */
+section {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-input::placeholder, textarea::placeholder {
-  color: #eee;
+.overlay {
+  position: relative;
+  z-index: 1;
 }
 
-.btn-contacto, button {
-  background: linear-gradient(to right, #ffcc70, #ffd700);
-  color: #2a2a3d;
-  padding: 0.8rem 1.5rem;
-  font-weight: bold;
-  font-family: 'Cinzel', serif;
-  border-radius: 10px;
-  border: none;
-  margin-top: 1rem;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-button:hover, .btn-contacto:hover {
-  box-shadow: 0 0 10px #ffd700;
-  transform: scale(1.05);
-}
-
-.respuesta {
-  margin-top: 1rem;
-  font-style: italic;
-  color: #ffd700;
-  font-size: 1.1rem;
-}
-
+/* === GALERÍA DE PRODUCTOS === */
 .galeria-productos {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
   margin-top: 2rem;
 }
 
@@ -131,6 +96,8 @@ button:hover, .btn-contacto:hover {
   padding: 1rem;
   width: 200px;
   text-align: center;
+  color: #fff;
+  box-shadow: none;
 }
 
 .producto img {
@@ -138,34 +105,108 @@ button:hover, .btn-contacto:hover {
   border-radius: 10px;
 }
 
+/* === ORÁCULO === */
+#oraculo input,
+#oraculo button {
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  width: 80%;
+  max-width: 400px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+}
+
+#oraculo button {
+  background-color: #6a0dad;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid gold;
+}
+
+#respuestaOraculo {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #ffd700;
+}
+
+/* === FORMULARIO DE CONTACTO === */
+form input,
+form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem;
+  margin: 0.5rem auto;
+  display: block;
+  border-radius: 8px;
+  border: none;
+  background-color: #f9f9f9;
+}
+
+.btn-contacto {
+  background-color: #6a0dad;
+  color: white;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border: 2px solid gold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-contacto:hover {
+  background-color: gold;
+  color: #3b0066;
+}
+
+/* === FOOTER === */
 .footer-derechos {
+  background-color: rgba(20, 0, 40, 0.9);
   text-align: center;
   padding: 2rem;
-  background-color: #140029;
+  color: #e6e6fa;
   font-size: 0.9rem;
-  color: #eee;
+  border-top: 2px solid gold;
 }
 
-.footer-derechos .footer-redes a {
+.footer-redes {
+  margin-top: 1rem;
+}
+
+.footer-redes a {
+  margin: 0 0.5rem;
   color: #ffd700;
-  margin: 0 10px;
   font-size: 1.2rem;
-  text-decoration: none;
 }
 
-@media screen and (max-width: 768px) {
+/* === SELECT INTENCIÓN === */
+select {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #5a2a82;
+  color: white;
+  font-weight: bold;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
   .nav-menu {
     flex-direction: column;
     align-items: center;
   }
 
-  section {
-    padding: 1rem;
-  }
-
   .galeria-productos {
     flex-direction: column;
     align-items: center;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .logo {
+    margin-bottom: 1rem;
   }
 }
 
