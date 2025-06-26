@@ -1,4 +1,4 @@
-<!-- HTML actualizado con menú responsive, filtros y diseño respetado -->
+<!-- HTML actualizado con música de fondo y botón de control -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -47,6 +47,23 @@
       .hamburger {
         display: block;
       }
+    }
+    .btn-musica {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffd700;
+      border: 2px solid #ffd700;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      padding: 0.6rem 0.9rem;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .btn-musica:hover {
+      background: #ffd700;
+      color: #2a2a3d;
     }
   </style>
 </head>
@@ -152,6 +169,15 @@
     </footer>
   </div>
 
+  <!-- Música de fondo -->
+  <audio id="musicaBosque" autoplay loop>
+    <source src="hadas-bosque.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <!-- Botón de control de música -->
+  <button class="btn-musica" onclick="toggleMusica()"><i class="fas fa-music"></i></button>
+
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
     particlesJS('particles-js', {
@@ -230,9 +256,19 @@
       const nav = document.getElementById("navMenu");
       nav.classList.toggle("show");
     }
+
+    function toggleMusica() {
+      const audio = document.getElementById("musicaBosque");
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
   </script>
 </body>
 </html>
+
 
 
 
