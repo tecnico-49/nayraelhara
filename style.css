@@ -1,11 +1,10 @@
-/* Fuentes y colores base */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Karla', sans-serif;
-  color: #ffffff;
-  background: url('nayra.png') no-repeat center center fixed;
+  background: url('fondo.jpg') no-repeat center center fixed;
   background-size: cover;
+  color: #ffffff;
 }
 
 .overlay {
@@ -14,62 +13,58 @@ body {
   padding-bottom: 5rem;
 }
 
-/* Header y Navbar */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(35, 0, 50, 0.8);
+  background-color: rgba(20, 0, 40, 0.8);
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
-  z-index: 999;
-  backdrop-filter: blur(4px);
+  z-index: 1000;
 }
 
 .logo {
   font-size: 2rem;
   font-family: 'Cinzel', serif;
-  color: #fff;
+  color: white;
   text-shadow: 0 0 10px #fff;
 }
 
-.navbar .nav-menu {
+.nav-menu {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   margin: 0;
   padding: 0;
 }
 
-.navbar .nav-menu li a {
-  text-decoration: none;
-  color: #d4a3ff;
-  font-weight: bold;
-  font-family: 'Cinzel', serif;
-  transition: 0.3s;
-  padding: 0.5rem 1rem;
+.nav-menu li a {
+  background: #f0e6ff;
+  color: #400040;
+  padding: 0.6rem 1rem;
   border-radius: 8px;
+  font-family: 'Cinzel', serif;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.navbar .nav-menu li a:hover {
+.nav-menu li a:hover {
   background-color: #ffd700;
   color: #2a2a3d;
   box-shadow: 0 0 10px #ffd700;
 }
 
-/* Secciones generales */
 section {
   padding: 2rem;
   margin: auto;
-  max-width: 800px;
+  max-width: 900px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  margin-bottom: 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
+  margin-bottom: 2rem;
 }
 
-/* Título dorado */
 .titulo-dorado {
   color: #f5e663;
   font-family: 'Cinzel', serif;
@@ -80,11 +75,10 @@ section {
   border-radius: 10px;
   box-shadow: 0 0 10px #f5e663;
   margin-bottom: 1rem;
-  text-shadow: 0 0 6px #fff;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Inputs y formulario */
-input, textarea {
+input, textarea, select {
   width: 90%;
   margin: 0.5rem 0;
   padding: 0.8rem;
@@ -116,15 +110,13 @@ input::placeholder, textarea::placeholder {
   transform: scale(1.05);
 }
 
-/* Respuesta del oráculo */
-#respuestaOraculo {
+.respuesta {
   margin-top: 1rem;
   font-style: italic;
   color: #ffd700;
   font-size: 1.1rem;
 }
 
-/* Galería de productos */
 .galeria-productos {
   display: flex;
   flex-wrap: wrap;
@@ -134,52 +126,34 @@ input::placeholder, textarea::placeholder {
 }
 
 .producto {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
   padding: 1rem;
   width: 200px;
   text-align: center;
-  color: #fff;
-  box-shadow: 0 0 10px #444;
-  transition: transform 0.3s ease;
-}
-
-.producto:hover {
-  transform: scale(1.05);
 }
 
 .producto img {
   width: 100%;
-  height: auto;
   border-radius: 10px;
-  box-shadow: 0 0 8px #fff;
 }
 
-.producto h4 {
-  font-family: 'Cinzel', serif;
-  margin: 0.5rem 0;
-  color: #ffd700;
-}
-
-/* Footer con derechos */
 .footer-derechos {
   text-align: center;
-  padding: 2rem 1rem;
-  background-color: rgba(10, 0, 30, 0.9);
-  color: #fff;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
   font-size: 0.9rem;
-  border-top: 1px solid #444;
 }
 
 .footer-redes {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .footer-redes a {
-  color: #fff;
-  margin: 0 10px;
-  font-size: 1.3rem;
-  transition: 0.3s ease;
+  color: white;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  text-decoration: none;
 }
 
 .footer-redes a:hover {
