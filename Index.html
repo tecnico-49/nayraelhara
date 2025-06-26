@@ -9,8 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <div id="particles-js"></div>
-
   <div class="header-fixed">
     <div class="logo">Nayra Elhara</div>
     <nav class="navbar">
@@ -26,10 +24,8 @@
   </div>
 
   <div class="overlay">
-    <section id="inicio">
-      <div class="bienvenida-destacada">
-        <h1>Bienvenida al Portal de Nayra</h1>
-      </div>
+    <section id="inicio" class="bienvenida-destacada">
+      <h1>Bienvenida al Portal de Nayra</h1>
       <p>Un espacio para despertar tu luz interior con guía espiritual y energía sagrada.</p>
     </section>
 
@@ -40,13 +36,16 @@
 
     <section id="catalogo">
       <h2 class="titulo-dorado">Catálogo</h2>
-      <p>Descubre amuletos, cuarzos y herramientas para tu camino espiritual.</p>
-
-      <div class="pagos-buttons">
-        <button onclick="window.open('https://www.paypal.com/paypalme/tuusuario', '_blank')"><i class="fab fa-paypal"></i> Pagar con PayPal</button>
-        <button onclick="window.open('https://api.whatsapp.com/send?phone=573012344892&text=Hola%2C%20quiero%20pagar%20por%20Nequi', '_blank')"><i class="fas fa-mobile-alt"></i> Pagar con Nequi</button>
-        <button onclick="window.open('https://api.whatsapp.com/send?phone=573012344892&text=Hola%2C%20quiero%20pagar%20por%20Bancolombia', '_blank')"><i class="fas fa-university"></i> Bancolombia</button>
-        <button onclick="window.open('https://checkout.stripe.com/pay/cs_test_tuCodigo', '_blank')"><i class="fab fa-cc-stripe"></i> Stripe</button>
+      <div>
+        <select id="filtroCategoria" onchange="filtrarProductos()">
+          <option value="todos">Todos</option>
+          <option value="amor">Amor</option>
+          <option value="proteccion">Protección</option>
+          <option value="abundancia">Abundancia</option>
+        </select>
+      </div>
+      <div id="productos">
+        <!-- Productos se generarán dinámicamente con JS -->
       </div>
     </section>
 
@@ -61,30 +60,45 @@
     <section id="agenda">
       <h2 class="titulo-dorado">Reserva tu Cita Espiritual</h2>
       <form id="formAgenda">
-        <input type="text" name="nombreCita" placeholder="Tu nombre" required>
-        <input type="email" name="emailCita" placeholder="Tu correo" required>
-        <input type="date" name="fechaCita" required>
-        <input type="time" name="horaCita" required>
-        <select name="tipoCita" required>
-          <option value="">Selecciona el tipo de cita</option>
-          <option value="canalizacion">Canalización Espiritual</option>
-          <option value="lecturaCartas">Lectura de Cartas</option>
-          <option value="sanacion">Sanación Energética</option>
-        </select>
-        <button type="submit" class="btn-contacto">Reservar Cita</button>
-        <div id="mensajeReserva" class="respuesta"></div>
+        <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+        <input type="email" name="correo" placeholder="Tu correo" required>
+        <input type="datetime-local" name="fecha" required>
+        <textarea name="mensaje" placeholder="Motivo de la cita..." required></textarea>
+        <button type="submit" class="btn-contacto">Reservar</button>
       </form>
     </section>
 
+    <section id="servicios">
+      <h2 class="titulo-dorado">Servicios Especiales</h2>
+      <ul>
+        <li>📖 Libros de Sabiduría Espiritual</li>
+        <li>🧘‍♀️ Retiros espirituales en Villa de Leyva</li>
+        <li>🌐 Asesorías online personalizadas</li>
+      </ul>
+    </section>
+
     <section id="contacto">
-      <h2 class="titulo-dorado">Contáctanos</h2>
+      <h3 class="preguntas">Contáctanos</h3>
       <form>
         <input type="text" name="nombre" placeholder="Tu nombre" required>
         <input type="email" name="correo" placeholder="Tu correo" required>
         <textarea name="mensaje" placeholder="Tu mensaje espiritual..." required></textarea>
         <button type="submit" class="btn-contacto">Enviar</button>
       </form>
+
+      <div class="pagos-buttons">
+        <button onclick="mostrarQR('qr-nequi.png')">Pagar con Nequi</button>
+        <button onclick="mostrarQR('qr-bancolombia.png')">Pagar con Bancolombia</button>
+        <button onclick="window.open('https://www.paypal.me/tuusuario')">PayPal</button>
+        <button onclick="window.open('https://tu-stripe-link')">Stripe</button>
+      </div>
     </section>
+  </div>
+
+  <!-- Modal de QR -->
+  <div id="qrModal" class="modal" style="display:none">
+    <span class="cerrar" onclick="cerrarQR()">&times;</span>
+    <img id="qrImagen" src="" alt="QR de pago">
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
@@ -106,8 +120,7 @@
       },
       retina_detect: true
     });
-  </script>
-  <script>
+
     function consultarOraculo() {
       const frasesOraculo = [
         "Confía, el universo ya está trabajando a tu favor.",
@@ -135,22 +148,24 @@
         respuestaDiv.innerText = `🔮 ${frasesOraculo[indice]}`;
       }
     }
-  </script>
-  <script>
-    document.getElementById("formAgenda").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const nombre = e.target.nombreCita.value;
-      const fecha = e.target.fechaCita.value;
-      const hora = e.target.horaCita.value;
-      const tipo = e.target.tipoCita.value;
 
-      const mensaje = `✨ Gracias ${nombre}, tu cita de "${tipo}" ha sido reservada para el ${fecha} a las ${hora}. Te llegará un correo con más detalles.`;
-      document.getElementById("mensajeReserva").innerText = mensaje;
-      e.target.reset();
-    });
+    function mostrarQR(src) {
+      document.getElementById('qrImagen').src = src;
+      document.getElementById('qrModal').style.display = 'block';
+    }
+
+    function cerrarQR() {
+      document.getElementById('qrModal').style.display = 'none';
+    }
+
+    function filtrarProductos() {
+      const filtro = document.getElementById("filtroCategoria").value;
+      // Aquí agregarás la lógica con JS dinámico para mostrar productos filtrados
+    }
   </script>
 </body>
 </html>
+
 
 
 
