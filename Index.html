@@ -9,23 +9,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <div class="header-fixed">
+  <div id="particles-js"></div>
+  <div class="overlay">
     <div class="logo">Nayra Elhara</div>
+
     <nav class="navbar">
       <ul class="nav-menu">
         <li><button onclick="location.href='#inicio'"><i class="fas fa-home"></i> Inicio</button></li>
         <li><button onclick="location.href='#canalizaciones'"><i class="fas fa-star-and-crescent"></i> Canalizaciones</button></li>
-        <li><button onclick="location.href='#catalogo'"><i class="fas fa-shopping-bag"></i> Catálogo</button></li>
+        <li><button onclick="location.href='#catalogo'"><i class="fas fa-gem"></i> Catálogo</button></li>
         <li><button onclick="location.href='#oraculo'"><i class="fas fa-brain"></i> Oráculo</button></li>
-        <li><button onclick="location.href='#agenda'"><i class="fas fa-calendar-alt"></i> Agenda</button></li>
         <li><button onclick="location.href='#contacto'"><i class="fas fa-envelope"></i> Contacto</button></li>
       </ul>
     </nav>
-  </div>
 
-  <div class="overlay">
-    <section id="inicio" class="bienvenida-destacada">
-      <h1>Bienvenida al Portal de Nayra</h1>
+    <section id="inicio">
+      <h2 class="titulo-dorado">Bienvenida al Portal de Nayra</h2>
       <p>Un espacio para despertar tu luz interior con guía espiritual y energía sagrada.</p>
     </section>
 
@@ -35,74 +34,58 @@
     </section>
 
     <section id="catalogo">
-      <h2 class="titulo-dorado">Catálogo</h2>
-      <div>
-        <select id="filtroCategoria" onchange="filtrarProductos()">
-          <option value="todos">Todos</option>
-          <option value="amor">Amor</option>
-          <option value="proteccion">Protección</option>
-          <option value="abundancia">Abundancia</option>
-        </select>
-      </div>
-      <div id="productos">
-        <!-- Productos se generarán dinámicamente con JS -->
-      </div>
+      <h2 class="titulo-dorado">Catálogo Espiritual</h2>
+      <p>Elige según tu intención:</p>
+      <select>
+        <option value="amor">Amor</option>
+        <option value="proteccion">Protección</option>
+        <option value="abundancia">Abundancia</option>
+      </select>
+      <p>Cuarzos, amuletos y libros espirituales próximamente disponibles.</p>
     </section>
 
     <section id="oraculo">
       <h2 class="titulo-dorado">Oráculo de Nayra</h2>
-      <p>Haz tu pregunta espiritual y el oráculo responderá con sabiduría.</p>
-      <input type="text" id="pregunta" placeholder="Escribe tu pregunta..."><br>
+      <input type="text" id="pregunta" placeholder="Escribe tu pregunta espiritual..."><br>
       <button onclick="consultarOraculo()" class="btn-contacto"><i class="fas fa-magic"></i> Consultar</button>
       <div id="respuestaOraculo" class="respuesta"></div>
     </section>
 
-    <section id="agenda">
-      <h2 class="titulo-dorado">Reserva tu Cita Espiritual</h2>
-      <form id="formAgenda">
-        <input type="text" name="nombre" placeholder="Tu nombre completo" required>
-        <input type="email" name="correo" placeholder="Tu correo" required>
-        <input type="datetime-local" name="fecha" required>
-        <textarea name="mensaje" placeholder="Motivo de la cita..." required></textarea>
-        <button type="submit" class="btn-contacto">Reservar</button>
-      </form>
-    </section>
-
-    <section id="servicios">
-      <h2 class="titulo-dorado">Servicios Especiales</h2>
-      <ul>
-        <li>📖 Libros de Sabiduría Espiritual</li>
-        <li>🧘‍♀️ Retiros espirituales en Villa de Leyva</li>
-        <li>🌐 Asesorías online personalizadas</li>
-      </ul>
-    </section>
-
     <section id="contacto">
-      <h3 class="preguntas">Contáctanos</h3>
+      <h2 class="titulo-dorado">Contáctanos</h2>
       <form>
         <input type="text" name="nombre" placeholder="Tu nombre" required>
         <input type="email" name="correo" placeholder="Tu correo" required>
         <textarea name="mensaje" placeholder="Tu mensaje espiritual..." required></textarea>
         <button type="submit" class="btn-contacto">Enviar</button>
       </form>
-
-      <div class="pagos-buttons">
-        <button onclick="mostrarQR('qr-nequi.png')">Pagar con Nequi</button>
-        <button onclick="mostrarQR('qr-bancolombia.png')">Pagar con Bancolombia</button>
-        <button onclick="window.open('https://www.paypal.me/tuusuario')">PayPal</button>
-        <button onclick="window.open('https://tu-stripe-link')">Stripe</button>
-      </div>
+      <br>
+      <h3>Apoya este portal con un aporte espiritual:</h3>
+      <button class="btn-contacto" onclick="mostrarQR('nequi-qr.png')"><i class="fas fa-mobile-alt"></i> Nequi</button>
+      <button class="btn-contacto" onclick="mostrarQR('bancolombia-qr.png')"><i class="fas fa-university"></i> Bancolombia</button>
+      <button class="btn-contacto" onclick="window.open('https://www.paypal.com/', '_blank')"><i class="fab fa-paypal"></i> PayPal</button>
     </section>
   </div>
 
   <!-- Modal de QR -->
-  <div id="qrModal" class="modal" style="display:none">
+  <div id="qrModal" class="modal" style="display:none;">
     <span class="cerrar" onclick="cerrarQR()">&times;</span>
     <img id="qrImagen" src="" alt="QR de pago">
   </div>
 
+  <footer class="footer-derechos">
+    <p>&copy; 2025 Nayra Elhara. Todos los derechos reservados. | Hecho con 💫 para el despertar espiritual.</p>
+    <div class="footer-redes">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fas fa-file-contract"></i> Políticas</a>
+    </div>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
+    // Partículas de fondo
     particlesJS('particles-js', {
       particles: {
         number: { value: 70 },
@@ -121,6 +104,7 @@
       retina_detect: true
     });
 
+    // Oráculo
     function consultarOraculo() {
       const frasesOraculo = [
         "Confía, el universo ya está trabajando a tu favor.",
@@ -149,18 +133,14 @@
       }
     }
 
-    function mostrarQR(src) {
-      document.getElementById('qrImagen').src = src;
-      document.getElementById('qrModal').style.display = 'block';
+    // Mostrar QR
+    function mostrarQR(imagen) {
+      document.getElementById("qrImagen").src = imagen;
+      document.getElementById("qrModal").style.display = "flex";
     }
 
     function cerrarQR() {
-      document.getElementById('qrModal').style.display = 'none';
-    }
-
-    function filtrarProductos() {
-      const filtro = document.getElementById("filtroCategoria").value;
-      // Aquí agregarás la lógica con JS dinámico para mostrar productos filtrados
+      document.getElementById("qrModal").style.display = "none";
     }
   </script>
 </body>
