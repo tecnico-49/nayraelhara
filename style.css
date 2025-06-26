@@ -1,209 +1,209 @@
-/* === FUENTES Y COLORES BASE === */
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Karla', sans-serif;
-  color: #f4eaff;
-  background-color: #1a0826;
+  color: #fff;
+  background-color: #000;
 }
 
-h2, h3, .logo {
-  font-family: 'Cinzel', serif;
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  min-height: 100vh;
+  padding-bottom: 5rem;
 }
 
-a {
-  color: #f4eaff;
-  text-decoration: none;
-}
-
-/* === ENCABEZADO Y MENÚ === */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: rgba(20, 0, 40, 0.8);
-  border-bottom: 2px solid gold;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
+/* Logo */
 .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #fff8dc;
-  text-shadow: 0 0 10px gold;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  font-family: 'Cinzel', serif;
+  color: white;
+  text-shadow: 0 0 10px #fff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-menu {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   padding: 0;
   margin: 0;
 }
 
 .nav-menu li a {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  border: 2px solid gold;
-  border-radius: 12px;
-  background-color: #3b0066;
-  color: #fcdfff;
-  font-weight: bold;
+  background: transparent;
+  color: #e6ccff;
+  border: 1px solid #e6ccff;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  text-decoration: none;
   transition: 0.3s;
 }
 
 .nav-menu li a:hover {
-  background-color: gold;
-  color: #3b0066;
+  background-color: #e6ccff;
+  color: #2a2a3d;
+  box-shadow: 0 0 10px #ffd700;
 }
 
-/* === TÍTULOS DESTACADOS === */
+/* Títulos */
 .titulo-dorado {
-  text-align: center;
-  color: gold;
-  text-shadow: 0 0 10px #fff;
+  color: #f5e663;
+  font-family: 'Cinzel', serif;
   font-size: 2rem;
-  margin-top: 2rem;
-}
-
-/* === SECCIONES === */
-section {
-  padding: 3rem 2rem;
-  max-width: 900px;
-  margin: 0 auto;
+  border: 2px solid gold;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #f5e663;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
-.overlay {
-  position: relative;
-  z-index: 1;
+/* Secciones */
+section {
+  padding: 2rem;
+  margin: auto;
+  max-width: 800px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 2rem;
+  border-radius: 12px;
 }
 
-/* === GALERÍA DE PRODUCTOS === */
+/* Formularios */
+input, textarea {
+  width: 90%;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #eee;
+}
+
+.btn-contacto {
+  background: linear-gradient(to right, #ffcc70, #ffd700);
+  color: #2a2a3d;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  border-radius: 10px;
+  border: none;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-contacto:hover {
+  box-shadow: 0 0 10px #ffd700;
+  transform: scale(1.05);
+}
+
+/* Galería de productos */
 .galeria-productos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .producto {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 1rem;
-  width: 200px;
+  border-radius: 12px;
   text-align: center;
   color: #fff;
-  box-shadow: none;
 }
 
 .producto img {
   width: 100%;
-  border-radius: 10px;
-}
-
-/* === ORÁCULO === */
-#oraculo input,
-#oraculo button {
-  padding: 0.8rem;
-  margin: 0.5rem 0;
-  width: 80%;
-  max-width: 400px;
-  font-size: 1rem;
   border-radius: 8px;
-  border: none;
+  margin-bottom: 0.5rem;
 }
 
-#oraculo button {
-  background-color: #6a0dad;
-  color: white;
+/* Filtros */
+.filtro-categorias {
+  display: block;
+  margin-top: 1rem;
   font-weight: bold;
-  cursor: pointer;
-  border: 2px solid gold;
+  color: #f0e6d2;
 }
 
-#respuestaOraculo {
+select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+/* Oráculo */
+.respuesta {
   margin-top: 1rem;
   font-style: italic;
   color: #ffd700;
+  font-size: 1.1rem;
 }
 
-/* === FORMULARIO DE CONTACTO === */
-form input,
-form textarea {
-  width: 100%;
-  max-width: 500px;
+/* Servicios */
+#servicios ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#servicios li {
+  margin-bottom: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.07);
   padding: 1rem;
-  margin: 0.5rem auto;
-  display: block;
   border-radius: 8px;
-  border: none;
-  background-color: #f9f9f9;
 }
 
-.btn-contacto {
-  background-color: #6a0dad;
-  color: white;
-  font-weight: bold;
-  padding: 1rem 2rem;
-  border: 2px solid gold;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.btn-contacto:hover {
-  background-color: gold;
-  color: #3b0066;
-}
-
-/* === FOOTER === */
+/* Footer */
 .footer-derechos {
-  background-color: rgba(20, 0, 40, 0.9);
   text-align: center;
-  padding: 2rem;
-  color: #e6e6fa;
+  color: #ccc;
   font-size: 0.9rem;
-  border-top: 2px solid gold;
+  padding: 1.5rem 1rem 2rem;
+  border-top: 1px solid #444;
 }
 
 .footer-redes {
-  margin-top: 1rem;
+  margin-top: 0.8rem;
 }
 
 .footer-redes a {
-  margin: 0 0.5rem;
-  color: #ffd700;
+  color: #e6ccff;
+  margin: 0 10px;
   font-size: 1.2rem;
+  transition: 0.3s;
 }
 
-/* === SELECT INTENCIÓN === */
-select {
-  padding: 0.6rem;
-  border-radius: 8px;
-  border: none;
-  background-color: #5a2a82;
-  color: white;
-  font-weight: bold;
+.footer-redes a:hover {
+  color: #ffd700;
 }
 
-/* === RESPONSIVE === */
+/* Responsivo extra */
 @media (max-width: 768px) {
-  .nav-menu {
-    flex-direction: column;
-    align-items: center;
+  section {
+    padding: 1rem;
   }
+  .nav-menu li {
+    width: 100%;
+  }
+}
 
-  .galeria-productos {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .header {
-    flex-direction: column;
-  }
 
   .logo {
     margin-bottom: 1rem;
