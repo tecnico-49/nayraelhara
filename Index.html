@@ -1,4 +1,4 @@
-<!-- HTML actualizado con filtros por categoría en la tienda, sin modificar el diseño existente -->
+<!-- HTML actualizado con menú responsive, filtros y diseño respetado -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Karla:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    /* Fondo animado */
     #particles-js {
       position: fixed;
       top: 0;
@@ -19,25 +20,33 @@
       background: url('nayra.png') no-repeat center center fixed;
       background-size: cover;
     }
-
-    .producto {
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      padding: 1rem;
-      width: 200px;
-      text-align: center;
-      box-shadow: none !important;
-    }
-    .galeria-productos {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-    .filtro-categorias {
-      margin-bottom: 1rem;
-      font-weight: bold;
+    /* Responsive navbar */
+    .hamburger {
+      display: none;
+      font-size: 2rem;
       color: #fff;
+      cursor: pointer;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+    }
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+      }
+      .nav-menu.show {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+      }
     }
   </style>
 </head>
@@ -46,8 +55,9 @@
   <div class="overlay">
     <header class="header">
       <div class="logo">Nayra Elhara</div>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
       <nav class="navbar">
-        <ul class="nav-menu">
+        <ul class="nav-menu" id="navMenu">
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#canalizaciones">Canalizaciones</a></li>
           <li><a href="#catalogo">Catálogo</a></li>
@@ -214,6 +224,11 @@
           p.style.display = 'none';
         }
       });
+    }
+
+    function toggleMenu() {
+      const nav = document.getElementById("navMenu");
+      nav.classList.toggle("show");
     }
   </script>
 </body>
