@@ -183,5 +183,73 @@ section {
 
 /* === Formulario === */
 input, textarea, select {
-  width:
+  width: 90%;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #eee;
+}
+
+.btn-contacto {
+  background: linear-gradient(to right, #ffcc70, #ffd700);
+  color: #2a2a3d;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  border-radius: 10px;
+  border: none;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-contacto:hover {
+  box-shadow: 0 0 10px #ffd700;
+  transform: scale(1.05);
+}
+
+/* === Footer === */
+.footer-derechos {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ddd;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.footer-redes {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.footer-redes a {
+  display: inline-block;
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.footer-redes a:hover {
+  color: #ffd700;
+  transform: scale(1.2);
+}
+
+/* === Música === */
+#musica-control {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+#musica-control audio {
+  background: rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 0.5rem;
+}
 
