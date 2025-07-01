@@ -125,13 +125,38 @@ body {
 }
 
 /* === Encabezado principal (imagen, título y menú) === */
+/* === Encabezado principal (imagen, título y menú) centrado === */
 header.navbar {
-  display: flex;                /* Layout en fila para imagen, título y menú */
-  justify-content: space-between;/* Espacio entre elementos */
-  align-items: center;          /* Alineación vertical centrada */
-  flex-wrap: wrap;              /* Permite bajar a nueva línea en pantallas pequeñas */
-  padding: 1rem 2rem;
+  display: flex;                /* Layout flexible */
+  flex-direction: column;       /* Imagen, título y menú en columna */
+  align-items: center;          /* Centra todo */
+  padding: 2rem 1rem;
   background: rgba(20,0,40,0.8);
+}
+
+/* Imagen de Nayra centrada */
+.header-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #f5e663;
+  box-shadow: 0 0 10px #f5e663;
+  margin-bottom: 1rem;          /* Espacio debajo */
+}
+
+/* Título neón centrado */
+.logo.neon-title {
+  margin-bottom: 1rem;
+}
+
+/* Menú centrado debajo */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
 }
 
 /* Imagen de Nayra al lado del título */
@@ -282,6 +307,26 @@ footer {
   width: 100%;
   background: transparent;
   border-radius: 8px;
+}
+
+
+/* === Pie de página centrado y fondo estrellado === */
+.footer-derechos {
+  text-align: center;                  /* Centra el texto */
+  font-weight: bold;                   /* Negrita para resaltar */
+  padding: 2rem 1rem;
+  background-color: rgba(20,0,40,0.9); /* Base oscura */
+  background-image: radial-gradient(white 1px, transparent 1px); /* Estrellas */
+  background-size: 20px 20px;
+}
+
+/* Estilo para el enlace Políticas en el footer */
+.footer-derechos a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #f5e663;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 
