@@ -183,11 +183,15 @@ form input, form textarea {
 }
 /* Botón de envío pequeño */
 form button {
-  padding: 0.3rem 1rem;
-  background: #f5e663; color: #2a2a3d;
-  border: none; border-radius: 10px;
-  font-size: 0.8rem; font-weight: bold;
-  cursor: pointer; transition: transform 0.3s;
+  padding: 0.3rem 0.8rem;        /* Reduce padding para tamaño compacto */
+  background: #f5e663;           /* Color dorado para resaltar */
+  color: #2a2a3d;                /* Texto oscuro para contraste */
+  border: none;
+  border-radius: 10px;
+  font-size: 0.8rem;             /* Tamaño de letra más pequeño */
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 form button:hover {
   background: #ffe85c; transform: scale(1.02);
