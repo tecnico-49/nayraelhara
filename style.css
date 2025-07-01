@@ -85,4 +85,203 @@ body::after {
   font-family: 'Cinzel', serif;
   font-size: 1rem;
   text-shadow: 0 0 3px #fff;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.nav-menu li a:hover {
+  color: #fff;
+  background: rgba(216,180,254,0.2);
+  box-shadow: 0 0 5px #d8b4fe, 0 0 10px #d8b4fe, 0 0 20px #d8b4fe;
+  transform: scale(1.05);
+}
+
+/* === Menú de navegación responsive === */
+@media (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+}/
+@media (max-width: 768px) {
+  .neon-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* === General === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Karla', sans-serif;
+  color: #fff;
+}
+
+.overlay {
+  background-color: rgba(0,0,0,0.6);
+  min-height: 100vh;
+  padding-bottom: 5rem;
+}
+
+/* === Encabezado principal (imagen, título y menú) === */
+header.navbar {
+  display: flex;                /* Layout en fila para imagen, título y menú */
+  justify-content: space-between;/* Espacio entre elementos */
+  align-items: center;          /* Alineación vertical centrada */
+  flex-wrap: wrap;              /* Permite bajar a nueva línea en pantallas pequeñas */
+  padding: 1rem 2rem;
+  background: rgba(20,0,40,0.8);
+}
+
+/* Imagen de Nayra al lado del título */
+.header-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #f5e663;
+  box-shadow: 0 0 10px #f5e663;
+  margin-right: 1rem;
+}
+
+/* Título neón centrado dinámico */
+.logo.neon-title {
+  flex: 1 1 auto;              /* Crece para ocupar espacio central */
+  text-align: center;
+}
+
+/* Menú de navegación alinea a la derecha en desktop */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.header-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #f5e663;
+  box-shadow: 0 0 10px #f5e663;
+}
+
+/* === Servicios, Agenda, IA, Contacto: secciones estilizadas === */
+section {
+  padding: 2rem;
+  margin: auto;
+  max-width: 800px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.titulo-dorado {
+  color: #f5e663;
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  border: 2px solid gold;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #f5e663;
+  display: inline-block;
+}
+
+/* === Formulario centrado y estilizado === */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+form input,
+form textarea {
+  flex: 1 1 250px;
+  min-width: 200px;
+  max-width: 300px;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+form button {
+  padding: 0.7rem 1.5rem;
+  background: #f5e663;
+  color: #2a2a3d;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: #ffe85c;
+  transform: scale(1.05);
+}
+
+/* === Footer y botones flotantes === */
+footer {
+  padding: 2rem 1rem;
+  background: rgba(20,0,40,0.8);
+}
+
+.footer-redes {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.footer-redes a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.8rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer-redes a:hover {
+  color: #f5e663;
+  transform: scale(1.2);
+}
+
+.btn-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: #fff;
+  font-size: 2.5rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(37,211,102,0.7);
+  z-index: 1000;
+  transition: transform 0.3s;
+}
+
+.btn-whatsapp:hover {
+  transform: scale(1.1);
+}
+
+/* === Contenedor y estilo de audio === */
+#musica-control {
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+  background: rgba(0,0,0,0.4);
+  padding: 0.5rem;
+  border-radius: 12px;
+  max-width: 400px;
+}
+
+#musica-control audio {
+  width: 100%;
+  background: transparent;
+  border-radius: 8px;
+}
+
 
