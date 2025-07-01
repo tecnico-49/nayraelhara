@@ -8,32 +8,49 @@ body {
   background-size: cover;
 }
 
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
 .overlay {
   background-color: rgba(0, 0, 0, 0.6);
   min-height: 100vh;
   padding-bottom: 5rem;
-}
-
-.logo {
-  font-size: 2.2rem;
-  padding: 1rem 2rem;
-  font-family: 'Cinzel', serif;
-  color: white;
-  text-shadow: 0 0 10px #fff;
-  text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .navbar {
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: rgba(20, 0, 40, 0.8);
   padding: 0.5rem 1rem;
+}
+
+.logo {
+  font-size: 2rem;
+  font-family: 'Cinzel', serif;
+  color: white;
+  text-shadow: 0 0 10px #fff;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ffd700;
 }
 
 .nav-menu {
   list-style: none;
   display: flex;
   justify-content: flex-end;
-  flex-wrap: wrap;
   gap: 0.7rem;
   margin: 0;
   padding: 0;
@@ -57,15 +74,40 @@ body {
   box-shadow: 0 0 10px #a855f7;
 }
 
+@media (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    display: none;
+    padding: 1rem 0;
+    z-index: 999;
+  }
+
+  .nav-menu.menu-abierto {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+}
+
 section {
   padding: 2rem;
   margin: auto;
-  max-width: 800px;
+  max-width: 900px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
   margin-bottom: 2rem;
   border-radius: 12px;
-  box-shadow: none;
 }
 
 .titulo-dorado {
@@ -102,7 +144,7 @@ input::placeholder, textarea::placeholder {
   font-family: 'Cinzel', serif;
   border-radius: 10px;
   border: none;
-  margin-top: 1rem;
+  margin: 0.5rem;
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -143,26 +185,127 @@ input::placeholder, textarea::placeholder {
   font-weight: bold;
 }
 
-.galeria-productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
+.carrusel-container {
+  overflow-x: auto;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
-.producto {
-  background: rgba(255, 255, 255, 0.1);
+.carrusel {
+  display: flex;
+  gap: 1rem;
+  scroll-snap-align: start;
+  padding: 0 1rem;
+}
+
+.carrusel .producto {
+  flex: 0 0 auto;
+  width: 220px;
+  background: rgba(255,255,255,0.1);
   border-radius: 12px;
   padding: 1rem;
+  scroll-snap-align: center;
+  transition: transform 0.3s ease;
   text-align: center;
 }
 
-.producto img {
+.carrusel .producto:hover {
+  transform: scale(1.05);
+}
+
+.carrusel .producto img {
   width: 100%;
-  max-height: 180px;
+  height: 140px;
   object-fit: cover;
   border-radius: 10px;
 }
+
+.carrusel .producto h3 {
+  font-size: 1.1rem;
+  color: #ffd700;
+  margin-top: 0.5rem;
+}
+
+.carrusel .producto p {
+  font-size: 0.9rem;
+  color: #eee;
+}
+
+#quien-soy .quien-soy-contenido {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.foto-nayra {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid gold;
+  box-shadow: 0 0 10px gold;
+}
+
+.frase-impacto {
+  font-style: italic;
+  color: #f5e663;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+#testimonios .testimonios-contenedor {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.testimonio {
+  background: rgba(0,0,0,0.4);
+  padding: 1rem;
+  border-left: 4px solid #ffd700;
+  border-radius: 8px;
+  font-style: italic;
+}
+
+.testimonio span {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #f5e663;
+}
+
+.btn-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #25d366;
+  z-index: 1000;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  #quien-soy .quien-soy-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .foto-nayra {
+    margin-bottom: 1rem;
+  }
+}
+
 
 
 
