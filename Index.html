@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oráculo de Nayra</title>
-  <link rel="stylesheet" href="estilos.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Karla&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/tu-id-fontawesome.js" crossorigin="anonymous"></script>
+  
+  <!-- Fuente y estilo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Karla&display=swap" rel="stylesheet" />
+  
+  <!-- Estilos CSS (debe estar en la misma carpeta que este archivo) -->
+  <link rel="stylesheet" href="estilos.css" />
+
+  <!-- Íconos de redes sociales -->
+  <script src="https://kit.fontawesome.com/your-fontawesome-id.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
   <!-- Control de Música -->
   <div id="musica-control">
     <audio controls loop>
-      <source src="musica-bosque.mp3" type="audio/mpeg">
-      Tu navegador no soporta audio HTML5.
+      <source src="musica-bosque.mp3" type="audio/mpeg" />
+      Tu navegador no soporta el elemento de audio.
     </audio>
   </div>
 
-  <!-- Encabezado y Menú -->
+  <!-- Encabezado y Menú de navegación -->
   <header class="navbar">
     <div class="logo">Oráculo de Nayra</div>
     <nav>
@@ -32,6 +39,7 @@
     </nav>
   </header>
 
+  <!-- Contenido Principal -->
   <main class="overlay">
 
     <!-- Sección Servicios -->
@@ -63,55 +71,58 @@
       </ul>
     </section>
 
-    <!-- Sección IA Espiritual -->
+    <!-- Sección de IA Espiritual -->
     <section id="ia">
       <h2 class="titulo-dorado">Consulta a la IA Espiritual</h2>
-      <input type="text" id="preguntaIA" placeholder="Haz tu pregunta al universo...">
+      <input type="text" id="preguntaIA" placeholder="Haz tu pregunta al universo..." />
       <button class="btn-contacto" onclick="responderIA()">Consultar</button>
       <div id="respuestaIA"></div>
     </section>
 
-    <!-- Formulario de Contacto -->
+    <!-- Sección de Contacto -->
     <section id="contacto">
       <h2 class="titulo-dorado">Contáctanos</h2>
       <form>
-        <input type="text" placeholder="Tu nombre" required>
-        <input type="email" placeholder="Tu correo" required>
+        <input type="text" placeholder="Tu nombre" required />
+        <input type="email" placeholder="Tu correo" required />
         <textarea placeholder="Escribe tu mensaje..." rows="5"></textarea>
         <button type="submit" class="btn-contacto">Enviar</button>
       </form>
     </section>
-
+    
   </main>
 
-  <!-- Pie de página con redes y derechos -->
+  <!-- Pie de Página -->
   <footer>
     <div class="footer-redes">
-      <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-instagram" title="Instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook" title="Facebook"></i></a>
+      <a href="#"><i class="fab fa-youtube" title="YouTube"></i></a>
     </div>
     <div class="footer-derechos">
-      © 2025 Nayra Elhara. Todos los derechos reservados. | Hecho con 💫 para el despertar espiritual.<br>
+      © 2025 Nayra Elhara. Todos los derechos reservados. | Hecho con 💫 para el despertar espiritual.<br />
       <a href="#" style="color:#ccc;">Políticas</a>
     </div>
   </footer>
 
+  <!-- Script de IA espiritual -->
   <script>
-    // Simulación de respuesta de IA
     function responderIA() {
-      const pregunta = document.getElementById('preguntaIA').value;
+      const pregunta = document.getElementById('preguntaIA').value.trim();
       const respuesta = document.getElementById('respuestaIA');
-      if (!pregunta.trim()) {
-        respuesta.innerText = 'Por favor, formula una pregunta primero ✨';
+      
+      if (!pregunta) {
+        respuesta.innerText = '✨ Por favor, formula una pregunta primero.';
         return;
       }
-      // Generar respuesta simulada
-      respuesta.innerText = '🌀 La energía dice: confía en el proceso, tu respuesta está en el interior.';
+
+      respuesta.innerText = '🔮 La energía dice: Confía en tu intuición. Tu camino ya está trazado.';
     }
   </script>
+
 </body>
 </html>
+
 
 
 
