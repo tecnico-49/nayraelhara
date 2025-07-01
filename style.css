@@ -1,56 +1,179 @@
-/* === Fuente y colores base === */
+/* === Fondo animado estilo visionario === */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(-45deg, #4e00c2, #310055, #0e0e1b, #45045b);
+  background-size: 400% 400%;
+  animation: fondoAnimado 15s ease infinite;
+  z-index: -2;
+  opacity: 0.7;
+}
+
+@keyframes fondoAnimado {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Partículas energéticas flotantes para efecto místico y moderno */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.04;
+  z-index: -1;
+  animation: particulasFlotantes 60s linear infinite;
+}
+
+@keyframes particulasFlotantes {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100px);
+  }
+}
+
+/* === Nuevas secciones === */
+
+#servicios .servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.servicio {
+  background-color: rgba(255,255,255,0.05);
+  border: 1px solid gold;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.servicio:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px gold;
+}
+
+.servicio h3 {
+  color: #f5e663;
+  margin-bottom: 0.5rem;
+}
+
+#agenda ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+#agenda li {
+  padding: 0.7rem;
+  background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  color: #fff;
+}
+
+#ia input[type="text"] {
+  width: 80%;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 1rem;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+#ia .btn-contacto {
+  margin-top: 0.5rem;
+}
+
+#respuestaIA {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #ffd700;
+}
+
+.footer-redes {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.footer-redes a {
+  display: inline-block;
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.footer-redes a:hover {
+  color: #ffd700;
+  transform: scale(1.2);
+}
+
+#musica-control {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+#musica-control audio {
+  background: rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 0.5rem;
+}
+
+/* === Estilos base reutilizables === */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Karla', sans-serif;
   color: #ffffff;
-  background: url('nayra.png') no-repeat center center fixed;
-  background-size: cover;
-}
-
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  top: 0;
-  left: 0;
 }
 
 .overlay {
   background-color: rgba(0, 0, 0, 0.6);
   min-height: 100vh;
   padding-bottom: 5rem;
-  position: relative;
-  z-index: 1;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(20, 0, 40, 0.8);
-  padding: 0.5rem 1rem;
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 2.2rem;
+  padding: 1rem 2rem;
   font-family: 'Cinzel', serif;
   color: white;
   text-shadow: 0 0 10px #fff;
+  text-align: center;
 }
 
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #ffd700;
+.navbar {
+  text-align: right;
+  background-color: rgba(20, 0, 40, 0.8);
+  padding: 0.5rem 1rem;
 }
 
 .nav-menu {
   list-style: none;
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 0.7rem;
   margin: 0;
   padding: 0;
@@ -74,40 +197,15 @@ body {
   box-shadow: 0 0 10px #a855f7;
 }
 
-@media (max-width: 768px) {
-  .nav-menu {
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.8);
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    display: none;
-    padding: 1rem 0;
-    z-index: 999;
-  }
-
-  .nav-menu.menu-abierto {
-    display: flex;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-  }
-}
-
 section {
   padding: 2rem;
   margin: auto;
-  max-width: 900px;
+  max-width: 800px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
   margin-bottom: 2rem;
   border-radius: 12px;
+  box-shadow: none;
 }
 
 .titulo-dorado {
@@ -144,7 +242,7 @@ input::placeholder, textarea::placeholder {
   font-family: 'Cinzel', serif;
   border-radius: 10px;
   border: none;
-  margin: 0.5rem;
+  margin-top: 1rem;
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -168,144 +266,32 @@ input::placeholder, textarea::placeholder {
   padding: 1.5rem 1rem 3rem;
 }
 
-.footer-redes a {
-  color: #ccc;
-  margin: 0 0.6rem;
-  font-size: 1.2rem;
-  transition: 0.3s;
-}
-
-.footer-redes a:hover {
-  color: #ffd700;
-}
-
 .filtro-categorias {
   display: block;
   margin-top: 1rem;
   font-weight: bold;
 }
 
-.carrusel-container {
-  overflow-x: auto;
-  padding: 1rem 0;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-
-.carrusel {
-  display: flex;
+.galeria-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
-  scroll-snap-align: start;
-  padding: 0 1rem;
+  margin-top: 1.5rem;
 }
 
-.carrusel .producto {
-  flex: 0 0 auto;
-  width: 220px;
-  background: rgba(255,255,255,0.1);
+.producto {
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 1rem;
-  scroll-snap-align: center;
-  transition: transform 0.3s ease;
   text-align: center;
 }
 
-.carrusel .producto:hover {
-  transform: scale(1.05);
-}
-
-.carrusel .producto img {
+.producto img {
   width: 100%;
-  height: 140px;
+  max-height: 180px;
   object-fit: cover;
   border-radius: 10px;
 }
-
-.carrusel .producto h3 {
-  font-size: 1.1rem;
-  color: #ffd700;
-  margin-top: 0.5rem;
-}
-
-.carrusel .producto p {
-  font-size: 0.9rem;
-  color: #eee;
-}
-
-#quien-soy .quien-soy-contenido {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  flex-wrap: wrap;
-  text-align: left;
-}
-
-.foto-nayra {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid gold;
-  box-shadow: 0 0 10px gold;
-}
-
-.frase-impacto {
-  font-style: italic;
-  color: #f5e663;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-
-#testimonios .testimonios-contenedor {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.testimonio {
-  background: rgba(0,0,0,0.4);
-  padding: 1rem;
-  border-left: 4px solid #ffd700;
-  border-radius: 8px;
-  font-style: italic;
-}
-
-.testimonio span {
-  display: block;
-  margin-top: 0.5rem;
-  font-weight: bold;
-  color: #f5e663;
-}
-
-.btn-whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366;
-  color: white;
-  font-size: 2rem;
-  padding: 0.5rem 0.7rem;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #25d366;
-  z-index: 1000;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-}
-
-.btn-whatsapp:hover {
-  transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-  #quien-soy .quien-soy-contenido {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .foto-nayra {
-    margin-bottom: 1rem;
-  }
-}
-
 
 
 
