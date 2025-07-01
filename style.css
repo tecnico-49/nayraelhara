@@ -53,29 +53,15 @@ header.navbar {
   padding: 2rem 1rem;
   background: rgba(20,0,40,0.8);
 }
+/* Imagen de Nayra: tamaño aumentado para mayor presencia */
 .header-image {
-  width: 120px; height: 120px;
+  width: 160px;               /* Aumenta el tamaño del círculo */
+  height: 160px;
   border-radius: 50%;
   border: 3px solid #f5e663;
   box-shadow: 0 0 10px #f5e663;
   margin-bottom: 1rem;
-
-  /* 🔮 Animaciones mágicas añadidas */
-  animation: levitar 6s ease-in-out infinite, resplandor 3s ease-in-out infinite;
 }
-@keyframes levitar {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-10px); }
-}
-@keyframes resplandor {
-  0%, 100% {
-    box-shadow: 0 0 10px #f5e663, 0 0 20px #f5e663, 0 0 30px #f5e663;
-  }
-  50% {
-    box-shadow: 0 0 20px #ffe85c, 0 0 30px #fffac2, 0 0 40px #ffe85c;
-  }
-}
-
 .logo.neon-title {
   color: #f5f663;
   font-family: 'Cinzel', serif;
@@ -241,5 +227,3 @@ form button:hover {
   display: inline-block; margin-top: 0.5rem;
   color: #f5e663; text-decoration: underline; font-weight: bold;
 }
-
-
