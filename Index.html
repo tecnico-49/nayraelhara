@@ -1,273 +1,382 @@
-<!-- HTML actualizado con música de fondo y botón de control -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Oráculo de Nayra</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Karla:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Oráculo de Nayra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Karla&family=Cinzel&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <style>
-    /* Fondo animado */
-    #particles-js {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
+    /* Estilos base */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Karla', sans-serif;
+      color: #ffffff;
       background: url('nayra.png') no-repeat center center fixed;
       background-size: cover;
     }
-    /* Responsive navbar */
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      top: 0;
+      left: 0;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      padding-bottom: 5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(20, 0, 40, 0.8);
+      padding: 0.5rem 1rem;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-family: 'Cinzel', serif;
+      color: white;
+      text-shadow: 0 0 10px #fff;
+    }
+
     .hamburger {
       display: none;
       font-size: 2rem;
-      color: #fff;
       cursor: pointer;
-      position: absolute;
-      right: 1rem;
-      top: 1rem;
+      color: #ffd700;
     }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.7rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-menu li a {
+      text-decoration: none;
+      color: #d8b4fe;
+      background: #2d1a3c;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      border: 1px solid #a855f7;
+      transition: all 0.3s ease;
+    }
+
+    .nav-menu li a:hover {
+      background-color: #a855f7;
+      color: #2a2a3d;
+      box-shadow: 0 0 10px #a855f7;
+    }
+
     @media (max-width: 768px) {
       .nav-menu {
-        display: none;
         flex-direction: column;
-        background: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.8);
         position: absolute;
         top: 60px;
         right: 0;
-        width: 200px;
-        padding: 1rem;
+        width: 100%;
+        display: none;
+        padding: 1rem 0;
+        z-index: 999;
       }
-      .nav-menu.show {
+
+      .nav-menu.menu-abierto {
         display: flex;
       }
+
       .hamburger {
         display: block;
       }
+
+      .logo {
+        font-size: 1.5rem;
+      }
     }
-    .btn-musica {
+
+    section {
+      padding: 2rem;
+      margin: auto;
+      max-width: 900px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      margin-bottom: 2rem;
+      border-radius: 12px;
+    }
+
+    .titulo-dorado {
+      color: #f5e663;
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      border: 2px solid gold;
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #f5e663;
+      margin-bottom: 1rem;
+    }
+
+    .btn-contacto {
+      background: linear-gradient(to right, #ffcc70, #ffd700);
+      color: #2a2a3d;
+      padding: 0.8rem 1.5rem;
+      font-weight: bold;
+      font-family: 'Cinzel', serif;
+      border-radius: 10px;
+      border: none;
+      margin: 0.5rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn-contacto:hover {
+      box-shadow: 0 0 10px #ffd700;
+      transform: scale(1.05);
+    }
+
+    .carrusel-container {
+      overflow-x: auto;
+      padding: 1rem 0;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .carrusel {
+      display: flex;
+      gap: 1rem;
+      scroll-snap-align: start;
+      padding: 0 1rem;
+    }
+
+    .carrusel .producto {
+      flex: 0 0 auto;
+      width: 220px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 1rem;
+      scroll-snap-align: center;
+    }
+
+    .carrusel .producto img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .foto-nayra {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid gold;
+      box-shadow: 0 0 10px gold;
+    }
+
+    #quien-soy .quien-soy-contenido {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+
+    .frase-impacto {
+      font-style: italic;
+      color: #f5e663;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    #testimonios .testimonios-contenedor {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .testimonio {
+      background: rgba(0,0,0,0.4);
+      padding: 1rem;
+      border-left: 4px solid #ffd700;
+      border-radius: 8px;
+      font-style: italic;
+    }
+
+    .testimonio span {
+      display: block;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #f5e663;
+    }
+
+    .btn-whatsapp {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      color: #ffd700;
-      border: 2px solid #ffd700;
+      background-color: #25d366;
+      color: white;
+      font-size: 2rem;
+      padding: 0.5rem 0.7rem;
       border-radius: 50%;
-      font-size: 1.5rem;
-      padding: 0.6rem 0.9rem;
-      cursor: pointer;
-      z-index: 10;
+      box-shadow: 0 0 10px #25d366;
+      z-index: 1000;
+      text-decoration: none;
     }
-    .btn-musica:hover {
-      background: #ffd700;
-      color: #2a2a3d;
+
+    @media (max-width: 768px) {
+      #quien-soy .quien-soy-contenido {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .foto-nayra {
+        margin-bottom: 1rem;
+      }
     }
   </style>
 </head>
 <body>
   <div id="particles-js"></div>
   <div class="overlay">
-    <header class="header">
-      <div class="logo">Nayra Elhara</div>
+    <header class="navbar">
+      <div class="logo">Oráculo de Nayra</div>
       <div class="hamburger" onclick="toggleMenu()">☰</div>
-      <nav class="navbar">
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#canalizaciones">Canalizaciones</a></li>
-          <li><a href="#catalogo">Catálogo</a></li>
-          <li><a href="#oraculo">Oráculo</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#quien-soy">Quién soy</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#contacto">Contáctanos</a></li>
+      </ul>
     </header>
 
-    <section id="inicio">
-      <h2 class="titulo-dorado">Bienvenida al Portal de Nayra</h2>
-      <p>Un espacio para despertar tu luz interior con guía espiritual y energía sagrada.</p>
+    <section class="hero">
+      <h1 class="titulo-dorado">Oráculo de Nayra</h1>
+      <p>Guía espiritual y canalizaciones para despertar tu intuición divina.</p>
+      <button class="btn-contacto" onclick="document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})">Explora el Catálogo</button>
+      <button class="btn-contacto" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Comienza tu guía espiritual</button>
+      <div style="margin-top: 1.5rem;">
+        <button onclick="toggleAudio()" class="btn-contacto">🎶 Música de hadas</button>
+        <audio id="audioFondo" loop>
+          <source src="https://cdn.pixabay.com/audio/2022/10/31/audio_8fba14b14a.mp3" type="audio/mp3">
+        </audio>
+      </div>
     </section>
 
-    <section id="canalizaciones">
-      <h2 class="titulo-dorado">Canalizaciones</h2>
-      <p>Recibe mensajes del alma a través de Nayra y sus dones espirituales.</p>
-    </section>
-
-    <section id="catalogo">
-      <h2 class="titulo-dorado">Catálogo Espiritual</h2>
-      <label class="filtro-categorias">Filtrar por intención:</label>
-      <select onchange="filtrarProductos(this.value)">
-        <option value="todos">Todos</option>
-        <option value="amor">Amor</option>
-        <option value="proteccion">Protección</option>
-        <option value="abundancia">Abundancia</option>
-      </select>
-
-      <div class="galeria-productos">
-        <div class="producto" data-categoria="amor">
-          <img src="cuarzo-rosa.jpg" alt="Cuarzo Rosa">
-          <h4>Cuarzo Rosa</h4>
-          <p>Amor propio y sanación emocional.</p>
-        </div>
-
-        <div class="producto" data-categoria="abundancia">
-          <img src="amatista.jpg" alt="Amatista">
-          <h4>Amatista</h4>
-          <p>Calma mental y conexión espiritual.</p>
-        </div>
-
-        <div class="producto" data-categoria="proteccion">
-          <img src="obsidiana.jpg" alt="Obsidiana Negra">
-          <h4>Obsidiana Negra</h4>
-          <p>Protección energética profunda.</p>
-        </div>
-
-        <div class="producto" data-categoria="amor">
-          <img src="amuleto-lunar.jpg" alt="Amuleto Lunar">
-          <h4>Amuleto Lunar</h4>
-          <p>Intuición y conexión con lo femenino sagrado.</p>
+    <!-- Quién soy -->
+    <section id="quien-soy">
+      <h2 class="titulo-dorado">¿Quién soy?</h2>
+      <div class="quien-soy-contenido">
+        <img src="https://placehold.co/150x150/000000/ffffff?text=Nayra" alt="Nayra Elhara" class="foto-nayra">
+        <div>
+          <p class="frase-impacto">"¡No estás perdida... estás recordando quién eres!"</p>
+          <p>Soy Nayra, canalizadora y guía espiritual. Este oráculo fue creado para ayudarte a sanar, despertar y reconectar con tu verdad más alta.</p>
         </div>
       </div>
     </section>
 
-    <section id="oraculo">
-      <h2 class="titulo-dorado">Oráculo de Nayra</h2>
-      <input type="text" id="pregunta" placeholder="Escribe tu pregunta...">
-      <button onclick="consultarOraculo()">Consultar</button>
-      <div id="respuestaOraculo" class="respuesta"></div>
+    <!-- Catálogo -->
+    <section id="catalogo">
+      <h2 class="titulo-dorado">Catálogo Estelar</h2>
+      <div class="carrusel-container">
+        <div class="carrusel">
+          <div class="producto">
+            <img src="https://placehold.co/220x150/432857/FFFFFF?text=Cuarzo+Rosa" alt="Cuarzo Rosa">
+            <h3>Cuarzo Rosa</h3>
+            <p>Amor propio y sanación emocional.</p>
+          </div>
+          <div class="producto">
+            <img src="https://placehold.co/220x150/734c9e/FFFFFF?text=Amatista" alt="Amatista">
+            <h3>Amatista</h3>
+            <p>Protección y expansión espiritual.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="servicios">
-      <h2 class="titulo-dorado">Servicios Espirituales</h2>
-      <ul>
-        <li><strong>Libros Canalizados:</strong> Publicaciones escritas por Nayra con mensajes de luz.</li>
-        <li><strong>Retiros Espirituales:</strong> Viajes y encuentros sagrados en Villa de Leyva.</li>
-        <li><strong>Sesiones Personalizadas:</strong> Lecturas, oráculos y activaciones energéticas por cita.</li>
-      </ul>
+    <!-- Testimonios -->
+    <section id="testimonios">
+      <h2 class="titulo-dorado">Testimonios</h2>
+      <div class="testimonios-contenedor">
+        <div class="testimonio">
+          <p>"¡Increíble sesión! Sentí mucha claridad."</p>
+          <span>&mdash; Laura G.</span>
+        </div>
+        <div class="testimonio">
+          <p>"Conecté con mi intuición de una forma mágica."</p>
+          <span>&mdash; Camila R.</span>
+        </div>
+      </div>
     </section>
 
+    <!-- Contacto -->
     <section id="contacto">
       <h2 class="titulo-dorado">Contáctanos</h2>
-      <form action="enviar.php" method="POST">
-        <input type="text" name="nombre" placeholder="Tu nombre" required>
-        <input type="email" name="correo" placeholder="Tu correo" required>
-        <textarea name="mensaje" placeholder="Tu mensaje espiritual..." required></textarea>
+      <form>
+        <input type="text" placeholder="Tu nombre">
+        <input type="email" placeholder="Tu correo">
+        <textarea placeholder="Tu mensaje"></textarea>
         <button type="submit" class="btn-contacto">Enviar</button>
       </form>
     </section>
 
-    <footer class="footer-derechos">
-      <p>&copy; 2025 Nayra Elhara. Todos los derechos reservados. | Hecho con 💫 para el despertar espiritual.</p>
+    <!-- Footer -->
+    <footer>
       <div class="footer-redes">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
-        <a href="#"><i class="fas fa-file-contract"></i> Políticas</a>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
       </div>
+      <p class="footer-derechos">© 2025 Nayra Elhara. Todos los derechos reservados. | Hecho con 💫 para el despertar espiritual. <br> <a href="#" style="color:#f5e663; text-decoration: underline;">Políticas</a>
+      </p>
     </footer>
   </div>
 
-  <!-- Música de fondo -->
-  <audio id="musicaBosque" autoplay loop>
-    <source src="hadas-bosque.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio HTML5.
-  </audio>
+  <a href="https://wa.me/573001112233" class="btn-whatsapp" target="_blank">💌</a>
 
-  <!-- Botón de control de música -->
-  <button class="btn-musica" onclick="toggleMusica()"><i class="fas fa-music"></i></button>
-
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 80 },
-        color: { value: "#ffffff" },
-        shape: { type: "circle" },
-        opacity: { value: 0.1 },
-        size: { value: 3 },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: "#ffffff",
-          opacity: 0.1,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 1
-        }
-      },
-      interactivity: {
-        events: {
-          onhover: { enable: true, mode: "grab" },
-          onclick: { enable: true, mode: "push" }
-        },
-        modes: {
-          grab: { distance: 200, line_linked: { opacity: 0.3 } },
-          push: { particles_nb: 4 }
-        }
-      },
-      retina_detect: true
-    });
-
-    function consultarOraculo() {
-      const frasesOraculo = [
-        "Confía, el universo ya está trabajando a tu favor.",
-        "Recuerda quién eres: una chispa eterna de luz.",
-        "Lo que hoy duele, mañana será tu poder.",
-        "Abre tu corazón: el amor divino te rodea.",
-        "Los ciclos que terminan son puertas que se abren.",
-        "No temas al cambio, Nayra te guía en cada paso.",
-        "Tu intuición es más sabia de lo que crees.",
-        "Cada noche oscura da paso a un amanecer dorado.",
-        "Suelta el pasado con gratitud, no con miedo.",
-        "Eres sostenida por la energía del todo.",
-        "Tu alma eligió esta lección, y ya la estás dominando.",
-        "En el silencio encontrarás las respuestas que buscas.",
-        "La respuesta está en ti. Respira y escucha."
-      ];
-
-      const pregunta = document.getElementById("pregunta").value.trim();
-      const respuestaDiv = document.getElementById("respuestaOraculo");
-
-      if (pregunta === "") {
-        respuestaDiv.innerText = "🌌 Escribe tu pregunta para recibir una guía del Oráculo.";
-      } else {
-        const indice = Math.floor(Math.random() * frasesOraculo.length);
-        respuestaDiv.innerText = `🔮 ${frasesOraculo[indice]}`;
-      }
-    }
-
-    function filtrarProductos(categoria) {
-      const productos = document.querySelectorAll('.producto');
-      productos.forEach(p => {
-        const cat = p.getAttribute('data-categoria');
-        if (categoria === 'todos' || categoria === cat) {
-          p.style.display = 'block';
-        } else {
-          p.style.display = 'none';
-        }
-      });
-    }
-
     function toggleMenu() {
-      const nav = document.getElementById("navMenu");
-      nav.classList.toggle("show");
+      document.getElementById("navMenu").classList.toggle("menu-abierto");
     }
 
-    function toggleMusica() {
-      const audio = document.getElementById("musicaBosque");
+    function toggleAudio() {
+      const audio = document.getElementById("audioFondo");
       if (audio.paused) {
         audio.play();
       } else {
         audio.pause();
       }
     }
+
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 30 },
+        color: { value: "#ffd700" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3 },
+        size: { value: 3 },
+        line_linked: { enable: false },
+        move: { speed: 0.6 }
+      },
+      interactivity: { detect_on: "canvas" },
+      retina_detect: true
+    });
   </script>
 </body>
 </html>
+
 
 
 
