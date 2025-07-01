@@ -10,16 +10,16 @@ body::before {
   background-size: 400% 400%;
   animation: fondoAnimado 15s ease infinite;
   z-index: -2;
-  opacity: 0.7;
+  opacity: 0.7; /* Ajusta la opacidad para no opacar demasiado el contenido */
 }
 
 @keyframes fondoAnimado {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* === Partículas flotantes === */
+/* === Partículas flotantes sutiles === */
 body::after {
   content: "";
   position: fixed;
@@ -29,7 +29,7 @@ body::after {
   height: 100%;
   background-image: radial-gradient(white 1px, transparent 1px);
   background-size: 40px 40px;
-  opacity: 0.04;
+  opacity: 0.04; /* Muy suave para no distraer */
   z-index: -1;
   animation: particulasFlotantes 60s linear infinite;
 }
@@ -39,7 +39,7 @@ body::after {
   to   { transform: translateY(-100px); }
 }
 
-/* === Configuración general === */
+/* === Estilos generales === */
 body {
   margin: 0;
   padding: 0;
@@ -62,6 +62,7 @@ body {
   text-align: center;
 }
 
+/* === Menú de navegación === */
 .navbar {
   text-align: right;
   background-color: rgba(20, 0, 40, 0.8);
@@ -96,7 +97,7 @@ body {
   box-shadow: 0 0 10px #a855f7;
 }
 
-/* === Secciones === */
+/* === Secciones principales === */
 section {
   padding: 2rem;
   margin: auto;
@@ -181,47 +182,40 @@ section {
   color: #ffd700;
 }
 
-/* === Formulario === */
-input, textarea, select {
-  width: 90%;
-  margin: 0.5rem 0;
-  padding: 0.8rem;
-  border-radius: 10px;
-  border: none;
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
-}
-
-input::placeholder, textarea::placeholder {
-  color: #eee;
-}
-
-.btn-contacto {
-  background: linear-gradient(to right, #ffcc70, #ffd700);
-  color: #2a2a3d;
-  padding: 0.8rem 1.5rem;
-  font-weight: bold;
-  font-family: 'Cinzel', serif;
-  border-radius: 10px;
-  border: none;
+/* === Formulario de contacto centrado === */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra campos horizontalmente */
+  gap: 1rem; /* Espacio entre campos */
   margin-top: 1rem;
-  cursor: pointer;
-  transition: 0.3s ease;
 }
 
-.btn-contacto:hover {
-  box-shadow: 0 0 10px #ffd700;
+form input,
+form textarea {
+  flex: 1 1 250px; /* Se adaptan al espacio disponible */
+  min-width: 200px;
+  max-width: 300px;
+}
+
+form button,
+form input[type="submit"] {
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  background: #ffd700; /* Botón dorado para destacar */
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+  background: #ffe85c;
   transform: scale(1.05);
 }
 
-/* === Footer === */
-.footer-derechos {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #ddd;
-  padding: 1.5rem 1rem 3rem;
-}
-
+/* === Footer y redes sociales === */
 .footer-redes {
   margin-top: 1rem;
   text-align: center;
@@ -240,16 +234,70 @@ input::placeholder, textarea::placeholder {
   transform: scale(1.2);
 }
 
-/* === Música === */
+.footer-derechos {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ddd;
+  padding: 1.5rem 1rem 3rem;
+}
+
+/* === Contenedor de audio === */
 #musica-control {
-  display: flex;
+  display: flex;           /* Usamos flex para centrar el control */
   justify-content: center;
   margin-bottom: 1rem;
+  background: rgba(0,0,0,0.4); /* Fondo tenue para diferenciar */
+  padding: 0.5rem;
+  border-radius: 12px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #musica-control audio {
-  background: rgba(255,255,255,0.2);
-  border-radius: 12px;
-  padding: 0.5rem;
+  width: 100%;             /* Audio ocupa todo el contenedor */
+  background: transparent; /* Transparente para limpieza */
+  border-radius: 8px;
 }
 
+/* === Botón flotante de WhatsApp === */
+.btn-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366; /* Verde WhatsApp */
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(37,211,102,0.7);
+  z-index: 1000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.btn-whatsapp:hover {
+  transform: scale(1.1);
+}
+
+/* === Ajustes redes sociales === */
+.footer-redes {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.footer-redes a {
+  display: inline-block;
+  color: #fff;
+  margin: 0 15px;
+  font-size: 1.8rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer-redes a:hover {
+  color: #ffd700;         /* Dorado al pasar el mouse */
+  transform: scale(1.2);
+}
