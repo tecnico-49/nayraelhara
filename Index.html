@@ -11,17 +11,132 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Karla&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Íconos de redes sociales (FontAwesome) -->
+  <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/your-fontawesome-id.js" crossorigin="anonymous"></script>
+
+  <style>
+    /* === Fondo animado degradado místico === */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: linear-gradient(-45deg, #2a004f, #45045b, #190033, #3c0066);
+      background-size: 400% 400%;
+      animation: fondoMistica 20s ease infinite;
+      z-index: -2;
+      opacity: 0.3;
+    }
+
+    @keyframes fondoMistica {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* === Partículas flotantes (estrellas sutiles) === */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: radial-gradient(white 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.05;
+      z-index: -1;
+      animation: particulasMisticas 60s linear infinite;
+    }
+
+    @keyframes particulasMisticas {
+      from { transform: translateY(0); }
+      to { transform: translateY(-100px); }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Karla', sans-serif;
+      background-color: #1b002d;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header.navbar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    .header-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 3px solid #f5e663;
+      box-shadow: 0 0 20px #f5e663;
+      margin-bottom: 1rem;
+      object-fit: cover;
+    }
+
+    .logo.neon-title {
+      color: #f5e663;
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      text-align: center;
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #f5e663,
+                   0 0 30px #f5e663, 0 0 40px #f5e663;
+      animation: glow 2s ease-in-out infinite alternate;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #f5e663,
+                     0 0 40px #f5e663, 0 0 50px #f5e663;
+      }
+      to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #f5e663,
+                     0 0 20px #f5e663, 0 0 25px #f5e663;
+      }
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 0;
+    }
+
+    .nav-menu li a {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      border: 2px solid #d8b4fe;
+      border-radius: 10px;
+      color: #d8b4fe;
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      text-shadow: 0 0 3px #fff;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .nav-menu li a:hover {
+      color: #fff;
+      background: rgba(216,180,254,0.2);
+      box-shadow: 0 0 5px #d8b4fe, 0 0 10px #d8b4fe, 0 0 20px #d8b4fe;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Encabezado -->
   <header class="navbar">
     <img src="nayra.png" alt="Foto de Nayra" class="header-image" />
     <h1 class="logo neon-title">Oráculo de Nayra</h1>
     <nav>
-      <ul class="nav-menu neon-buttons">
+      <ul class="nav-menu">
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#agenda">Agenda</a></li>
         <li><a href="#ia">IA Espiritual</a></li>
@@ -29,106 +144,6 @@
       </ul>
     </nav>
   </header>
-
-  <!-- Música de fondo -->
-  <div id="musica-control">
-    <audio controls id="audioFondo">
-      <source src="musica-bosque.mp3" type="audio/mpeg" />
-      Tu navegador no soporta reproducción de audio.
-    </audio>
-  </div>
-
-  <!-- Botón WhatsApp flotante -->
-  <a href="https://wa.me/573001112233" class="btn-whatsapp" target="_blank" title="Escríbeme en WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <!-- Contenido principal -->
-  <main class="overlay">
-    <!-- Servicios -->
-    <section id="servicios">
-      <h2 class="titulo-dorado">Servicios</h2>
-      <div class="servicios-grid">
-        <div class="servicio">
-          <h3>Lecturas de Tarot</h3>
-          <p>Conexiones profundas con tu energía y guías espirituales.</p>
-        </div>
-        <div class="servicio">
-          <h3>Sanación Energética</h3>
-          <p>Reequilibra tus chakras y limpia bloqueos emocionales.</p>
-        </div>
-        <div class="servicio">
-          <h3>Cristales Personalizados</h3>
-          <p>Recomendaciones únicas según tu propósito de vida.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Agenda -->
-    <section id="agenda">
-      <h2 class="titulo-dorado">Agenda</h2>
-      <ul>
-        <li>✨ Ceremonia de Luna Nueva - 7 de julio</li>
-        <li>🌕 Ritual de Abundancia - 15 de julio</li>
-        <li>🔮 Curso de Iniciación Espiritual - 25 de julio</li>
-      </ul>
-    </section>
-
-    <!-- IA Espiritual -->
-    <section id="ia">
-      <h2 class="titulo-dorado">Consulta a la IA Espiritual</h2>
-      <input type="text" id="preguntaIA" placeholder="Haz tu pregunta al universo..." />
-      <button class="btn-contacto" onclick="responderIA()">Consultar</button>
-      <div id="respuestaIA"></div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto">
-      <h2 class="titulo-dorado">Contáctanos</h2>
-      <form>
-        <input type="text" placeholder="Tu nombre" required />
-        <input type="email" placeholder="Tu correo" required />
-        <textarea placeholder="Escribe tu mensaje..." rows="5"></textarea>
-        <div class="contenedor-boton">
-          <button type="submit" class="btn-contacto">Enviar Mensaje ✨</button>
-        </div>
-      </form>
-    </section>
-
-    <!-- Redes sociales -->
-    <div class="redes-sociales">
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://x.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
-      <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-redes">
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
-    </div>
-    <div class="footer-derechos">
-      © 2025 Nayra Elhara. Todos los derechos reservados. | Hecho con 💫 para el despertar espiritual.<br />
-      <a href="#">Políticas</a>
-    </div>
-  </footer>
-
-  <!-- Script IA -->
-  <script>
-    function responderIA() {
-      const pregunta = document.getElementById('preguntaIA').value.trim();
-      const respuesta = document.getElementById('respuestaIA');
-      if (!pregunta) {
-        respuesta.innerText = '✨ Por favor, formula una pregunta primero.';
-        return;
-      }
-      respuesta.innerText = '🔮 La energía responde: Confía en tu intuición y sigue adelante.';
-    }
-  </script>
 </body>
 </html>
 
