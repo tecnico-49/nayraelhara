@@ -16,21 +16,30 @@ body::before {
   100% { background-position: 0% 50%; }
 }
 
-/* === Partículas flotantes === */
+/* === Partículas flotantes (versión funcional) === */
 body::after {
   content: "";
   position: fixed;
   top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity: 0.04;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image:
+    radial-gradient(#ffffff 1px, transparent 1px),
+    radial-gradient(#ffffff 1px, transparent 1px);
+  background-size: 80px 80px, 100px 100px;
+  background-position: 0 0, 40px 40px;
+  opacity: 0.05;
   z-index: -1;
-  animation: particulasFlotantes 60s linear infinite;
+  animation: moverParticulas 100s linear infinite;
 }
-@keyframes particulasFlotantes {
-  from { transform: translateY(0); }
-  to   { transform: translateY(-100px); }
+@keyframes moverParticulas {
+  from {
+    background-position: 0 0, 40px 40px;
+  }
+  to {
+    background-position: 1000px 1000px, 1040px 1040px;
+  }
 }
 
 /* === Estilos Generales === */
@@ -53,10 +62,9 @@ header.navbar {
   padding: 2rem 1rem;
   background: rgba(20,0,40,0.8);
 }
-/* Imagen de Nayra: tamaño aumentado para mayor presencia */
 .header-image {
-  width: 160px;               /* Aumenta el tamaño del círculo */
-  height: 160px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   border: 3px solid #f5e663;
   box-shadow: 0 0 10px #f5e663;
@@ -181,20 +189,30 @@ form input, form textarea {
   padding: 0.8rem; border: none; border-radius: 10px;
   background: rgba(255,255,255,0.1); color: #fff;
 }
-/* Botón de envío pequeño */
-form button {
-  padding: 0.3rem 0.8rem;        /* Reduce padding para tamaño compacto */
-  background: #f5e663;           /* Color dorado para resaltar */
-  color: #2a2a3d;                /* Texto oscuro para contraste */
+
+/* === Contenedor para botón centrado debajo === */
+.contenedor-boton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor-boton button {
+  max-width: 160px;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  background: #f5e663;
+  color: #2a2a3d;
   border: none;
   border-radius: 10px;
-  font-size: 0.8rem;             /* Tamaño de letra más pequeño */
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.3s;
 }
-form button:hover {
-  background: #ffe85c; transform: scale(1.02);
+.contenedor-boton button:hover {
+  background: #ffe85c;
+  transform: scale(1.02);
 }
 
 /* === Botón flotante de WhatsApp === */
@@ -215,11 +233,11 @@ form button:hover {
   border-radius: 12px;
 }
 #musica-control audio {
-  width: 100%; background: transparent;
+  width: 500%; background: transparent;
   border-radius: 8px;
 }
 
-/* === Pie de página centrado y fondo estrellado === */
+/* === Pie de página === */
 .footer-derechos {
   text-align: center; font-weight: bold;
   padding: 2rem 1rem;
