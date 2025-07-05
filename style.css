@@ -198,21 +198,32 @@ section h2 {
   color: #ffd700;
 }
 
-/* NUEVO FOOTER REDISEÑADO */
+/* FOOTER MÍSTICO */
 footer {
   padding: 2rem 1rem;
   text-align: center;
   color: #ccc;
 }
 
-.socials {
+.footer-banner {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(245, 230, 99, 0.3);
+  max-width: 700px;
+  margin: 2rem auto 0;
+  text-align: center;
+  color: #f5e663;
+}
+
+.footer-banner .socials {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   margin-bottom: 1rem;
 }
 
-.socials a {
+.footer-banner .socials a {
   background: rgba(255, 255, 255, 0.1);
   padding: 0.8rem;
   border-radius: 50%;
@@ -222,33 +233,23 @@ footer {
   box-shadow: 0 0 8px rgba(245, 230, 99, 0.5);
 }
 
-.socials a:hover {
+.footer-banner .socials a:hover {
   background: #f5e663;
   color: #1b002d;
   transform: scale(1.1);
 }
 
-.footer-banner {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: 12px;
-  color: #eee;
+.footer-banner p a {
+  color: #fff;
+  text-decoration: underline;
   font-size: 0.9rem;
-  margin: 0 auto;
-  max-width: 600px;
-  box-shadow: 0 0 10px rgba(245, 230, 99, 0.3);
 }
-<footer>
-  <div class="footer-banner">
-    <div class="socials">
-      <a href="https://instagram.com/nayraelhara" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://tiktok.com/@nayraelhara" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-      <a href="https://wa.me/573001112233" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    </div>
-    <p>© 2025 Nayra Elhara – Creado con amor para almas luminosas 🌙<br />
-    <a href="#" style="color:#fff;">Políticas de Privacidad</a></p>
-  </div>
-</footer>
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #fff, 0 0 20px #f5e663; }
+  to { text-shadow: 0 0 5px #fff, 0 0 10px #f5e663; }
+}
+
 
 @keyframes glow {
   from { text-shadow: 0 0 10px #fff, 0 0 20px #f5e663; }
