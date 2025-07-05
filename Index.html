@@ -9,13 +9,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Karla&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/your-fontawesome-id.js" crossorigin="anonymous"></script>
 
   <style>
     /* === Fondo animado degradado místico === */
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Karla', sans-serif;
+      background: #1b002d;
+      overflow-x: hidden;
+      position: relative;
+      height: 100%;
+    }
+
     body::before {
       content: "";
       position: fixed;
@@ -25,7 +32,7 @@
       background-size: 400% 400%;
       animation: fondoMistica 20s ease infinite;
       z-index: -2;
-      opacity: 0.3;
+      opacity: 0.4;
     }
 
     @keyframes fondoMistica {
@@ -34,7 +41,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* === Partículas flotantes (estrellas sutiles) === */
     body::after {
       content: "";
       position: fixed;
@@ -42,23 +48,15 @@
       width: 100%; height: 100%;
       background-image: radial-gradient(white 1px, transparent 1px);
       background-size: 40px 40px;
-      opacity: 0.05;
+      opacity: 0.07;
       z-index: -1;
       animation: particulasMisticas 60s linear infinite;
+      pointer-events: none;
     }
 
     @keyframes particulasMisticas {
       from { transform: translateY(0); }
-      to { transform: translateY(-100px); }
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Karla', sans-serif;
-      background-color: #1b002d;
-      color: #fff;
-      overflow-x: hidden;
+      to   { transform: translateY(-100px); }
     }
 
     header.navbar {
@@ -130,7 +128,6 @@
     }
   </style>
 </head>
-
 <body>
   <header class="navbar">
     <img src="nayra.png" alt="Foto de Nayra" class="header-image" />
