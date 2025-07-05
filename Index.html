@@ -64,6 +64,7 @@
       text-align: center;
       padding: 6rem 1rem 4rem;
       color: #f5e663;
+      position: relative;
     }
 
     .hero img {
@@ -71,9 +72,15 @@
       height: 240px;
       border-radius: 50%;
       border: 4px solid #f5e663;
-      box-shadow: 0 0 20px #f5e663;
+      box-shadow: 0 0 25px #f5e663, 0 0 40px #f5e663 inset;
       margin-bottom: 1rem;
       object-fit: cover;
+      animation: destello 3s infinite alternate;
+    }
+
+    @keyframes destello {
+      0% { box-shadow: 0 0 20px #f5e663, 0 0 40px #f5e663 inset; }
+      100% { box-shadow: 0 0 30px #fff4a3, 0 0 60px #fff4a3 inset; }
     }
 
     .hero h1 {
@@ -291,7 +298,6 @@
   </script>
 </body>
 </html>
-
 
 
 
