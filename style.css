@@ -45,7 +45,6 @@ body::after {
   to { transform: translateY(-100px); }
 }
 
-/* === HERO === */
 .hero {
   display: flex;
   flex-direction: column;
@@ -102,7 +101,6 @@ body::after {
   transform: scale(1.05);
 }
 
-/* === CTA Calendly === */
 .cta-reserva {
   display: inline-block;
   background: #f5e663;
@@ -122,7 +120,6 @@ body::after {
   transform: scale(1.05);
 }
 
-/* === SECTIONS === */
 section {
   padding: 4rem 1rem;
   max-width: 900px;
@@ -139,7 +136,6 @@ section h2 {
   text-shadow: 0 0 10px #f5e663;
 }
 
-/* === SERVICIOS y TIENDA === */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -164,7 +160,6 @@ section h2 {
   color: #f5e663;
 }
 
-/* === IA ESPIRITUAL === */
 .ia-form {
   display: flex;
   flex-direction: column;
@@ -203,25 +198,47 @@ section h2 {
   color: #ffd700;
 }
 
-/* === FOOTER === */
+/* NUEVO FOOTER REDISEÑADO */
 footer {
   padding: 2rem 1rem;
   text-align: center;
   color: #ccc;
 }
 
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
 .socials a {
-  margin: 0 0.5rem;
-  color: #d8b4fe;
-  font-size: 1.5rem;
-  transition: color .3s;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.8rem;
+  border-radius: 50%;
+  color: #f5e663;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(245, 230, 99, 0.5);
 }
 
 .socials a:hover {
-  color: #fff;
+  background: #f5e663;
+  color: #1b002d;
+  transform: scale(1.1);
 }
 
-/* === GLOW TEXT === */
+.footer-banner {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  color: #eee;
+  font-size: 0.9rem;
+  margin: 0 auto;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(245, 230, 99, 0.3);
+}
+
 @keyframes glow {
   from { text-shadow: 0 0 10px #fff, 0 0 20px #f5e663; }
   to { text-shadow: 0 0 5px #fff, 0 0 10px #f5e663; }
