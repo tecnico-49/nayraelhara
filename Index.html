@@ -4,26 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oráculo de Nayra</title>
+
   <!-- Fuentes y estilos -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Karla&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
   <!-- Íconos de redes sociales (FontAwesome) -->
   <script src="https://kit.fontawesome.com/your-fontawesome-id.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-
-  <!-- Fondo animado extra en HTML (Canvas o Lottie) opcional -->
-  <!-- Podrías integrar aquí una librería para animación de partículas más avanzada -->
-
-  <!-- Encabezado con imagen de Nayra y navegación -->
+  <!-- Encabezado -->
   <header class="navbar">
-    <!-- Imagen de Nayra reemplazando fondo PNG para más conexión personal -->
-   <img src="nayra.png" alt="Foto de Nayra" class="header-image" />
-    <h1 class="logo neon-title">Oráculo de Nayra</h1> <!-- Título con efecto "neón" -->
+    <img src="nayra.png" alt="Foto de Nayra" class="header-image" />
+    <h1 class="logo neon-title">Oráculo de Nayra</h1>
     <nav>
-      <ul class="nav-menu neon-buttons"> <!-- Clases comentan animación llamativa -->
+      <ul class="nav-menu neon-buttons">
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#agenda">Agenda</a></li>
         <li><a href="#ia">IA Espiritual</a></li>
@@ -32,23 +30,22 @@
     </nav>
   </header>
 
-  <!-- Control de Música mejorado -->
+  <!-- Música de fondo -->
   <div id="musica-control">
     <audio controls id="audioFondo">
       <source src="musica-bosque.mp3" type="audio/mpeg" />
-      <!-- Mensaje si no soporta audio -->
       Tu navegador no soporta reproducción de audio.
     </audio>
   </div>
 
-  <!-- Botón flotante de WhatsApp siempre visible -->
+  <!-- Botón WhatsApp flotante -->
   <a href="https://wa.me/573001112233" class="btn-whatsapp" target="_blank" title="Escríbeme en WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
+  <!-- Contenido principal -->
   <main class="overlay">
-
-    <!-- Sección Servicios -->
+    <!-- Servicios -->
     <section id="servicios">
       <h2 class="titulo-dorado">Servicios</h2>
       <div class="servicios-grid">
@@ -67,7 +64,7 @@
       </div>
     </section>
 
-    <!-- Sección Agenda -->
+    <!-- Agenda -->
     <section id="agenda">
       <h2 class="titulo-dorado">Agenda</h2>
       <ul>
@@ -77,7 +74,7 @@
       </ul>
     </section>
 
-    <!-- Sección IA Espiritual -->
+    <!-- IA Espiritual -->
     <section id="ia">
       <h2 class="titulo-dorado">Consulta a la IA Espiritual</h2>
       <input type="text" id="preguntaIA" placeholder="Haz tu pregunta al universo..." />
@@ -85,28 +82,29 @@
       <div id="respuestaIA"></div>
     </section>
 
-    <!-- Sección de Contacto -->
+    <!-- Contacto -->
     <section id="contacto">
       <h2 class="titulo-dorado">Contáctanos</h2>
       <form>
         <input type="text" placeholder="Tu nombre" required />
         <input type="email" placeholder="Tu correo" required />
         <textarea placeholder="Escribe tu mensaje..." rows="5"></textarea>
-        <button type="submit" class="btn-contacto">Enviar Mensaje ✨</button>
+        <div class="contenedor-boton">
+          <button type="submit" class="btn-contacto">Enviar Mensaje ✨</button>
+        </div>
       </form>
     </section>
-  <!-- Redes sociales flotantes en sección -->
-  <div class="redes-sociales">
-    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://x.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
-    <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-  </div>
-</main>
 
+    <!-- Redes sociales -->
+    <div class="redes-sociales">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
   </main>
 
-  <!-- Pie de Página -->
+  <!-- Footer -->
   <footer>
     <div class="footer-redes">
       <a href="#"><i class="fab fa-instagram"></i></a>
@@ -115,13 +113,12 @@
     </div>
     <div class="footer-derechos">
       © 2025 Nayra Elhara. Todos los derechos reservados. | Hecho con 💫 para el despertar espiritual.<br />
-      <a href="#" style="color:#ccc;">Políticas</a>
+      <a href="#">Políticas</a>
     </div>
   </footer>
 
-  <!-- Script IA Espiritual -->
+  <!-- Script IA -->
   <script>
-    // Función que simula respuesta de IA
     function responderIA() {
       const pregunta = document.getElementById('preguntaIA').value.trim();
       const respuesta = document.getElementById('respuestaIA');
@@ -129,11 +126,9 @@
         respuesta.innerText = '✨ Por favor, formula una pregunta primero.';
         return;
       }
-      // Respuesta energética aleatoria
       respuesta.innerText = '🔮 La energía responde: Confía en tu intuición y sigue adelante.';
     }
   </script>
-
 </body>
 </html>
 
