@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Mística - Nayra Elhara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Karla&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Karla', sans-serif;
+      background: linear-gradient(-45deg, #2a004f, #45045b, #190033, #3c0066);
+      background-size: 400% 400%;
+      animation: fondo 20s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes fondo {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      color: #f5e663;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    .volver {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #f5e663;
+      color: #1b002d;
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      transition: transform 0.3s;
+    }
+
+    .volver:hover {
+      background: #fff;
+      transform: scale(1.05);
+    }
+
+    .tienda {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(0,0,0,0.4);
+      border-radius: 15px;
+    }
+
+    .producto {
+      margin-bottom: 2rem;
+      border-left: 4px solid gold;
+      padding-left: 1rem;
+    }
+
+    .producto h2 {
+      font-family: 'Cinzel', serif;
+      color: #f5e663;
+    }
+
+    .producto p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Tienda de Cuarzos y Energía</h1>
+    <a class="volver" href="index.html">← Volver al Oráculo</a>
+  </header>
+
+  <div class="tienda">
+    <div class="producto">
+      <h2>💖 Cuarzo Rosa</h2>
+      <p>Conecta con el amor propio, la armonía emocional y la dulzura interna. Ideal para sanar heridas del corazón.</p>
+    </div>
+
+    <div class="producto">
+      <h2>🔮 Amatista</h2>
+      <p>Protección psíquica, desarrollo espiritual y conexión con la intuición profunda. Recomendado para meditar.</p>
+    </div>
+
+    <div class="producto">
+      <h2>🖤 Obsidiana Negra</h2>
+      <p>Escudo protector contra energías negativas, cortes energéticos y liberación de bloqueos antiguos.</p>
+    </div>
+
+    <div class="producto">
+      <h2>🌟 Citrino</h2>
+      <p>Activación del plexo solar, atracción de abundancia y limpieza de pensamientos limitantes.</p>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Nayra Elhara · Tienda espiritual con propósito ✨
+  </footer>
+
+</body>
+</html>
