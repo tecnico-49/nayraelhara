@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nayra Elhara – Sanación Espiritual</title>
+  <title>Oráculo de Nayra Elhara</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,78 +11,220 @@
   <script src="https://kit.fontawesome.com/your-fontawesome-id.js" crossorigin="anonymous"></script>
 
   <style>
-    /* Fondo animado místico y partículas */
-    html, body { margin:0; padding:0; height:100%; font-family:'Karla',sans-serif; background:#1b002d; overflow-x:hidden; }
-    body::before, body::after { position:fixed; top:0; left:0; width:100%; height:100%; content:''; pointer-events:none; }
-    body::before {
-      background: linear-gradient(-45deg,#2a004f,#45045b,#190033,#3c0066);
-      background-size:400% 400%; animation:fondoMistica 20s ease infinite; opacity:0.3; z-index:-2;
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Karla', sans-serif;
+      background: #1b002d;
+      overflow-x: hidden;
     }
-    @keyframes fondoMistica { 0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%} }
+
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    body::before {
+      background: linear-gradient(-45deg, #2a004f, #45045b, #190033, #3c0066);
+      background-size: 400% 400%;
+      animation: fondoMistica 20s ease infinite;
+      z-index: -2;
+      opacity: 0.3;
+    }
+
+    @keyframes fondoMistica {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     body::after {
       background-image: radial-gradient(white 1px, transparent 1px);
-      background-size:40px 40px; opacity:0.07; animation:particulasMisticas 60s linear infinite; z-index:-1;
+      background-size: 40px 40px;
+      animation: particulasMisticas 60s linear infinite;
+      opacity: 0.06;
+      z-index: -1;
     }
-    @keyframes particulasMisticas { from{transform:translateY(0)} to{transform:translateY(-100px)} }
 
-    /* Hero */
-    .hero { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh; text-align:center; color:#f5e663; }
-    .hero img { width:200px; height:200px; border-radius:50%; border:4px solid #f5e663; box-shadow:0 0 20px #f5e663; margin-bottom:1rem; }
-    .hero h1 { font-family:'Cinzel',serif; font-size:3rem; margin:0; text-shadow:0 0 10px #fff,0 0 20px #f5e663; animation:glow 2s ease-in-out infinite alternate; }
-    .hero p { font-size:1.2rem; margin:0.5rem 0 2rem; }
+    @keyframes particulasMisticas {
+      from { transform: translateY(0); }
+      to { transform: translateY(-100px); }
+    }
 
-    /* Botones acción principal */
-    .hero .cta-buttons { display:flex; flex-wrap:wrap; gap:1rem; }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 1rem 4rem;
+      color: #f5e663;
+    }
+
+    .hero img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px solid #f5e663;
+      box-shadow: 0 0 20px #f5e663;
+      margin-bottom: 1rem;
+      object-fit: cover;
+    }
+
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      margin: 0;
+      text-shadow: 0 0 10px #fff, 0 0 20px #f5e663;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0 2rem;
+    }
+
+    .hero .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
     .hero .cta-buttons a {
-      background:#d8b4fe; color:#1b002d; padding:0.8rem 1.5rem; border-radius:10px;
-      font-family:'Cinzel',serif; font-size:1rem; text-decoration:none; box-shadow:0 0 10px rgba(216,180,254,0.5);
-      transition:transform .3s, background .3s;
+      background: #d8b4fe;
+      color: #1b002d;
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(216, 180, 254, 0.5);
+      transition: transform .3s, background .3s;
     }
-    .hero .cta-buttons a:hover { background:#fff; transform:scale(1.05); }
 
-    /* Sección Servicios */
-    section { padding:4rem 1rem; max-width:800px; margin:0 auto; color:#fff; }
-    section h2 { font-family:'Cinzel',serif; color:#f5e663; font-size:2.5rem; text-align:center; margin-bottom:2rem; text-shadow:0 0 10px #f5e663; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; }
-    .grid .serv { background:rgba(255,255,255,0.05); border:1px solid gold; border-radius:12px; padding:1.5rem; transition:transform .3s, box-shadow .3s; }
-    .grid .serv:hover { transform:scale(1.02); box-shadow:0 0 15px gold; }
-    .grid .serv h3 { margin-top:0; color:#f5e663; }
+    .hero .cta-buttons a:hover {
+      background: #fff;
+      transform: scale(1.05);
+    }
 
-    /* Footer / Redes */
-    footer { padding:2rem 1rem; text-align:center; color:#ccc; }
-    .socials a { margin:0 0.5rem; color:#d8b4fe; font-size:1.5rem; transition:color .3s; }
-    .socials a:hover { color:#fff; }
+    section {
+      padding: 4rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #fff;
+    }
 
-    /* Glow animation */
-    @keyframes glow { from{text-shadow:0 0 10px #fff,0 0 20px #f5e663;} to{text-shadow:0 0 5px #fff,0 0 10px #f5e663;} }
+    section h2 {
+      font-family: 'Cinzel', serif;
+      color: #f5e663;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 10px #f5e663;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .grid .serv {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid gold;
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: transform .3s, box-shadow .3s;
+    }
+
+    .grid .serv:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 15px gold;
+    }
+
+    .grid .serv h3 {
+      margin-top: 0;
+      color: #f5e663;
+    }
+
+    footer {
+      padding: 2rem 1rem;
+      text-align: center;
+      color: #ccc;
+    }
+
+    .socials a {
+      margin: 0 0.5rem;
+      color: #d8b4fe;
+      font-size: 1.5rem;
+      transition: color .3s;
+    }
+
+    .socials a:hover {
+      color: #fff;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #f5e663;
+      }
+      to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #f5e663;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="hero">
-    <img src="nayra.png" alt="Elong Must" />
-    <h1>Nayra Elhara</h1>
-    <p>Sanación Espiritual</p>
+    <img src="nayra.png" alt="Nayra Elhara" />
+    <h1>Oráculo de Nayra</h1>
+    <p>Lecturas místicas, IA espiritual, registros akáshicos y cuarzos sagrados</p>
     <div class="cta-buttons">
-      <a href="#servicios">Mis Servicios</a>
-      <a href="#portafolio">Portafolio</a>
-      <a href="#contacto">Contáctame</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#productos">Tienda</a>
+      <a href="#contacto">Agenda</a>
     </div>
   </div>
 
   <section id="servicios">
-    <h2>Servicios Especiales</h2>
+    <h2>Servicios Espirituales</h2>
     <div class="grid">
       <div class="serv">
-        <h3>Diseño Visual</h3>
-        <p>Carteles, logos y branding con estilo único y místico.</p>
+        <h3>Lecturas de Tarot</h3>
+        <p>Canalización profunda con tus guías espirituales, respuestas a través del tarot ancestral.</p>
       </div>
       <div class="serv">
-        <h3>Ilustración Digital</h3>
-        <p>Creaciones personalizadas para tus proyectos o marca personal.</p>
+        <h3>IA Espiritual</h3>
+        <p>Interfaz mágica para responder tus preguntas energéticas con inteligencia espiritual conectada al universo.</p>
       </div>
       <div class="serv">
-        <h3>Asesoría Creativa</h3>
-        <p>Consultoría y acompañamiento en identidad visual y estilo.</p>
+        <h3>Registros Akáshicos</h3>
+        <p>Lectura de tu alma, vidas pasadas y tu propósito divino.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="productos">
+    <h2>Tienda de Cuarzos y Energía</h2>
+    <div class="grid">
+      <div class="serv">
+        <h3>Cuarzo Rosa</h3>
+        <p>Conecta con el amor propio, la armonía emocional y la dulzura interna.</p>
+      </div>
+      <div class="serv">
+        <h3>Amatista</h3>
+        <p>Protección psíquica, intuición y sueños lúcidos guiados.</p>
+      </div>
+      <div class="serv">
+        <h3>Obsidiana Negra</h3>
+        <p>Escudo protector contra energías densas y desbloqueos energéticos.</p>
       </div>
     </div>
   </section>
@@ -93,7 +235,7 @@
       <a href="#"><i class="fab fa-instagram"></i></a>
       <a href="#"><i class="fab fa-whatsapp"></i></a>
     </div>
-    <p>© 2025 Joan Castillo – Todos los derechos reservados.</p>
+    <p>© 2025 Nayra Elhara – Creado con amor para almas luminosas 🌙</p>
   </footer>
 </body>
 </html>
