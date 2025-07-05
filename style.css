@@ -238,6 +238,17 @@ footer {
   max-width: 600px;
   box-shadow: 0 0 10px rgba(245, 230, 99, 0.3);
 }
+<footer>
+  <div class="footer-banner">
+    <div class="socials">
+      <a href="https://instagram.com/nayraelhara" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://tiktok.com/@nayraelhara" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/573001112233" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p>© 2025 Nayra Elhara – Creado con amor para almas luminosas 🌙<br />
+    <a href="#" style="color:#fff;">Políticas de Privacidad</a></p>
+  </div>
+</footer>
 
 @keyframes glow {
   from { text-shadow: 0 0 10px #fff, 0 0 20px #f5e663; }
