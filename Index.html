@@ -116,6 +116,25 @@
       transform: scale(1.05);
     }
 
+    .cta-reserva {
+      display: inline-block;
+      background: #f5e663;
+      color: #1b002d;
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 10px #f5e663;
+      transition: transform .3s, background .3s;
+    }
+
+    .cta-reserva:hover {
+      background: #fff;
+      transform: scale(1.05);
+    }
+
     section {
       padding: 4rem 1rem;
       max-width: 900px;
@@ -225,7 +244,8 @@
     <div class="cta-buttons">
       <a href="#servicios">Servicios</a>
       <a href="#productos">Tienda</a>
-      <a href="#agenda">Agenda</a>
+      <a href="#ia">IA</a>
+      <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/tecnicoensistemassenatec49'});return false;" class="cta-reserva">Reservar Sesión ✨</a>
     </div>
   </div>
 
@@ -274,12 +294,6 @@
     </div>
   </section>
 
-  <section id="agenda">
-    <h2>Reserva Tu Cita</h2>
-    <p style="text-align:center; max-width:600px; margin: 0 auto;">Conéctate con Nayra y agenda una sesión sagrada a través de nuestra plataforma de reservas:</p>
-    <div id="calendly-container" style="min-width:320px;height:800px;"></div>
-  </section>
-
   <footer>
     <div class="socials">
       <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -310,18 +324,10 @@
       const aleatoria = mensajes[Math.floor(Math.random() * mensajes.length)];
       respuesta.textContent = aleatoria;
     }
-
-    window.onload = function() {
-      Calendly.initInlineWidget({
-        url: 'https://calendly.com/tecnicoensistemassenatec49',
-        parentElement: document.getElementById('calendly-container'),
-        prefill: {},
-        utm: {}
-      });
-    }
   </script>
 </body>
 </html>
+
 
 
 
