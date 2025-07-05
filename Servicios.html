@@ -8,78 +8,67 @@
   <style>
     body {
       margin: 0;
+      background: #1b002d;
       font-family: 'Karla', sans-serif;
-      background: linear-gradient(-45deg, #2a004f, #45045b, #190033, #3c0066);
-      background-size: 400% 400%;
-      animation: fondo 20s ease infinite;
-      color: #fff;
-    }
-
-    @keyframes fondo {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      color: white;
+      background-image: radial-gradient(#ffffff11 1px, transparent 1px);
+      background-size: 30px 30px;
     }
 
     header {
       text-align: center;
-      padding: 2rem 1rem;
-      background: rgba(0,0,0,0.5);
+      padding: 3rem 1rem 2rem;
     }
 
     header h1 {
       font-family: 'Cinzel', serif;
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: #f5e663;
-      text-shadow: 0 0 10px #fff;
+      text-shadow: 0 0 15px #f5e663;
     }
 
-    .volver {
-      display: inline-block;
-      margin-top: 1rem;
-      background: #f5e663;
-      color: #1b002d;
-      padding: 0.6rem 1.2rem;
-      border-radius: 10px;
-      text-decoration: none;
-      font-family: 'Cinzel', serif;
-      transition: transform 0.3s;
-    }
-
-    .volver:hover {
-      background: #fff;
-      transform: scale(1.05);
-    }
-
-    .servicios {
-      max-width: 900px;
-      margin: 2rem auto;
+    .servicios-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
       padding: 2rem;
-      background: rgba(0,0,0,0.4);
-      border-radius: 15px;
+      max-width: 1000px;
+      margin: auto;
     }
 
     .servicio {
-      margin-bottom: 2rem;
-      border-left: 4px solid gold;
-      padding-left: 1rem;
+      border: 1px solid gold;
+      border-radius: 12px;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.05);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .servicio:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px gold;
     }
 
     .servicio h2 {
       font-family: 'Cinzel', serif;
       color: #f5e663;
+      font-size: 1.5rem;
+      margin-top: 0;
     }
 
-    .servicio p {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    footer {
+    .volver {
+      display: block;
       text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #ccc;
+      margin: 3rem auto 1rem;
+      color: #d8b4fe;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+    }
+
+    .volver:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -87,40 +76,26 @@
 
   <header>
     <h1>Servicios Espirituales</h1>
-    <a class="volver" href="index.html">← Volver al Oráculo</a>
   </header>
 
-  <div class="servicios">
+  <main class="servicios-container">
     <div class="servicio">
-      <h2>🔮 Lecturas de Tarot</h2>
-      <p>Canalización profunda con tus guías espirituales. A través del tarot ancestral recibes respuestas sabias, orientaciones del alma y energía divina para tus decisiones.</p>
+      <h2>Lecturas de Tarot</h2>
+      <p>Canalización profunda con tus guías espirituales, respuestas a través del tarot ancestral.</p>
     </div>
-
     <div class="servicio">
-      <h2>🤖 IA Espiritual</h2>
-      <p>Consulta interactiva con inteligencia espiritual. Una interfaz mágica que canaliza mensajes energéticos del universo y responde a tus preguntas más profundas.</p>
+      <h2>IA Espiritual</h2>
+      <p>Interfaz mágica para responder tus preguntas energéticas con inteligencia espiritual conectada al universo.</p>
     </div>
-
     <div class="servicio">
-      <h2>📜 Registros Akáshicos</h2>
-      <p>Accede a la memoria de tu alma. Descubre vidas pasadas, bloqueos kármicos y tu propósito divino a través de esta lectura sagrada y poderosa.</p>
+      <h2>Registros Akáshicos</h2>
+      <p>Lectura de tu alma, vidas pasadas y tu propósito divino. Conexión profunda con la biblioteca del alma.</p>
     </div>
+  </main>
 
-    <div class="servicio">
-      <h2>💎 Cuarzos Personalizados</h2>
-      <p>Diagnóstico energético y recomendación de cuarzo para equilibrar chakras, proteger tu campo áurico y expandir tu luz interior. Incluye ritual guiado.</p>
-    </div>
-
-    <div class="servicio">
-      <h2>🧘‍♀️ Sanación Energética</h2>
-      <p>Reiki, limpieza energética, armonización de chakras y protección psíquica. Un espacio para sentirte liviana, en paz y elevada espiritualmente.</p>
-    </div>
-  </div>
-
-  <footer>
-    © 2025 Nayra Elhara · Todos los derechos reservados ✨
-  </footer>
+  <a href="index.html" class="volver">← Volver al Oráculo</a>
 
 </body>
 </html>
+
 
