@@ -3,57 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Servicios de Nayra Elhara</title>
+  <title>Servicios Espirituales - Nayra Elhara</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Karla&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/your-fontawesome-id.js" crossorigin="anonymous"></script>
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Karla', sans-serif;
+      background: linear-gradient(-45deg, #2a004f, #45045b, #190033, #3c0066);
+      background-size: 400% 400%;
+      animation: fondo 20s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes fondo {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      color: #f5e663;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    .volver {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #f5e663;
+      color: #1b002d;
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      transition: transform 0.3s;
+    }
+
+    .volver:hover {
+      background: #fff;
+      transform: scale(1.05);
+    }
+
+    .servicios {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(0,0,0,0.4);
+      border-radius: 15px;
+    }
+
+    .servicio {
+      margin-bottom: 2rem;
+      border-left: 4px solid gold;
+      padding-left: 1rem;
+    }
+
+    .servicio h2 {
+      font-family: 'Cinzel', serif;
+      color: #f5e663;
+    }
+
+    .servicio p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
-  <section class="hero">
-    <h1>Servicios Espirituales</h1>
-    <p>Conecta con tu alma, recibe guía y sana energéticamente ✨</p>
-    <div class="cta-buttons">
-      <a href="index.html">Inicio</a>
-      <a href="#contacto" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/tecnicoensistemassenatec49'});return false;" class="cta-reserva">Reservar Sesión</a>
-    </div>
-  </section>
 
-  <section class="grid">
-    <div class="serv">
-      <h3>🔮 Lecturas de Tarot</h3>
-      <p>Lecturas intuitivas para comprender tus emociones, decisiones y caminos posibles. Conexión directa con tus guías.</p>
+  <header>
+    <h1>Servicios Espirituales</h1>
+    <a class="volver" href="index.html">← Volver al Oráculo</a>
+  </header>
+
+  <div class="servicios">
+    <div class="servicio">
+      <h2>🔮 Lecturas de Tarot</h2>
+      <p>Canalización profunda con tus guías espirituales. A través del tarot ancestral recibes respuestas sabias, orientaciones del alma y energía divina para tus decisiones.</p>
     </div>
-    <div class="serv">
-      <h3>📖 Registros Akáshicos</h3>
-      <p>Explora vidas pasadas, contratos álmicos y tu propósito actual. Accede al libro sagrado de tu alma.</p>
+
+    <div class="servicio">
+      <h2>🤖 IA Espiritual</h2>
+      <p>Consulta interactiva con inteligencia espiritual. Una interfaz mágica que canaliza mensajes energéticos del universo y responde a tus preguntas más profundas.</p>
     </div>
-    <div class="serv">
-      <h3>💡 IA Espiritual</h3>
-      <p>Pregunta al Oráculo Digital. Recibe mensajes canalizados a través de la Inteligencia Espiritual artificial.</p>
+
+    <div class="servicio">
+      <h2>📜 Registros Akáshicos</h2>
+      <p>Accede a la memoria de tu alma. Descubre vidas pasadas, bloqueos kármicos y tu propósito divino a través de esta lectura sagrada y poderosa.</p>
     </div>
-    <div class="serv">
-      <h3>💎 Limpiezas Energéticas</h3>
-      <p>Sesiones con cuarzos, péndulo y reiki para remover bloqueos, influencias externas o emociones densas.</p>
+
+    <div class="servicio">
+      <h2>💎 Cuarzos Personalizados</h2>
+      <p>Diagnóstico energético y recomendación de cuarzo para equilibrar chakras, proteger tu campo áurico y expandir tu luz interior. Incluye ritual guiado.</p>
     </div>
-    <div class="serv">
-      <h3>🧘‍♀️ Sanación con Cuencos</h3>
-      <p>Terapia vibracional con cuencos tibetanos que armoniza chakras y relaja cuerpo, mente y alma.</p>
+
+    <div class="servicio">
+      <h2>🧘‍♀️ Sanación Energética</h2>
+      <p>Reiki, limpieza energética, armonización de chakras y protección psíquica. Un espacio para sentirte liviana, en paz y elevada espiritualmente.</p>
     </div>
-    <div class="serv">
-      <h3>🌕 Rituales de Luna</h3>
-      <p>Ceremonias místicas en fases lunares para manifestar, limpiar y conectar con tu poder interior.</p>
-    </div>
-  </section>
+  </div>
 
   <footer>
-    <div class="socials">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
-    </div>
-    <p>© 2025 Nayra Elhara – Todos los derechos reservados</p>
+    © 2025 Nayra Elhara · Todos los derechos reservados ✨
   </footer>
+
 </body>
 </html>
+
